@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+    xmlns:resume="http://localhost:8000/part1"
+    targetNamespace="http://localhost:8000/part1">
+
+    <element name="resume" type="resume:ResumeType"/>
+
+</schema>
