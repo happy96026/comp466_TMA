@@ -6,4 +6,9 @@
 
     <element name="resume" type="resume:ResumeType"/>
 
+    <complexType name="ResumeType">
+        <sequence>
+        </sequence>
+    </complexType>
+
 </schema>
