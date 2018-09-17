@@ -1,0 +1,126 @@
+<?xml version="1.0"?>
+
+<part1:resume
+    xmlns:part1="http://localhost:8000/part1">
+
+    <generalInfo>
+        <name>
+            <first>Min Soung</first>
+            <middle></middle>
+            <last>Choi</last>
+        </name>
+
+        <phoneNumber>
+            <type>home</type>
+            <number>780-988-5800</number>
+            <ext></ext>
+        </phoneNumber>
+
+        <phoneNumber>
+            <type>cell</type>
+            <number>639-916-0722</number>
+            <ext></ext>
+        </phoneNumber>
+
+        <email>m.choi960@gmail.com</email>
+
+        <address>
+            <number>11611</number>
+            <street>37 Avenue NW</street>
+            <apartment></apartment>
+            <city>Edmonton</city>
+            <province>AB</province>
+            <postalCode>T6J 0J1</postalCode>
+        </address>
+
+        <website>https://happy96026.github.io</website>
+    </generalInfo>
+
+    <educationalBackground>
+        <education>
+            <institution>University of Alberta</institution>
+            <location>
+                <city>Edmonton</city>
+                <province>AB</province>
+            </location>
+            <degree>Bsc in Computer Engineering: Software Options</degree>
+            <duration>
+                <start>2014-09</start>
+                <end>2019-04</end>
+            </duration>
+        </education>
+
+        <education>
+            <institution>Harry Ainlay High School</institution>
+            <location>
+                <city>Edmonton</city>
+                <province>AB</province>
+            </location>
+            <degree>High School Diploma</degree>
+            <duration>
+                <start>2011-09</start>
+                <end>2014-04</end>
+            </duration>
+        </education>
+    </educationalBackground>
+
+    <workExperience>
+        <work>
+            <name>Microsemi</name>
+            <location>
+                <city>Saskatoon</city>
+                <province>SK</province>
+            </location>
+            <position>Product Development Engineer</position>
+            <duration>
+                <start>2017-01</start>
+                <end>2017-08</end>
+            </duration>
+            <description>
+                <point>
+                    verified the functionality and the correctness of a single chip
+                    by writing testcases in SystemVerilog (SV)
+                </point>
+                <point>
+                    performed hardware simulation using SimVision
+                </point>
+                <point>
+                    managed and kept track of software versions using Subversion (SVN)
+                </point>
+                <point>
+                    received training in Universal Verification Methodology (UVM)
+                </point>
+            </description>
+        </work>
+
+        <work>
+            <name>Alberta Computers For Schools</name>
+            <location>
+                <city>Edmonton</city>
+                <province>AB</province>
+            </location>
+            <position>Computer Repair Technician</position>
+            <duration>
+                <start>2016-05</start>
+                <end>2016-08</end>
+            </duration>
+            <description>
+                <point>
+                    prepared on average of 3.2 computers per day which includes installation,
+                    testing and configuration of operating system, application software and
+                    device driver
+                </point>
+                <point>
+                    coordinated the prepartion of orders as large as 150 computers per order and
+                    a total of 400-600 computers per month
+                </point>
+                <point>
+                    refurbished desktops and laptops by applying best practices for assembling,
+                    disassembling and repairs using research of online resources such as support
+                    websites
+                </point>
+            </description>
+        </work>
+    </workExperience>
+
+</part1:resume>

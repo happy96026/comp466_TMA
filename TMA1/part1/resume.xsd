@@ -1,14 +1,157 @@
 <?xml version="1.0"?>
 
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
-    xmlns:resume="http://localhost:8000/part1"
+    xmlns:part1="http://localhost:8000/part1"
     targetNamespace="http://localhost:8000/part1">
 
-    <element name="resume" type="resume:ResumeType"/>
+    <element name="resume" type="part1:ResumeType"/>
 
-    <complexType name="ResumeType">
+    <complexType name="resumeType">
+        <all>
+            <element name="generalInfo" type="part1:generalInfoType"/>
+            <element name="educationalBackground" type="part1:educationalBackgroundType"/>
+            <element name="workExperience" type="part1:workExperienceType"/>
+        </all>
+    </complexType>
+
+    <complexType name="generalInfoType">
         <sequence>
+            <element name="name" type="part1:personNameType"/>
+            <element name="phoneNumber" type="part1:phoneNumberType"/>
+            <element name="email" type="part1:emailType"/>
+            <element name="address" type="part1:addressType"/>
+            <element name="website" type="part1:websiteType"/>
         </sequence>
     </complexType>
 
+    <complexType name="personNameType">
+        <all>
+            <element name="first" type="string"/>
+            <element name="middle" type="string" minOccurs=0/>
+            <element name="last" type="string"/>
+        </all>
+    </complexType>
+
+    <complexType name="phoneNumberType">
+        <all>
+            <element name="type" type="part1:phoneNumberEnumType"/>
+            <element name="number" type="part1:phoneNumberRegexType"/>
+            <element name="ext" type="int" minOccurs=0/>
+        </all>
+    </complexType>
+
+    <simpleType name="phoneNumberEnumType">
+        <restriction base="string">
+            <enumeration value="home"/>
+            <enumeration value="cell"/>
+            <enumeration value="work"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="phoneNumberRegexType">
+        <restriction base="string">
+            <pattern value="[0-9]{3}-[0-9]{3}-[0-9]{4}"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="emailType">
+        <restriction base="string">
+            <pattern
+                value="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"/>
+        </restriction>
+    </simpleType>
+
+    <complexType name="addressType">
+        <sequence>
+            <element name="number" type="int"/>
+            <element name="street" type="string"/>
+            <element name="apartment" type="int" minOccurs=0/>
+            <element name="city" type="string"/>
+            <element name="province" type="part1:provinceType"/>
+            <element name="postalCode" type="part1:postalCodeType"/>
+        </sequence>
+    </complexType>
+
+    <simpleType name="provinceType">
+        <restriction base="string">
+            <enumeration value="ON"/>
+            <enumeration value="QC"/>
+            <enumeration value="NS"/>
+            <enumeration value="NB"/>
+            <enumeration value="MB"/>
+            <enumeration value="BC"/>
+            <enumeration value="PE"/>
+            <enumeration value="SK"/>
+            <enumeration value="AB"/>
+            <enumeration value="NL"/>
+            <enumeration value="NT"/>
+            <enumeration value="YT"/>
+            <enumeration value="NU"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="postalCodeType">
+        <restriction base="string">
+            <pattern value="[ABCEGHJKLMNPRSTVXY][0-9][ABCEGHJKLMNPRSTVWXYZ] ?[0-9][ABCEGHJKLMNPRSTVWXYZ][0-9]"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="websiteType">
+        <restriction base="string">
+            <pattern
+                value=".|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$^(http:\/\/www\"/>
+        </restriction>
+    </simpleType>
+
+    <complexType name="educationalBackgroundType">
+        <sequence>
+            <element name="education" type="part1:educationType" minOccurs=1 maxOccurs=5/>
+        </sequence>
+    </complexType>
+
+    <complexType name="educationType">
+        <sequence>
+            <element name="institution" type="string"/>
+            <element name="location" type="part1:locationType"/>
+            <element name="degree" type="string"/>
+            <element name="duration" type="part1:durationType"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="locationType">
+        <sequence>
+            <element name="city" type="string"/>
+            <element name="province" type="part1:provinceType"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="durationType">
+        <sequence>
+            <element name="start" type="date"/>
+            <element name="end" type="date"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="workExperienceType">
+        <sequence>
+            <element name="work" type="part1:workType" minOccurs=1
+                maxOccurs=3/>
+        </sequence>
+    </complexType>
+
+    <complexType name="workType">
+        <sequence>
+            <element name="name" type="string"/>
+            <element name="location" type="part1:locationType"/>
+            <element name="position" type="string"/>
+            <element name="duration" type="part1:durationType"/>
+            <element name="description" type="part1:descriptionType"/>
+        </sequence>
+    </complexType>
+
+    <complexType name="descriptionType">
+        <sequence>
+            <element name="point" type="string" minOccurs=1 maxOccurs=5/>
+        </sequence>
+    </complexType>
 </schema>
