@@ -1,7 +1,10 @@
 <?xml version="1.0"?>
+<?xml-stylesheet type="text/xsl" href="resume.xsl"?>
 
 <part1:resume
-    xmlns:part1="http://localhost:8000/part1">
+    xmlns:part1="http://localhost:8000/part1"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://localhost:8000/part1 resume.xsd">
 
     <generalInfo>
         <name>
@@ -13,13 +16,11 @@
         <phoneNumber>
             <type>home</type>
             <number>780-988-5800</number>
-            <ext></ext>
         </phoneNumber>
 
         <phoneNumber>
             <type>cell</type>
             <number>639-916-0722</number>
-            <ext></ext>
         </phoneNumber>
 
         <email>m.choi960@gmail.com</email>
@@ -27,7 +28,6 @@
         <address>
             <number>11611</number>
             <street>37 Avenue NW</street>
-            <apartment></apartment>
             <city>Edmonton</city>
             <province>AB</province>
             <postalCode>T6J 0J1</postalCode>

@@ -1,10 +1,10 @@
 <?xml version="1.0"?>
 
 <schema xmlns="http://www.w3.org/2001/XMLSchema"
-    xmlns:part1="http://localhost:8000/part1"
-    targetNamespace="http://localhost:8000/part1">
+    targetNamespace="http://localhost:8000/part1"
+    xmlns:part1="http://localhost:8000/part1">
 
-    <element name="resume" type="part1:ResumeType"/>
+    <element name="resume" type="part1:resumeType"/>
 
     <complexType name="resumeType">
         <all>
@@ -17,7 +17,7 @@
     <complexType name="generalInfoType">
         <sequence>
             <element name="name" type="part1:personNameType"/>
-            <element name="phoneNumber" type="part1:phoneNumberType"/>
+            <element name="phoneNumber" type="part1:phoneNumberType" maxOccurs="3"/>
             <element name="email" type="part1:emailType"/>
             <element name="address" type="part1:addressType"/>
             <element name="website" type="part1:websiteType"/>
@@ -27,7 +27,7 @@
     <complexType name="personNameType">
         <all>
             <element name="first" type="string"/>
-            <element name="middle" type="string" minOccurs=0/>
+            <element name="middle" type="string" minOccurs="0"/>
             <element name="last" type="string"/>
         </all>
     </complexType>
@@ -36,7 +36,7 @@
         <all>
             <element name="type" type="part1:phoneNumberEnumType"/>
             <element name="number" type="part1:phoneNumberRegexType"/>
-            <element name="ext" type="int" minOccurs=0/>
+            <element name="ext" type="int" minOccurs="0"/>
         </all>
     </complexType>
 
@@ -56,8 +56,7 @@
 
     <simpleType name="emailType">
         <restriction base="string">
-            <pattern
-                value="^[a-zA-Z0-9.!#$%&’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"/>
+            <!--<pattern value="^[a-zA-Z0-9.!#$%&amp;’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"/>-->
         </restriction>
     </simpleType>
 
@@ -65,7 +64,7 @@
         <sequence>
             <element name="number" type="int"/>
             <element name="street" type="string"/>
-            <element name="apartment" type="int" minOccurs=0/>
+            <element name="apartment" type="int" minOccurs="0"/>
             <element name="city" type="string"/>
             <element name="province" type="part1:provinceType"/>
             <element name="postalCode" type="part1:postalCodeType"/>
@@ -98,14 +97,13 @@
 
     <simpleType name="websiteType">
         <restriction base="string">
-            <pattern
-                value=".|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$^(http:\/\/www\"/>
+            <!--<pattern value=".|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$^(http:\/\/www\"/>-->
         </restriction>
     </simpleType>
 
     <complexType name="educationalBackgroundType">
         <sequence>
-            <element name="education" type="part1:educationType" minOccurs=1 maxOccurs=5/>
+            <element name="education" type="part1:educationType" minOccurs="1" maxOccurs="5"/>
         </sequence>
     </complexType>
 
@@ -127,15 +125,21 @@
 
     <complexType name="durationType">
         <sequence>
-            <element name="start" type="date"/>
-            <element name="end" type="date"/>
+            <element name="start" type="part1:dateType"/>
+            <element name="end" type="part1:dateType"/>
         </sequence>
     </complexType>
 
+    <simpleType name="dateType">
+        <restriction base="string">
+            <pattern value="[12][0-9]{3}-(0[1-9]|1[0-2])"/>
+        </restriction>
+    </simpleType>
+
     <complexType name="workExperienceType">
         <sequence>
-            <element name="work" type="part1:workType" minOccurs=1
-                maxOccurs=3/>
+            <element name="work" type="part1:workType" minOccurs="1"
+                maxOccurs="3"/>
         </sequence>
     </complexType>
 
@@ -151,7 +155,7 @@
 
     <complexType name="descriptionType">
         <sequence>
-            <element name="point" type="string" minOccurs=1 maxOccurs=5/>
+            <element name="point" type="string" minOccurs="1" maxOccurs="5"/>
         </sequence>
     </complexType>
 </schema>
