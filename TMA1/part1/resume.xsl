@@ -1,4 +1,6 @@
 <?xml version="1.0"?>
+<!--TODO: Compare xsl to xsd rather than xml-->
+<!--TODO: Include position of job-->
 <xsl:stylesheet
     version="1.0"
     xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
@@ -12,12 +14,14 @@
                     <xsl:value-of select="generalInfo/name/first"/>&#160;<xsl:value-of select="generalInfo/name/last"/>'s Resume
                 </title>
                 <!-- Compiled and minified CSS -->
-                <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>
+                <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"/>-->
+                <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"/>
+                <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons"/>
                 <link rel="stylesheet" type="text/css" href="../shared/styles.css"/>
             </head>
             <body>
                 <div class="wrapper resume">
-                    <div class="header card-panel teal lighten-2">
+                    <div class="wrapper header">
                         <xsl:apply-templates select="generalInfo"/>
                     </div>
                     <div class="content">
@@ -31,29 +35,53 @@
 
      <xsl:template match="generalInfo">
         <div class="generalInfo">
-            <xsl:apply-templates select="name"/>
+            <div id="resumeName">
+                <xsl:value-of select="name"/>
+            </div>
             <xsl:apply-templates select="phoneNumber"/> 
-            <xsl:apply-templates select="email"/>
-            <xsl:apply-templates select="address"/>
+            <xsl:apply-templates select="email"/> 
+            <xsl:apply-templates select="address"/> 
         </div>
     </xsl:template>
 
-    <xsl:template match="name | email | address">
+    <xsl:template match="email">
         <div>
-            <xsl:value-of select="."/>
+            <i class="material-icons">email</i>
+            <p>&#160;<xsl:value-of select="."/></p>
+        </div>
+    </xsl:template>
+        
+    <xsl:template match="address">
+        <div>
+            <i class="material-icons">home</i>
+            <p>&#160;<xsl:value-of select="number"/> -
+                <xsl:value-of select="street"/>,
+                <xsl:value-of select="city"/>&#160;<xsl:value-of select="province"/>,
+                <xsl:value-of select="postalCode"/>
+            </p>
         </div>
     </xsl:template>
 
     <xsl:template match="phoneNumber">
         <xsl:for-each select=".">
             <div>
-                <xsl:value-of select="."/>
+                <xsl:if test="type='home'">
+                    <i class="material-icons">phone</i>
+                </xsl:if>
+                <xsl:if test="type='cell'">
+                    <i class="material-icons">smartphone</i>
+                </xsl:if>
+                <xsl:if test="type='work'">
+                    <i class="material-icons">work</i>
+                </xsl:if>
+                <p>&#160;<xsl:value-of select="number"/></p>
             </div>
         </xsl:for-each>
     </xsl:template>
 
     <xsl:template match="educationalBackground">
         <div class="educationalBackground">
+            <h1>Education</h1>
             <xsl:apply-templates select="education"/>
         </div>
     </xsl:template>
@@ -61,22 +89,27 @@
     <xsl:template match="education">
         <xsl:for-each select=".">
             <div class="education">
-                <xsl:apply-templates select="institution"/>
-                <xsl:apply-templates select="location"/>
-                <xsl:apply-templates select="duration"/>
-                <xsl:apply-templates select="degree"/>
+                <div style="float: left;">
+                    <xsl:apply-templates select="institution"/>, 
+                    <xsl:apply-templates select="location"/>
+                </div>
+                <div style="float: right;">
+                    <xsl:apply-templates select="duration"/>
+                </div>
+                <div style="clear: both;">
+                    <xsl:value-of select="degree"/>
+                </div>
             </div>
         </xsl:for-each>
     </xsl:template>
 
-    <xsl:template match="institution | degree">
-        <div>
-            <xsl:value-of select="."/>
-        </div>
+    <xsl:template match="institution">
+        <b><xsl:value-of select="."/></b>
     </xsl:template>
 
     <xsl:template match="workExperience">
         <div class="workExperience">
+            <h1>Work Experience</h1>
             <xsl:apply-templates select="work"/>
         </div>
     </xsl:template>
@@ -108,20 +141,12 @@
     </xsl:template>
 
     <xsl:template match="location">
-        <div class="city">
-            <xsl:apply-templates select="city"/>
-        </div>
-        <div class="province">
-            <xsl:apply-templates select="province"/>
-        </div>
+        <i>
+            <xsl:apply-templates select="city"/>, <xsl:apply-templates select="province"/>
+        </i>
     </xsl:template>
 
     <xsl:template match="duration">
-        <div class="start">
-            <xsl:apply-templates select="start"/>
-        </div>
-        <div class="end">
-            <xsl:apply-templates select="end"/>
-        </div>
+        <xsl:value-of select="start"/> - <xsl:apply-templates select="end"/>
     </xsl:template>
 </xsl:stylesheet>

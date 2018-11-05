@@ -5,42 +5,89 @@ body {
     font-family: "Roboto", sans-serif;
 }
 
-.wrapper {
-    display: grid;
+h1 {
+    font-weight: normal;
+    border-style: solid;
+    border-width: 0px 0px 1px;
+    border-color: #C0C0C0;
+    margin: 0 0 10px;
 }
 
-.resume {
-    grid-template-columns: 150px auto 150px;
-    grid-template-rows: 400px auto;
+.wrapper {
+    display: grid;
+    grid-column-gap: 10px;
+    grid-template-columns: repeat(12, 1fr);
+}
+
+.wrapper > * {
+    grid-column: 1 / span 12;
 }
 
 .header {
-    grid-column: 1 / 4;
-    display: grid;
-    grid-template-columns: 150px auto 150px;
     color: white;
-    /*background-color: #63aeff;*/
-    font-size: 25px;
+    background-color: #63aeff;
+    border-style: solid;
+    border-width: 0px 0px 1px;
+    border-color: #C0C0C0;
 }
 
-.generalInfo {
-    grid-column: 2 / 3;
-    align-self: center;
-}
-
-#name {
-    font-size: 50px;
-    margin-bottom: 35px;
-}
-
-.content {
-    grid-column: 2 / 3;
-}
-
-@media screen and (max-width: 700px) {
-    .generalInfo,
+@media (min-width: 700px) {
     .content {
-        grid-column: 1 / 4;
-        padding: 0 50px;
+        grid-column: 3 / span 8;
     }
+}
+/*-------------------------------------Part 1-----------------------------------------*/
+.resume > * {
+    padding: 0 20px;
+}
+
+.resume .header {
+    height: 300px;
+}
+
+.resume .generalInfo {
+    align-self: center;
+    font-size: 20px;
+}
+
+.generalInfo i {
+    position: relative;
+    top: 4px;
+}
+
+.generalInfo p {
+    display: inline;
+}
+
+.generalInfo > * {
+    margin: 2px 0;
+}
+
+#resumeName {
+    font-size: 50px;
+}
+
+@media (min-width: 700px) {
+    .resume .generalInfo {
+        grid-column: 3 / span 8;
+    }
+}
+
+.educationalBackground,
+.workExperience {
+    margin: 50px 0;
+}
+
+.education {
+    margin: 10px 0;
+}
+
+.education .institution {
+    font-style: bold;
+    display: inline;
+}
+
+.education .location {
+    /*display: inline;*/
+    font-style: italic;
 }
