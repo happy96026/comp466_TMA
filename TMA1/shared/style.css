@@ -1,0 +1,46 @@
+html,
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Roboto", sans-serif;
+}
+
+.wrapper {
+    display: grid;
+}
+
+.resume {
+    grid-template-columns: 150px auto 150px;
+    grid-template-rows: 400px auto;
+}
+
+.header {
+    grid-column: 1 / 4;
+    display: grid;
+    grid-template-columns: 150px auto 150px;
+    color: white;
+    background-color: #63aeff;
+    font-size: 25px;
+}
+
+.generalInfo {
+    grid-column: 2 / 3;
+    align-self: center;
+}
+
+#name {
+    font-size: 50px;
+    margin-bottom: 35px;
+}
+
+.content {
+    grid-column: 2 / 3;
+}
+
+@media screen and (max-width: 700px) {
+    .generalInfo,
+    .content {
+        grid-column: 1 / 4;
+        padding: 0 50px;
+    }
+}
