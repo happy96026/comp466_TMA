@@ -20,7 +20,7 @@
             <element name="phoneNumber" type="part1:phoneNumberType" maxOccurs="3"/>
             <element name="email" type="part1:emailType"/>
             <element name="address" type="part1:addressType"/>
-            <element name="website" type="part1:websiteType"/>
+            <element name="website" type="anyURI"/>
         </sequence>
     </complexType>
 
@@ -56,7 +56,7 @@
 
     <simpleType name="emailType">
         <restriction base="string">
-            <!--<pattern value="^[a-zA-Z0-9.!#$%&amp;’*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$"/>-->
+            <pattern value="[^@]+@[^\.]+\.[^\.]+"/>
         </restriction>
     </simpleType>
 
@@ -92,12 +92,6 @@
     <simpleType name="postalCodeType">
         <restriction base="string">
             <pattern value="[ABCEGHJKLMNPRSTVXY][0-9][ABCEGHJKLMNPRSTVWXYZ] ?[0-9][ABCEGHJKLMNPRSTVWXYZ][0-9]"/>
-        </restriction>
-    </simpleType>
-
-    <simpleType name="websiteType">
-        <restriction base="string">
-            <!--<pattern value=".|https:\/\/www\.|http:\/\/|https:\/\/)?[a-z0-9]+([\-\.]{1}[a-z0-9]+)*\.[a-z]{2,5}(:[0-9]{1,5})?(\/.*)?$^(http:\/\/www\"/>-->
         </restriction>
     </simpleType>
 

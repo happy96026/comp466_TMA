@@ -19,7 +19,7 @@ body {
     display: grid;
     grid-template-columns: 150px auto 150px;
     color: white;
-    background-color: #63aeff;
+    /*background-color: #63aeff;*/
     font-size: 25px;
 }
 
