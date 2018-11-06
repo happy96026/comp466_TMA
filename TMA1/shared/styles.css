@@ -3,13 +3,14 @@ body {
     margin: 0px;
     padding: 0px;
     font-family: "Roboto", sans-serif;
+    background-color: #f0f0f0;
 }
 
 h1 {
     font-weight: normal;
     border-style: solid;
     border-width: 0px 0px 1px;
-    border-color: #C0C0C0;
+    border-color: #c0c0c0;
     margin: 0 0 10px;
 }
 
@@ -26,9 +27,10 @@ h1 {
 .header {
     color: white;
     background-color: #63aeff;
-    border-style: solid;
-    border-width: 0px 0px 1px;
-    border-color: #C0C0C0;
+    box-shadow: 0 1px 5px #c0c0c0;
+    /*border-style: solid;*/
+    /*border-width: 0px 0px 1px;*/
+    /*border-color: #c0c0c0;*/
 }
 
 @media (min-width: 700px) {
@@ -37,8 +39,9 @@ h1 {
     }
 }
 /*-------------------------------------Part 1-----------------------------------------*/
-.resume > * {
-    padding: 0 20px;
+.generalInfo,
+.category {
+    margin: 0 15px;
 }
 
 .resume .header {
@@ -48,6 +51,7 @@ h1 {
 .resume .generalInfo {
     align-self: center;
     font-size: 20px;
+    /*padding: 10px;*/
 }
 
 .generalInfo i {
@@ -73,21 +77,24 @@ h1 {
     }
 }
 
-.educationalBackground,
-.workExperience {
-    margin: 50px 0;
+.resume .category {
+    margin-top: 50px;
+    margin-bottom: 50px;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0 0 5px #c0c0c0;
 }
 
-.education {
-    margin: 10px 0;
+.category .highlight {
+    margin: 13px 0;
 }
 
-.education .institution {
+.highlight .institution {
     font-style: bold;
     display: inline;
 }
 
-.education .location {
+.highlight .location {
     /*display: inline;*/
     font-style: italic;
 }

@@ -106,7 +106,7 @@
             <element name="institution" type="string"/>
             <element name="location" type="part1:locationType"/>
             <element name="degree" type="string"/>
-            <element name="duration" type="part1:durationType"/>
+            <element name="period" type="part1:periodType"/>
         </sequence>
     </complexType>
 
@@ -117,16 +117,41 @@
         </sequence>
     </complexType>
 
-    <complexType name="durationType">
+    <complexType name="periodType">
         <sequence>
             <element name="start" type="part1:dateType"/>
             <element name="end" type="part1:dateType"/>
         </sequence>
     </complexType>
 
-    <simpleType name="dateType">
+    <complexType name="dateType">
+        <sequence>
+            <element name="month" type="part1:monthType"/>
+            <element name="year" type="part1:yearType"/>
+        </sequence>
+    </complexType>
+    
+    <simpleType name="monthType">
         <restriction base="string">
-            <pattern value="[12][0-9]{3}-(0[1-9]|1[0-2])"/>
+            <enumeration value="Jan"/>
+            <enumeration value="Feb"/>
+            <enumeration value="Mar"/>
+            <enumeration value="Apr"/>
+            <enumeration value="May"/>
+            <enumeration value="Jun"/>
+            <enumeration value="Jul"/>
+            <enumeration value="Aug"/>
+            <enumeration value="Sep"/>
+            <enumeration value="Oct"/>
+            <enumeration value="Nov"/>
+            <enumeration value="Dec"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="yearType">
+        <restriction base="integer">
+            <minInclusive value="1990"/>
+            <maxInclusive value="9999"/>
         </restriction>
     </simpleType>
 
@@ -142,7 +167,7 @@
             <element name="name" type="string"/>
             <element name="location" type="part1:locationType"/>
             <element name="position" type="string"/>
-            <element name="duration" type="part1:durationType"/>
+            <element name="period" type="part1:periodType"/>
             <element name="description" type="part1:descriptionType"/>
         </sequence>
     </complexType>

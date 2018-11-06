@@ -44,10 +44,16 @@
                 <province>AB</province>
             </location>
             <degree>Bsc in Computer Engineering: Software Options</degree>
-            <duration>
-                <start>2014-09</start>
-                <end>2019-04</end>
-            </duration>
+            <period>
+                <start>
+                    <month>Sep</month>
+                    <year>2014</year>
+                </start>
+                <end>
+                    <month>Apr</month>
+                    <year>2019</year>
+                </end>
+            </period>
         </education>
 
         <education>
@@ -57,10 +63,16 @@
                 <province>AB</province>
             </location>
             <degree>High School Diploma</degree>
-            <duration>
-                <start>2011-09</start>
-                <end>2014-04</end>
-            </duration>
+            <period>
+                <start>
+                    <month>Sep</month>
+                    <year>2011</year>
+                </start>
+                <end>
+                    <month>Apr</month>
+                    <year>2014</year>
+                </end>
+            </period>
         </education>
     </educationalBackground>
 
@@ -72,10 +84,16 @@
                 <province>SK</province>
             </location>
             <position>Product Development Engineer</position>
-            <duration>
-                <start>2017-01</start>
-                <end>2017-08</end>
-            </duration>
+            <period>
+                <start>
+                    <month>Jan</month>
+                    <year>2017</year>
+                </start>
+                <end>
+                    <month>Aug</month>
+                    <year>2017</year>
+                </end>
+            </period>
             <description>
                 <point>
                     verified the functionality and the correctness of a single chip
@@ -100,10 +118,16 @@
                 <province>AB</province>
             </location>
             <position>Computer Repair Technician</position>
-            <duration>
-                <start>2016-05</start>
-                <end>2016-08</end>
-            </duration>
+            <period>
+                <start>
+                    <month>May</month>
+                    <year>2016</year>
+                </start>
+                <end>
+                    <month>Aug</month>
+                    <year>2016</year>
+                </end>
+            </period>
             <description>
                 <point>
                     prepared on average of 3.2 computers per day which includes installation,

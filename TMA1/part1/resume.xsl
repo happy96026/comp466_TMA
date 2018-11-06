@@ -80,7 +80,7 @@
     </xsl:template>
 
     <xsl:template match="educationalBackground">
-        <div class="educationalBackground">
+        <div class="category">
             <h1>Education</h1>
             <xsl:apply-templates select="education"/>
         </div>
@@ -88,13 +88,13 @@
 
     <xsl:template match="education">
         <xsl:for-each select=".">
-            <div class="education">
+            <div class="highlight">
                 <div style="float: left;">
                     <xsl:apply-templates select="institution"/>, 
                     <xsl:apply-templates select="location"/>
                 </div>
                 <div style="float: right;">
-                    <xsl:apply-templates select="duration"/>
+                    <xsl:apply-templates select="period"/>
                 </div>
                 <div style="clear: both;">
                     <xsl:value-of select="degree"/>
@@ -108,7 +108,7 @@
     </xsl:template>
 
     <xsl:template match="workExperience">
-        <div class="workExperience">
+        <div class="category">
             <h1>Work Experience</h1>
             <xsl:apply-templates select="work"/>
         </div>
@@ -116,11 +116,11 @@
 
     <xsl:template match="work">
         <xsl:for-each select=".">
-            <div class="work">
+            <div class="highlight">
                 <xsl:apply-templates select="company"/>
                 <xsl:apply-templates select="location"/>
                 <xsl:apply-templates select="position"/>
-                <xsl:apply-templates select="duration"/>
+                <xsl:apply-templates select="period"/>
                 <xsl:apply-templates select="description"/>
             </div>
         </xsl:for-each>
@@ -146,7 +146,11 @@
         </i>
     </xsl:template>
 
-    <xsl:template match="duration">
-        <xsl:value-of select="start"/> - <xsl:apply-templates select="end"/>
+    <xsl:template match="period">
+        <xsl:apply-templates select="start"/> - <xsl:apply-templates select="end"/>
+    </xsl:template>
+
+    <xsl:template match="start | end">
+        <xsl:value-of select="month"/>&#160;<xsl:value-of select="year"/>
     </xsl:template>
 </xsl:stylesheet>
