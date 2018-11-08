@@ -40,9 +40,17 @@ h1 {
         grid-column: 3 / span 8;
     }
 }
+
+ul {
+    margin: 0;
+}
+
+li {
+    margin: 3px 0;
+}
 /*-------------------------------------Part 1-----------------------------------------*/
 .resume .header {
-    height: 300px;
+    height: 400px;
 }
 
 .resume .generalInfo {
@@ -63,8 +71,15 @@ h1 {
     margin: 2px 0;
 }
 
-#resumeName {
+#resume-name {
     font-size: 50px;
+    margin-bottom: 0;
+    line-height: 100%;
+}
+
+#resume-position {
+    margin-top: 0;
+    margin-bottom: 20px;
 }
 
 @media (min-width: 700px) {
@@ -82,8 +97,8 @@ h1 {
 }
 
 .category .highlight {
-    margin-top: 13px;
-    margin-bottom: 13px;
+    margin-top: 25px;
+    margin-bottom: 25px;
 }
 
 .highlight .institution {

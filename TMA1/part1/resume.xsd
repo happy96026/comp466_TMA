@@ -17,6 +17,7 @@
     <complexType name="generalInfoType">
         <sequence>
             <element name="name" type="part1:personNameType"/>
+            <element name="position" type="string"/>
             <element name="phoneNumber" type="part1:phoneNumberType" maxOccurs="3"/>
             <element name="email" type="part1:emailType"/>
             <element name="address" type="part1:addressType"/>
@@ -36,7 +37,6 @@
         <all>
             <element name="type" type="part1:phoneNumberEnumType"/>
             <element name="number" type="part1:phoneNumberRegexType"/>
-            <element name="ext" type="int" minOccurs="0"/>
         </all>
     </complexType>
 
@@ -97,7 +97,7 @@
 
     <complexType name="educationalBackgroundType">
         <sequence>
-            <element name="education" type="part1:educationType" minOccurs="1" maxOccurs="5"/>
+            <element name="education" type="part1:educationType" minOccurs="1"/>
         </sequence>
     </complexType>
 

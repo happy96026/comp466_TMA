@@ -35,30 +35,20 @@
 
     <xsl:template match="generalInfo">
         <div class="generalInfo x-margin">
-            <div id="resumeName">
-                <xsl:value-of select="name"/>
+            <xsl:apply-templates select="name"/> 
+            <div id="resume-position">
+                <xsl:value-of select="position"/>
             </div>
             <xsl:apply-templates select="phoneNumber"/> 
             <xsl:apply-templates select="email"/> 
             <xsl:apply-templates select="address"/> 
+            <xsl:apply-templates select="website"/> 
         </div>
     </xsl:template>
 
-    <xsl:template match="email">
-        <div class="info">
-            <i class="material-icons">email</i>
-            <div class="inline">&#160;<xsl:value-of select="."/></div>
-        </div>
-    </xsl:template>
-
-    <xsl:template match="address">
-        <div class="info">
-            <i class="material-icons">home</i>
-            <div>&#160;<xsl:value-of select="number"/> -
-                <xsl:value-of select="street"/>,
-                <xsl:value-of select="city"/>&#160;<xsl:value-of select="province"/>,
-                <xsl:value-of select="postalCode"/>
-            </div>
+    <xsl:template match="generalInfo/name">
+        <div id="resume-name">
+            <xsl:value-of select="first"/>&#160;<xsl:value-of select="last"/>
         </div>
     </xsl:template>
 
@@ -72,11 +62,38 @@
                     <i class="material-icons">smartphone</i>
                 </xsl:if>
                 <xsl:if test="type='work'">
-                    <i class="material-icons">work</i>
+                    <i class="material-icons">business</i>
                 </xsl:if>
                 <div>&#160;<xsl:value-of select="number"/></div>
             </div>
         </xsl:for-each>
+    </xsl:template>
+
+    <xsl:template match="email">
+        <div class="info">
+            <i class="material-icons">email</i>
+            <div class="inline">&#160;<xsl:value-of select="."/></div>
+        </div>
+    </xsl:template>
+
+    <xsl:template match="address">
+        <div class="info">
+            <i class="material-icons">home</i>
+            <div>&#160;<xsl:if test="apartment">
+                    <xsl:value-of select="apartment"/> - 
+                </xsl:if>
+                <xsl:value-of select="number"/>&#160;<xsl:value-of select="street"/>,
+                <xsl:value-of select="city"/>&#160;<xsl:value-of select="province"/>,
+                <xsl:value-of select="postalCode"/>
+            </div>
+        </div>
+    </xsl:template>
+
+    <xsl:template match="website">
+        <div class="info">
+            <i class="material-icons">public</i>
+            <div>&#160;<xsl:value-of select="."/></div>
+        </div>
     </xsl:template>
 
     <xsl:template match="educationalBackground">
@@ -137,11 +154,11 @@
     </xsl:template>
 
     <xsl:template match="description">
-        <xsl:for-each select="point">
-            <div class="point">
-                <xsl:value-of select="."/>
-            </div>
-        </xsl:for-each>
+        <ul>
+            <xsl:for-each select="point">
+                <li><xsl:value-of select="."/></li>
+            </xsl:for-each>
+        </ul>
     </xsl:template>
 
     <xsl:template match="location">
