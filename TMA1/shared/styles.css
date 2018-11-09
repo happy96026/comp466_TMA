@@ -11,7 +11,14 @@ h1 {
     border-style: solid;
     border-width: 0px 0px 1px;
     border-color: #c0c0c0;
-    margin: 0 0 10px;
+}
+
+ul {
+    margin: 0;
+}
+
+li {
+    margin: 3px 0;
 }
 
 .wrapper {
@@ -35,19 +42,57 @@ h1 {
     margin-left: 15px;
 }
 
+.category {
+    padding: 10px 20px;
+    background-color: white;
+    box-shadow: 0 0 5px #c0c0c0;
+}
+
+.category > h1 {
+    margin: 0;
+    margin-bottom: 10px;
+}
+
+.category > h2 {
+    font-size: 15px;
+    margin-top: 10px;
+    margin-bottom: 5px;
+}
+
+.category > div {
+    margin: 3px 0;
+}
+
+.category > div:last-of-type {
+    margin-bottom: 0px;
+}
+
 @media (min-width: 700px) {
     .content {
         grid-column: 3 / span 8;
     }
 }
-
-ul {
-    margin: 0;
+/*-------------------------------------Main Page--------------------------------------*/
+.main-page .header {
+    height: 60px;
 }
 
-li {
-    margin: 3px 0;
+.main-page .title {
+    align-self: center;
+    font-size: 25px;
+    font-weight: bold;
 }
+
+.main-page .category {
+    margin: 30px 0;
+}
+
+@media (min-width: 700px) {
+    .main-page .title {
+        grid-column: 2 / span 10;
+    }
+}
+
 /*-------------------------------------Part 1-----------------------------------------*/
 .resume .header {
     height: 400px;
@@ -91,14 +136,10 @@ li {
 .resume .category {
     margin-top: 50px;
     margin-bottom: 50px;
-    padding: 10px;
-    background-color: white;
-    box-shadow: 0 0 5px #c0c0c0;
 }
 
-.category .highlight {
-    margin-top: 25px;
-    margin-bottom: 25px;
+.resume .highlight {
+    margin-top: 17px;
 }
 
 .highlight .institution {
@@ -107,4 +148,8 @@ li {
 
 .highlight .location {
     font-style: italic;
+}
+
+div.highlight:first-of-type {
+    margin-top: 10px;
 }
