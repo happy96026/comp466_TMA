@@ -1,10 +1,10 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html>
     <head>
-        <meta charset="utf-8">
+        <meta charset="utf-8" />
         <title>COMP 466 Assignment 1</title>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
-        <link rel="stylesheet" type="text/css" href="../shared/styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
+        <link rel="stylesheet" type="text/css" href="../shared/styles.css" />
     </head>
 
     <body>
@@ -15,33 +15,82 @@
             <div class="content x-margin">
                 <div class="category">
                     <h1>General Information</h1>
-                    <div><b>COMP 466: Advanced Technologies for Web-Based Systems</b></div>
-                    <div><b>Assignment #1</b></div>
-                    <div><b>Name:</b> Min Soung Choi</div>
-                    <div><b>Student ID:</b> 3369465</div>
-                    <div><b>Date Started:</b> September 9, 2018</div>
-                    <div><b>Date Completed:</b> TBD</div>
-                    <div><b>Time Spent:</b> TBD</div>
+                    <p><b> COMP 466: Advanced Technologies for Web-Based Systems </b></p>
+                    <p><b>Assignment #1</b></p>
+                    <p><b>Name:</b> Min Soung Choi</p>
+                    <p><b>Student ID:</b> 3369465</p>
+                    <p><b>Date Started:</b> September 9, 2018</p>
+                    <p><b>Date Completed:</b> TBD</p>
+                    <p><b>Time Spent:</b> TBD</p>
                 </div>
                 <div class="category">
-                    <h1>Part 1 </h1>
+                    <h1>Part 1</h1>
                     <h2>Original Description</h2>
-                    <div>
-                        Create an XML version of your resume containing at least three sections: general 
-                        information about you; your educational background, and your work experience.
-                        Create a schema for the XML document, and then create an XSLT for the XML document
-                        so that it can be rendered in a browser.  Save all three files 
-                        (resume.xml, resume.xsd, and resume.xsl) for Part 1 in the directory TMA1/part1.
-                    </div>
+                    <p>
+                        Create an XML version of your resume containing at least three sections:
+                        general information about you; your educational background, and your work
+                        experience. Create a schema for the XML document, and then create an XSLT
+                        for the XML document so that it can be rendered in a browser. Save all three
+                        files (resume.xml, resume.xsd, and resume.xsl) for Part 1 in the directory
+                        TMA1/part1.
+                    </p>
                     <h2>Interpretation of the Part</h2>
-                    <div>
-                        Create XML for resume that meets the requirements above. A schema should be created
-                        for the XML document and XSLT to be rendered to the browser.
-                    </div>
+                    <p>
+                        Create an XML that contains information about my resume. Use XSD to define a
+                        schema in order to create a structure for my resume such as the types of
+                        information that should be contained in each categories of my resume.
+                        Finally, use XSLT to render the the info in my resume such that the XSLT
+                        caters to the schema definition and the code is reused for formats that are
+                        repeated.
+                    </p>
                     <h2>Analysis and Design</h2>
-                    <h2>Guide</h2>
+                    <p>
+                        The XSD schema is defined to create a general structure of the resume where
+                        the XML document is used to contain the actual content of the resume. Then,
+                        the XSLT is used to define the content of the HTML and convert the contents
+                        of the XML so that it can be rendered on the web. With the XSD schema, the
+                        general format of each tag and its corresponding restrictions are included
+                        to define what contents a resume should have. With the XSLT, it is created
+                        in a way such that a template is created for each unique tag. As some of the
+                        categories share common tags, these common tags can be reused by selecting
+                        the common tag and applying.
+                    </p>
+                    <h2>Documentation</h2>
+                    <p>
+                        The resume contains three categories, general info, educational background
+                        and work experience.
+                    </p>
+                    <p>
+                        Within general info, name, position, phone number, email, address and
+                        website must exist. All tags except phone number must exist once. Phone
+                        number tag can occur a maximum of three times. Name must have first, middle
+                        and last tag where middle can occur or not. Phone number must have type and
+                        number tag where type can be from "home", "cell", and "work" and number is a
+                        string that is in the format of "xxx-xxx-xxxx". Email is a string where the
+                        it is filtered using the regex "[^@]+@[^\.]+\.[^\.]+" and address must
+                        contain number, street, apartment, city, province and postal code. Number is
+                        an int, street is string, apartment is int that is optional, province is
+                        string that must be a abbreviation of a Canadian province and postal code
+                        must be a Canadian postal code that is restricted using regex
+                        "[A-Z][0-9][A-Z] ?[0-9][A-Z][0-9]".
+                    </p>
+                    <p>
+                        Within educational background, education tag must exist but can occur more
+                        than once. Within education, instituion, location, degree and period exists.
+                        Institution is a string, location must contain city and province and period
+                        must contain start and end. Start and end is a date type where it must
+                        contain month and year tag. Month must be an abbreviation and year must be
+                        between 1990 to 9999.
+                    </p>
+                    <p>
+                        Within work experience, work tag must exist but can occur more tha once.
+                        Within work, name, location, position, period and description exists, Name
+                        is a string, position is string and description is composed of points that
+                        must occur once to five times which is also a string. Location and period is
+                        similar to the data type mentioned in educational background.
+                    </p>
                     <h2>Hyperlink</h2>
-                    <h2>Note</h2>
+                    <a href="part1/resume.xml">link</a>
                 </div>
             </div>
         </div>

@@ -91,7 +91,7 @@
 
     <simpleType name="postalCodeType">
         <restriction base="string">
-            <pattern value="[ABCEGHJKLMNPRSTVXY][0-9][ABCEGHJKLMNPRSTVWXYZ] ?[0-9][ABCEGHJKLMNPRSTVWXYZ][0-9]"/>
+            <pattern value="[A-Z][0-9][A-Z] ?[0-9][A-Z][0-9]"/>
         </restriction>
     </simpleType>
 

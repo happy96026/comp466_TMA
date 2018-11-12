@@ -1,0 +1,13 @@
+{
+    "quiz": [
+        {
+            "Question": "Question 1",
+            "Choices": [
+                "Choice 1",
+                "Choice 2",
+                "Choice 3"
+            ],
+            "Answer": 1
+        }
+    ]
+}
