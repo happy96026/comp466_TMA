@@ -1,0 +1,35 @@
+{
+    "unit": 1,
+    "sections": [
+        {
+            "number": 1,
+            "topic": "Introduction to Scripting",
+            "notes": []
+        },
+        {
+            "number": 2,
+            "topic": "Control Statements in JavaScript",
+            "notes": []
+        },
+        {
+            "number": 3,
+            "topic": "Functions in JavaScript",
+            "notes": []
+        },
+        {
+            "number": 4,
+            "topic": "Arrays, Objects, and Document Object Model (DOM) in JavaScript",
+            "notes": []
+        },
+        {
+            "number": 5,
+            "topic": "Event Handling in JavaScript",
+            "notes": []
+        },
+        {
+            "number": 6,
+            "topic": "Canvas in HTML5",
+            "notes": []
+        }
+    ]
+}
