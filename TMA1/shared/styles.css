@@ -21,7 +21,8 @@ li {
     margin: 3px 0;
 }
 
-.wrapper {
+.wrapper,
+.container {
     display: grid;
     grid-column-gap: 10px;
     grid-template-columns: repeat(12, 1fr);
@@ -72,6 +73,65 @@ li {
         grid-column: 3 / span 8;
     }
 }
+/*-------------------------------------Nav bar--------------------------------------*/
+.navbar ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: space-between;
+}
+
+.navbar li {
+    margin: 0px;
+    height: 50px;
+}
+
+.navbar ul > li {
+    display: flex;
+    align-items: center;
+}
+
+div.dropdown {
+    display: flex;
+}
+
+li.dropdown:hover {
+    background-color: #208afc;
+}
+
+#banner {
+    padding: 0 20px;
+}
+
+.navbar button {
+    border: none;
+    background: none;
+    outline: none;
+    color: white;
+    padding: 0 20px;
+    height: 100%;
+}
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    text-align: center;
+    width: 100%;
+}
+
+.navbar .dropdown-content {
+    display: none;
+}
+
+li.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content li:hover {
+    background-color: #208afc;
+}
+
 /*-------------------------------------Main Page--------------------------------------*/
 .main-page .header {
     height: 60px;
@@ -153,3 +213,4 @@ li {
 div.highlight:first-of-type {
     margin-top: 10px;
 }
+/*-------------------------------------Part 2-----------------------------------------*/

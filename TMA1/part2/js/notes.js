@@ -1,3 +1,5 @@
+"use strict";
+
 var currentScript = document.currentScript;
 
 function createSection(section, sectionName) {

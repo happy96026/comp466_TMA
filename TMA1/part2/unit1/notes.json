@@ -35,7 +35,7 @@
                 "URL contains the server's fully qualified hostname. The hostname is then translated into an IP address. The remainder of the URL after the hostname is the resource's location on the web server.",
                 "For security reasons the path location is typically a virtual directory",
                 "HTTP status code 200 indicates success.",
-                "HTTP status code 404 indicates success.",
+                "HTTP status code 404 indicates error.",
                 "The Multipurpose Internet Mail Extensions (MIME) standard specifies data formats, which programs can use to interpret data correctly.",
                 "Browsers often cache recetly viewed web pages so they can quickly reload the pages.",
                 "The bottom tier (also called the data tier or the information tier) maintains the application's data.",

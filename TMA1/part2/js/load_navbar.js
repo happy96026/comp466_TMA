@@ -1,3 +1,5 @@
+"use strict";
+
 var currentScript = document.currentScript;
 
 $(document).ready(function() {
