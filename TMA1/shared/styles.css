@@ -36,6 +36,7 @@ li {
     color: white;
     background-color: #63aeff;
     box-shadow: 0 1px 5px #c0c0c0;
+    z-index: 1;
 }
 
 .x-margin {
@@ -75,6 +76,7 @@ li {
 }
 /*-------------------------------------Nav bar--------------------------------------*/
 .navbar ul {
+    grid-column: 2 / span 10;
     list-style: none;
     margin: 0;
     padding: 0;
@@ -87,11 +89,6 @@ li {
     height: 50px;
 }
 
-.navbar ul > li {
-    display: flex;
-    align-items: center;
-}
-
 div.dropdown {
     display: flex;
 }
@@ -102,6 +99,7 @@ li.dropdown:hover {
 
 #banner {
     padding: 0 20px;
+    font-size: 20px;
 }
 
 .navbar button {
@@ -111,13 +109,19 @@ li.dropdown:hover {
     color: white;
     padding: 0 20px;
     height: 100%;
+    font-size: 15px;
 }
 
 .navbar a {
     color: white;
     text-decoration: none;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
     width: 100%;
+    height: 100%;
+    font-size: 15px;
 }
 
 .navbar .dropdown-content {
