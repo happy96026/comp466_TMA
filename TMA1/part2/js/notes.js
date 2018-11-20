@@ -4,6 +4,7 @@ var currentScript = document.currentScript;
 
 function createSection(section, sectionName) {
     var div = document.createElement("div");
+    div.setAttribute("class", "category");
 
     var h1 = document.createElement("h1");
     h1.appendChild(document.createTextNode(sectionName));

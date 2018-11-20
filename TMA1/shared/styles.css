@@ -32,7 +32,8 @@ li {
     grid-column: 1 / span 12;
 }
 
-.header {
+.header,
+.button {
     color: white;
     background-color: #63aeff;
     box-shadow: 0 1px 5px #c0c0c0;
@@ -45,7 +46,7 @@ li {
 }
 
 .category {
-    padding: 10px 20px;
+    padding: 20px;
     background-color: white;
     box-shadow: 0 0 5px #c0c0c0;
 }
@@ -66,13 +67,36 @@ li {
 }
 
 .category > div:last-of-type {
-    margin-bottom: 0px;
+    margin-bottom: 0;
+}
+
+.category > p {
+    margin: 15px 0;
+}
+
+.category > p:first-of-type {
+    margin: 0px 0;
+}
+
+.category > p:last-of-type {
+    margin-bottom: 0;
 }
 
 @media (min-width: 700px) {
     .content {
         grid-column: 3 / span 8;
     }
+}
+
+.button {
+    text-align: right;
+    text-decoration: none;
+    padding: 12px 15px;
+    font-size: 15px;
+}
+
+.button:hover {
+    background-color: #208afc;
 }
 /*-------------------------------------Nav bar--------------------------------------*/
 .navbar ul {
@@ -218,3 +242,6 @@ div.highlight:first-of-type {
     margin-top: 10px;
 }
 /*-------------------------------------Part 2-----------------------------------------*/
+.tutor .category {
+    margin: 20px 0;
+}
