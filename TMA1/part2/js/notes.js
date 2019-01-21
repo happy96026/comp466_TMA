@@ -2,6 +2,8 @@
 
 var currentScript = document.currentScript;
 
+function getAllSections() {}
+
 function createSection(section, sectionName) {
     var div = document.createElement("div");
     div.setAttribute("class", "category");

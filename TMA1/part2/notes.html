@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>Unit 1 Notes</title>
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"
+        ></script>
+        <script src="js/load_navbar.js"></script>
+        <script src="js/notes.js" path="notes.json"></script>
+        <link rel="stylesheet" type="text/css" href="../shared/styles.css" />
+    </head>
+    <body>
+        <div class="wrapper">
+            <nav class="header wrapper navbar"></nav>
+            <div class="content tutor">
+                <form action="notes.html">
+                    <input type="hidden" name="section" value="" />
+                    <div class="buttons">
+                        <input type="submit" class="button" value="Prev" />
+                        <input type="submit" class="button" value="Next" />
+                        <!-- <a href="../index.html" class="button">Prev</a> -->
+                        <!-- <a href="quiz.html" class="button">Next</a> -->
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>
