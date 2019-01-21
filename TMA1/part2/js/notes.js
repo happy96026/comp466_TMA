@@ -10,10 +10,12 @@ function createSection(section, sectionName) {
     h1.appendChild(document.createTextNode(sectionName));
     div.appendChild(h1);
 
+    var ul = document.createElement("ul");
+    div.appendChild(ul);
     section.notes.forEach(function(note) {
-        var p = document.createElement("p");
-        p.appendChild(document.createTextNode(note));
-        div.appendChild(p);
+        var li = document.createElement("li");
+        li.appendChild(document.createTextNode(note));
+        ul.appendChild(li);
     });
 
     return div;
@@ -22,13 +24,13 @@ function createSection(section, sectionName) {
 function loadNotes(asyncRequest) {
     if (asyncRequest.readyState == 4 && asyncRequest.status == 200) {
         var content = document.getElementsByClassName("content")[0];
-        var firstLink = content.getElementsByTagName("a")[0];
+        var buttons = document.getElementsByClassName("buttons")[0];
 
         var notes = JSON.parse(asyncRequest.responseText);
         notes.sections.forEach(function(section) {
             var sectionName = notes.unit + "." + section.number + " " + section.topic;
             var div = createSection(section, sectionName);
-            content.insertBefore(div, firstLink);
+            content.insertBefore(div, buttons);
         });
     }
 }

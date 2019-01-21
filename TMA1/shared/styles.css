@@ -46,6 +46,7 @@ li {
 }
 
 .category {
+    /*position: relative;*/
     padding: 20px;
     background-color: white;
     box-shadow: 0 0 5px #c0c0c0;
@@ -88,15 +89,28 @@ li {
     }
 }
 
+.buttons {
+    margin: 10px 0;
+    overflow: auto;
+}
+
 .button {
-    text-align: right;
     text-decoration: none;
-    padding: 12px 15px;
+    padding: 12px 25px;
     font-size: 15px;
+    display: inline-block;
 }
 
 .button:hover {
     background-color: #208afc;
+}
+
+.buttons > .button:first-of-type {
+    float: left;
+}
+
+.buttons > .button:last-of-type {
+    float: right;
 }
 /*-------------------------------------Nav bar--------------------------------------*/
 .navbar ul {
@@ -115,10 +129,6 @@ li {
 
 div.dropdown {
     display: flex;
-}
-
-li.dropdown:hover {
-    background-color: #208afc;
 }
 
 #banner {
@@ -156,10 +166,10 @@ li.dropdown:hover .dropdown-content {
     display: block;
 }
 
+li.dropdown:hover,
 .dropdown-content li:hover {
     background-color: #208afc;
 }
-
 /*-------------------------------------Main Page--------------------------------------*/
 .main-page .header {
     height: 60px;
@@ -243,5 +253,14 @@ div.highlight:first-of-type {
 }
 /*-------------------------------------Part 2-----------------------------------------*/
 .tutor .category {
-    margin: 20px 0;
+    margin-top: 20px;
+}
+
+.category ul {
+    /*position: absolute;*/
+    padding-left: 0px;
+}
+
+.category li {
+    margin: 0 0 5px 1em;
 }
