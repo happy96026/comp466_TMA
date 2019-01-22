@@ -1,6 +1,7 @@
 "use strict";
 
 var currentScript = document.currentScript;
+var units = [1, 2, 3];
 
 function getAllSections() {}
 
