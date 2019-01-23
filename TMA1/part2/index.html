@@ -9,11 +9,15 @@
             crossorigin="anonymous"
         ></script>
         <script src="js/load_navbar.js"></script>
+        <script src="js/load_sidebar.js"></script>
         <link rel="stylesheet" type="text/css" href="../shared/styles.css" />
     </head>
     <body>
         <div class="wrapper">
             <nav class="header wrapper navbar"></nav>
+            <aside class="sidebar">
+                <form action="notes.html"><input type="hidden" name="section" /></form>
+            </aside>
             <div class="content tutor">
                 <div class="category">
                     <p>Welcome to COMP 466 Tutor!</p>
@@ -27,8 +31,10 @@
                     </p>
                 </div>
                 <form action="notes.html">
-                    <input type="hidden" name="section" value="1.0" />
-                    <div class="buttons"><input type="submit" class="button" value="Next" /></div>
+                    <div class="buttons">
+                        <input type="hidden" name="section" value="1.0" />
+                        <input type="submit" class="button" value="Next" />
+                    </div>
                 </form>
             </div>
         </div>
