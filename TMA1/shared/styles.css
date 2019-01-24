@@ -125,10 +125,20 @@ li {
 .navbar li {
     margin: 0px;
     height: 50px;
+    list-style-type: none;
+    vertical-align: middle;
 }
 
-div.dropdown {
+
+.navbar a {
+    color: white;
+    text-decoration: none;
+    height: 100%;
     display: flex;
+    align-items: center;
+    /*justify-content: center;*/
+    /*box-sizing: border-box;*/
+    font-size: 15px;
 }
 
 #banner {
@@ -136,40 +146,33 @@ div.dropdown {
     font-size: 20px;
 }
 
-.navbar button {
-    border: none;
-    background: none;
-    outline: none;
-    color: white;
-    padding: 0 20px;
-    height: 100%;
-    font-size: 15px;
-}
+/*div.dropdown {*/
+    /*display: flex;*/
+/*}*/
 
-.navbar a {
-    color: white;
-    text-decoration: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    width: 100%;
-    height: 100%;
-    font-size: 15px;
-}
+/*.navbar button {*/
+    /*border: none;*/
+    /*background: none;*/
+    /*outline: none;*/
+    /*color: white;*/
+    /*padding: 0 20px;*/
+    /*height: 100%;*/
+    /*font-size: 15px;*/
+/*}*/
 
-.navbar .dropdown-content {
-    display: none;
-}
+/*.navbar .dropdown-content {*/
+    /*display: none;*/
+/*}*/
 
-li.dropdown:hover .dropdown-content {
-    display: block;
-}
+/*li.dropdown:hover .dropdown-content {*/
+    /*display: block;*/
+/*}*/
 
-li.dropdown:hover,
-.dropdown-content li:hover {
-    background-color: #208afc;
-}
+/*li.dropdown:hover,*/
+/*.dropdown-content li:hover {*/
+    /*background-color: #208afc;*/
+/*}*/
+/*-------------------------------------Side bar---------------------------------------*/
 /*-------------------------------------Main Page--------------------------------------*/
 .main-page .header {
     height: 60px;

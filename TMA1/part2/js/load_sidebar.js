@@ -4,6 +4,8 @@
 var units = [1, 2, 3];
 
 function loadSidebar(notes) {
+    const urlParams = new URLSearchParams(window.location.search);
+
     var form = document.getElementsByClassName("sidebar")[0].getElementsByTagName("form")[0];
     var input = form.getElementsByTagName("input")[0];
     var unitList = document.createElement("ul");
@@ -11,23 +13,34 @@ function loadSidebar(notes) {
         let unitItem = document.createElement("li");
         let unitHeader = document.createElement("h1");
         let sectionList = document.createElement("ul");
+        unitHeader.addEventListener("click", function() {
+            this.classList.toggle("active");
+            if (sectionList.style.display === "block") {
+                sectionList.style.display = "none";
+            } else {
+                sectionList.style.display = "block";
+            }
+        })
         for (let section of note.sections) {
             let sectionItem = document.createElement("li");
             sectionItem.appendChild(
                 document.createTextNode(note.unit + "." + section.number + ". " + section.topic)
             );
             sectionItem.addEventListener("click", function() {
-                input.setAttribute("value", note.unit + "." + section.number);
+                //input.setAttribute("value", note.unit + "." + section.number);
+                //input.setAttribute("value", "");
                 form.submit();
             });
             sectionList.appendChild(sectionItem);
         }
-        unitHeader.appendChild(document.createTextNode(note.unit + ". " + "Add Unit Name"));
+        unitHeader.appendChild(document.createTextNode(note.unit + ". " + note.title));
         unitItem.appendChild(unitHeader);
         unitItem.appendChild(sectionList);
         unitList.appendChild(unitItem);
     }
     form.appendChild(unitList);
+    console.log(notes);
+    console.log(urlParams.get("section"));
 }
 
 $(document).ready(function() {
