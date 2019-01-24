@@ -9,10 +9,17 @@ function loadSidebar(notes) {
     var form = document.getElementsByClassName("sidebar")[0].getElementsByTagName("form")[0];
     var input = form.getElementsByTagName("input")[0];
     var unitList = document.createElement("ul");
+    var homeNode = document.createElement("a");
+    homeNode.setAttribute("href", ".");
+    homeNode.appendChild(document.createTextNode("Home"));
+    var item = document.createElement("li");
+    item.appendChild(homeNode);
+    unitList.appendChild(item);
     for (let note of notes) {
         let unitItem = document.createElement("li");
         let unitHeader = document.createElement("h1");
         let sectionList = document.createElement("ul");
+        sectionList.style.display = "none";
         unitHeader.addEventListener("click", function() {
             this.classList.toggle("active");
             if (sectionList.style.display === "block") {
@@ -20,15 +27,14 @@ function loadSidebar(notes) {
             } else {
                 sectionList.style.display = "block";
             }
-        })
+        });
         for (let section of note.sections) {
             let sectionItem = document.createElement("li");
             sectionItem.appendChild(
                 document.createTextNode(note.unit + "." + section.number + ". " + section.topic)
             );
             sectionItem.addEventListener("click", function() {
-                //input.setAttribute("value", note.unit + "." + section.number);
-                //input.setAttribute("value", "");
+                input.setAttribute("value", note.unit + "." + section.number);
                 form.submit();
             });
             sectionList.appendChild(sectionItem);
@@ -39,8 +45,9 @@ function loadSidebar(notes) {
         unitList.appendChild(unitItem);
     }
     form.appendChild(unitList);
-    console.log(notes);
-    console.log(urlParams.get("section"));
+    console.log(window.location);
+    //console.log(notes);
+    //console.log(urlParams.get("section"));
 }
 
 $(document).ready(function() {
