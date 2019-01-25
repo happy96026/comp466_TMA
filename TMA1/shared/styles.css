@@ -190,16 +190,18 @@ div.highlight:first-of-type {
 /*-------------------------------------Part 2-----------------------------------------*/
 .part2 {
     display: grid;
-    grid-template-columns: 300px repeat(10, 1fr);
+    grid-template-columns: 250px repeat(10, 1fr);
     grid-template-rows: 60px auto;
-    height: 100vh;
 }
 
 .part2 .header {
     display: grid;
+    position: sticky;
     grid-column: 1 / 12;
-    grid-template-columns: 300px repeat(10, 1fr);
+    grid-row: 1;
+    grid-template-columns: 250px repeat(10, 1fr);
     grid-gap: 0;
+    top: 0;
 }
 
 .part2 .header div {
@@ -219,8 +221,21 @@ div.highlight:first-of-type {
 }
 
 .part2 .sidebar {
+    grid-column: 1;
+    grid-row: 2;
+    left: 0;
+    top: 60px;
+    position: sticky;
+    height: calc(100vh - 60px);
     overflow-y: scroll;
 }
+
+/*.part2 .sidebar .content {*/
+    /*position: relative;*/
+    /*height: calc(100vh - 60px);*/
+    /*top: 60px;*/
+    /*overflow-y: scroll;*/
+/*}*/
 
 .part2 .content {
     grid-column: 2 / 12;
