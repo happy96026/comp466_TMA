@@ -21,15 +21,17 @@ li {
     margin: 3px 0;
 }
 
-.wrapper,
-.container {
+.wrapper {
     display: grid;
-    grid-column-gap: 10px;
     grid-template-columns: repeat(12, 1fr);
+    grid-gap: 20px;
 }
 
-.wrapper > * {
+.header {
     grid-column: 1 / span 12;
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    grid-gap: 20px;
 }
 
 .header,
@@ -40,16 +42,16 @@ li {
     z-index: 1;
 }
 
-.x-margin {
-    margin-right: 15px;
-    margin-left: 15px;
-}
-
 .category {
     /*position: relative;*/
+    margin: 20px;
     padding: 20px;
     background-color: white;
     box-shadow: 0 0 5px #c0c0c0;
+}
+
+.category:first-of-type {
+    margin-top: 0;
 }
 
 .category > h1 {
@@ -90,12 +92,13 @@ li {
 }
 
 .buttons {
-    margin: 10px 0;
+    /*margin: 20px 0;*/
     overflow: auto;
 }
 
 .button {
     text-decoration: none;
+    /*margin: 20px;*/
     padding: 12px 25px;
     font-size: 15px;
     display: inline-block;
@@ -112,88 +115,17 @@ li {
 .buttons > .button:last-of-type {
     float: right;
 }
-/*-------------------------------------Nav bar--------------------------------------*/
-.navbar ul {
-    grid-column: 2 / span 10;
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    justify-content: space-between;
-}
-
-.navbar li {
-    margin: 0px;
-    height: 50px;
-    list-style-type: none;
-    vertical-align: middle;
-}
-
-
-.navbar a {
-    color: white;
-    text-decoration: none;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    /*justify-content: center;*/
-    /*box-sizing: border-box;*/
-    font-size: 15px;
-}
-
-#banner {
-    padding: 0 20px;
-    font-size: 20px;
-}
-
-/*div.dropdown {*/
-    /*display: flex;*/
-/*}*/
-
-/*.navbar button {*/
-    /*border: none;*/
-    /*background: none;*/
-    /*outline: none;*/
-    /*color: white;*/
-    /*padding: 0 20px;*/
-    /*height: 100%;*/
-    /*font-size: 15px;*/
-/*}*/
-
-/*.navbar .dropdown-content {*/
-    /*display: none;*/
-/*}*/
-
-/*li.dropdown:hover .dropdown-content {*/
-    /*display: block;*/
-/*}*/
-
-/*li.dropdown:hover,*/
-/*.dropdown-content li:hover {*/
-    /*background-color: #208afc;*/
-/*}*/
-/*-------------------------------------Side bar---------------------------------------*/
 /*-------------------------------------Main Page--------------------------------------*/
 .main-page .header {
     height: 60px;
 }
 
 .main-page .title {
+    grid-column: 2 / span 10;
     align-self: center;
     font-size: 25px;
     font-weight: bold;
 }
-
-.main-page .category {
-    margin: 30px 0;
-}
-
-@media (min-width: 700px) {
-    .main-page .title {
-        grid-column: 2 / span 10;
-    }
-}
-
 /*-------------------------------------Part 1-----------------------------------------*/
 .resume .header {
     height: 400px;
@@ -201,6 +133,7 @@ li {
 
 .resume .generalInfo {
     align-self: center;
+    margin: 20px;
     font-size: 20px;
 }
 
@@ -235,8 +168,8 @@ li {
 }
 
 .resume .category {
-    margin-top: 50px;
-    margin-bottom: 50px;
+    /*margin-top: 50px;*/
+    /*margin-bottom: 50px;*/
 }
 
 .resume .highlight {
@@ -255,15 +188,41 @@ div.highlight:first-of-type {
     margin-top: 10px;
 }
 /*-------------------------------------Part 2-----------------------------------------*/
-.tutor .category {
-    margin-top: 20px;
+.part2 {
+    display: grid;
+    grid-template-columns: 300px repeat(10, 1fr);
+    grid-template-rows: 60px auto;
+    height: 100vh;
 }
 
-.category ul {
-    /*position: absolute;*/
-    padding-left: 0px;
+.part2 .header {
+    display: grid;
+    grid-column: 1 / 12;
+    grid-template-columns: 300px repeat(10, 1fr);
+    grid-gap: 0;
 }
 
-.category li {
-    margin: 0 0 5px 1em;
+.part2 .header div {
+    grid-column: 1;
+    margin-left: auto;
+}
+
+.part2 .header a {
+    display: inline-flex;
+    align-items: center;
+    padding: 0 13px;
+    height: 100%;
+    font-size: 25px;
+    font-weight: bold;
+    text-decoration: none;
+    color: white;
+}
+
+.part2 .sidebar {
+    overflow-y: scroll;
+}
+
+.part2 .content {
+    grid-column: 2 / 12;
+    overflow: auto;
 }

@@ -10,7 +10,7 @@ var links = [
     },
     {
         text: "End",
-        path: "/part2/finish.html"
+        path: "/part2/end.html"
     }
 ];
 
@@ -89,7 +89,7 @@ function highlightCurrentNodes() {
 
         var event = new Event("click");
         unitItem.firstElementChild.dispatchEvent(event);
-    } else if (currentFile === "finish.html") {
+    } else if (currentFile === "end.html") {
         let item = childNodes[childNodes.length - 1];
         item.classList.add("current");
     }

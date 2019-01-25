@@ -8,14 +8,19 @@
             integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
             crossorigin="anonymous"
         ></script>
-        <script src="js/load_navbar.js"></script>
+        <script src="js/load_sidebar.js"></script>
         <script src="js/notes.js" path="notes.json"></script>
         <link rel="stylesheet" type="text/css" href="../shared/styles.css" />
     </head>
     <body>
-        <div class="wrapper">
-            <nav class="header wrapper navbar"></nav>
-            <div class="content tutor">
+        <div class="part2">
+            <nav class="header">
+                <div><a href="/part2">Comp 466 Tutor</a></div>
+            </nav>
+            <aside class="sidebar">
+                <form action="notes.html"><input type="hidden" name="section" /></form>
+            </aside>
+            <div class="content">
                 <form action="notes.html">
                     <input type="hidden" name="section" value="" />
                     <div class="buttons">
