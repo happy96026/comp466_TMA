@@ -2,23 +2,40 @@
 
 // Units must be hardcoded
 var units = [1, 2, 3];
+// Start and end links
+var links = [
+    {
+        text: "Home",
+        path: "/part2"
+    },
+    {
+        text: "End",
+        path: "/part2/finish.html"
+    }
+];
+
+function createLinkItemNode(link) {
+    var linkNode = document.createElement("a");
+    linkNode.setAttribute("href", link.path);
+    linkNode.appendChild(document.createTextNode(link.text));
+
+    var itemNode = document.createElement("li");
+    itemNode.appendChild(linkNode);
+
+    return itemNode;
+}
 
 function loadSidebar(notes) {
-    const urlParams = new URLSearchParams(window.location.search);
-
-    var form = document.getElementsByClassName("sidebar")[0].getElementsByTagName("form")[0];
+    var form = document.getElementsByClassName("sidebar")[0].firstElementChild;
     var input = form.getElementsByTagName("input")[0];
-    var unitList = document.createElement("ul");
-    var homeNode = document.createElement("a");
-    homeNode.setAttribute("href", ".");
-    homeNode.appendChild(document.createTextNode("Home"));
-    var item = document.createElement("li");
-    item.appendChild(homeNode);
-    unitList.appendChild(item);
+    var navList = document.createElement("ul");
+    navList.appendChild(createLinkItemNode(links[0]));
+
     for (let note of notes) {
         let unitItem = document.createElement("li");
         let unitHeader = document.createElement("h1");
         let sectionList = document.createElement("ul");
+
         sectionList.style.display = "none";
         unitHeader.addEventListener("click", function() {
             this.classList.toggle("active");
@@ -28,8 +45,10 @@ function loadSidebar(notes) {
                 sectionList.style.display = "block";
             }
         });
+
         for (let section of note.sections) {
             let sectionItem = document.createElement("li");
+            sectionItem.setAttribute("section", note.unit + "." + section.number);
             sectionItem.appendChild(
                 document.createTextNode(note.unit + "." + section.number + ". " + section.topic)
             );
@@ -39,15 +58,41 @@ function loadSidebar(notes) {
             });
             sectionList.appendChild(sectionItem);
         }
+
         unitHeader.appendChild(document.createTextNode(note.unit + ". " + note.title));
         unitItem.appendChild(unitHeader);
         unitItem.appendChild(sectionList);
-        unitList.appendChild(unitItem);
+        navList.appendChild(unitItem);
     }
-    form.appendChild(unitList);
-    console.log(window.location);
-    //console.log(notes);
-    //console.log(urlParams.get("section"));
+
+    navList.appendChild(createLinkItemNode(links[1]));
+    form.appendChild(navList);
+}
+
+function highlightCurrentNodes() {
+    var navList = document.getElementsByClassName("sidebar")[0].firstElementChild.lastElementChild;
+    var pathArr = window.location.pathname.split("/");
+    var currentFile = pathArr[pathArr.length - 1];
+    var childNodes = navList.childNodes;
+
+    if (currentFile === "" || currentFile === "index.html") {
+        let item = childNodes[0];
+        item.classList.add("current");
+    } else if (currentFile === "notes.html") {
+        const urlParams = new URLSearchParams(window.location.search);
+        let section = urlParams.get("section");
+        let sectionItem = navList.querySelector("li[section='" + section + "']");
+        sectionItem.classList.add("current");
+
+        let unitItem = sectionItem.parentNode.parentNode;
+        unitItem.classList.add("current");
+
+        var event = new Event("click");
+        unitItem.firstElementChild.dispatchEvent(event);
+    } else if (currentFile === "finish.html") {
+        let item = childNodes[childNodes.length - 1];
+        item.classList.add("current");
+    }
 }
 
 $(document).ready(function() {
@@ -65,6 +110,7 @@ $(document).ready(function() {
                         return 0;
                     });
                     loadSidebar(notes);
+                    highlightCurrentNodes();
                 }
             }
         });
