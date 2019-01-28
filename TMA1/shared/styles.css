@@ -44,7 +44,7 @@ li {
 
 .category {
     /*position: relative;*/
-    margin: 20px;
+    margin: 15px;
     padding: 20px;
     background-color: white;
     box-shadow: 0 0 5px #c0c0c0;
@@ -240,6 +240,13 @@ div.highlight:first-of-type {
     padding: 0;
 }
 
+.part2 .sidebar .title-container {
+    display: flex;
+    padding: 16px;
+    justify-content: space-between;
+    align-items: center;
+}
+
 .part2 .sidebar form > ul > li {
     margin: 0;
     cursor: pointer;
@@ -255,7 +262,6 @@ div.highlight:first-of-type {
     color: black;
     display: block;
     font-size: 18px;
-    padding: 16px 16px;
     border-style: none;
 }
 
@@ -268,24 +274,39 @@ div.highlight:first-of-type {
 .part2 .sidebar .section p {
     padding: 5px 16px 5px 30px;
     margin: 0;
+    font-size: 13px;
 }
 
 .part2 .sidebar .section li {
     margin: 0;
 }
 
-.part2 .sidebar h1:hover,
-.part2 .sidebar a:hover,
+.part2 .sidebar .title-container:hover,
 .part2 .sidebar .section li:hover {
     background-color: #f0f0f0;
 }
 
 .part2 .content {
-    grid-column: 2 / 12;
+    grid-column: 2 / 11;
     overflow-x: auto;
     height: calc(100vh - 50px);
+    padding: 15px;
 }
 
 .part2 .current {
     background-color: #ffddc1;
+}
+
+div.title-container > i {
+    border: solid black;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 3px;
+    margin-right: 5px;
+    transform: rotate(-135deg);
+    height: 100%;
+}
+
+div.title-container.active > i {
+    transform: rotate(45deg);
 }

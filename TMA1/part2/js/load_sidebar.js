@@ -15,7 +15,9 @@ var links = [
 ];
 
 function createLinkItemNode(link) {
+
     var linkNode = document.createElement("a");
+    linkNode.classList.add("title-container")
     linkNode.setAttribute("href", link.path);
     linkNode.appendChild(document.createTextNode(link.text));
 
@@ -33,12 +35,15 @@ function loadSidebar(notes) {
 
     for (let note of notes) {
         let unitItem = document.createElement("li");
+        let titleContainer = document.createElement("div");
+        titleContainer.classList.add("title-container")
         let unitHeader = document.createElement("h1");
+        let arrow = document.createElement("i");
         let sectionList = document.createElement("ul");
 
         sectionList.classList.add("section");
         sectionList.style.display = "none";
-        unitHeader.addEventListener("click", function() {
+        titleContainer.addEventListener("click", function() {
             this.classList.toggle("active");
             if (sectionList.style.display === "block") {
                 sectionList.style.display = "none";
@@ -64,7 +69,9 @@ function loadSidebar(notes) {
         }
 
         unitHeader.appendChild(document.createTextNode(note.unit + ". " + note.title));
-        unitItem.appendChild(unitHeader);
+        titleContainer.appendChild(unitHeader);
+        titleContainer.appendChild(arrow);
+        unitItem.appendChild(titleContainer);
         unitItem.appendChild(sectionList);
         navList.appendChild(unitItem);
     }
@@ -82,7 +89,6 @@ function highlightCurrentNodes() {
     if (currentFile === "" || currentFile === "index.html") {
         let item = childNodes[0];
         item.childNodes[0].classList.add("current");
-        //item.classList.add("current");
     } else if (currentFile === "notes.html") {
         const urlParams = new URLSearchParams(window.location.search);
         let section = urlParams.get("section");
@@ -91,14 +97,12 @@ function highlightCurrentNodes() {
 
         let unitItem = sectionItem.parentNode.parentNode;
         unitItem.childNodes[0].classList.add("current");
-        //unitItem.classList.add("current");
 
         var event = new Event("click");
         unitItem.firstElementChild.dispatchEvent(event);
     } else if (currentFile === "end.html") {
         let item = childNodes[childNodes.length - 1];
         item.childNodes[0].classList.add("current");
-        //item.classList.add("current");
     }
 }
 
