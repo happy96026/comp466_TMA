@@ -196,12 +196,11 @@ div.highlight:first-of-type {
 
 .part2 .header {
     display: grid;
-    position: sticky;
-    grid-column: 1 / 12;
-    grid-row: 1;
+    position: fixed;
+    height: 50px;
+    width: 100vw;
     grid-template-columns: 300px repeat(10, 1fr);
     grid-gap: 0;
-    top: 0;
 }
 
 .part2 .header div {
@@ -221,12 +220,10 @@ div.highlight:first-of-type {
 }
 
 .part2 .sidebar {
-    grid-column: 1;
-    grid-row: 2;
-    left: 0;
+    position: fixed;
     top: 50px;
-    position: sticky;
     height: calc(100vh - 50px);
+    width: 300px;
     overflow-y: scroll;
     background-color: white;
     z-index: 1;
@@ -288,9 +285,7 @@ div.highlight:first-of-type {
 
 .part2 .content {
     grid-column: 2 / 11;
-    overflow-x: auto;
-    height: calc(100vh - 50px);
-    padding: 15px;
+    grid-row: 2;
 }
 
 .part2 .current {
