@@ -8,7 +8,6 @@ var unitSection = searchParams.get("section");
 var unit = unitSection.split(".")[0];
 var sectionNumber = unitSection.split(".")[1];
 
-
 function getAllSections() {}
 
 function createSection(section, sectionName) {

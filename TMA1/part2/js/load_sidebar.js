@@ -13,11 +13,11 @@ var links = [
         path: "/part2/end.html"
     }
 ];
-var sidebarItems = [];
+var itemIndex = -1;
 
 function createLinkItemNode(link) {
     var linkNode = document.createElement("a");
-    linkNode.classList.add("title-container")
+    linkNode.classList.add("title-container");
     linkNode.setAttribute("href", link.path);
     linkNode.appendChild(document.createTextNode(link.text));
 
@@ -29,12 +29,12 @@ function createLinkItemNode(link) {
 
 function createQuizItem(unitNumber) {
     var p = document.createElement("p");
-    p.appendChild(
-        document.createTextNode("Unit " + unitNumber + " Quiz")
-    );
+    p.appendChild(document.createTextNode("Unit " + unitNumber + " Quiz"));
 
     var sectionItem = document.createElement("li");
     sectionItem.appendChild(p);
+    sectionItem.setAttribute("quiz", unitNumber);
+    sectionItem.setAttribute("index", ++itemIndex);
 
     return sectionItem;
 }
@@ -44,14 +44,11 @@ function loadSidebar(notes) {
     var input = form.getElementsByTagName("input")[0];
     var navList = document.createElement("ul");
     navList.appendChild(createLinkItemNode(links[0]));
-    sidebarItems.push({
-        file: "",
-    });
 
     for (let note of notes) {
         let unitItem = document.createElement("li");
         let titleContainer = document.createElement("div");
-        titleContainer.classList.add("title-container")
+        titleContainer.classList.add("title-container");
         let unitHeader = document.createElement("h1");
         let arrow = document.createElement("i");
         let sectionList = document.createElement("ul");
@@ -75,6 +72,7 @@ function loadSidebar(notes) {
 
             let sectionItem = document.createElement("li");
             sectionItem.setAttribute("section", note.unit + "." + section.number);
+            sectionItem.setAttribute("index", ++itemIndex);
             sectionItem.appendChild(p);
             sectionItem.addEventListener("click", function() {
                 input.setAttribute("name", "section");
@@ -83,11 +81,6 @@ function loadSidebar(notes) {
                 form.submit();
             });
             sectionList.appendChild(sectionItem);
-            sidebarItems.push({
-                file: "notes.html",
-                name: "section",
-                value: note.unit + "." + section.number
-            });
         }
 
         let quizItem = createQuizItem(note.unit);
@@ -97,11 +90,6 @@ function loadSidebar(notes) {
             input.setAttribute("value", note.unit);
             input.parentElement.setAttribute("action", "quiz.html");
             form.submit();
-        });
-        sidebarItems.push({
-            file: "quiz.html",
-            name: "quiz",
-            value: note.unit
         });
 
         unitHeader.appendChild(document.createTextNode(note.unit + ". " + note.title));
@@ -114,9 +102,6 @@ function loadSidebar(notes) {
 
     navList.appendChild(createLinkItemNode(links[1]));
     form.appendChild(navList);
-    sidebarItems.push({
-        href: "part2/end.html",
-    });
 }
 
 function highlightCurrentNodes() {
@@ -145,19 +130,57 @@ function highlightCurrentNodes() {
     }
 }
 
-function findCurrentItem() {
-    
+function getActionNameValue(index) {
+    var action, name, value;
+    console.log(index);
+
+    if (index == -1) {
+        action = "/part2";
+        name = value = "";
+    } else if (index == itemIndex + 1) {
+        action = "end.html";
+        name = value = "";
+    } else {
+        let li = document.querySelector("li[index='" + index + "']");
+        if (li.hasAttribute("section")) {
+            action = "notes.html";
+            name = "section";
+            value = li.getAttribute("section");
+        } else {
+            action = "quiz.html";
+            name = "quiz";
+            value = li.getAttribute("quiz");
+        }
+    }
+
+    return [action, name, value];
 }
 
 function linkButtons() {
     var buttons = document.getElementsByClassName("buttons")[0];
-    var submits = buttons.querySelector("input[type='submit']");
-    var hidden = buttons.querySelector("input[type='hidden']");
+    var submits = buttons.querySelectorAll("input[type='submit']");
     var form = buttons.parentElement;
+    var hidden = form.children[0];
 
     var pathArr = window.location.pathname.split("/");
     var currentFile = pathArr[pathArr.length - 1];
+    var current = document.getElementsByClassName("current")[1];
+    if (currentFile == "notes.html" || currentFile == "quiz.html") {
+        let index = parseInt(current.getAttribute("index"));
+        let prev = getActionNameValue(index - 1);
+        let next = getActionNameValue(index + 1);
 
+        submits[0].addEventListener("click", function() {
+            form.setAttribute("action", prev[0]);
+            hidden.setAttribute("name", prev[1]);
+            hidden.setAttribute("value", prev[2]);
+        });
+        submits[1].addEventListener("click", function() {
+            form.setAttribute("action", next[0]);
+            hidden.setAttribute("name", next[1]);
+            hidden.setAttribute("value", next[2]);
+        });
+    }
 }
 
 $(document).ready(function() {
