@@ -92,8 +92,9 @@ li {
 }
 
 .buttons {
-    /*margin: 20px 0;*/
+    margin: 12px;
     overflow: auto;
+    padding: 3px;
 }
 
 .button {
@@ -102,6 +103,7 @@ li {
     padding: 12px 25px;
     font-size: 15px;
     display: inline-block;
+    border-style: none;
 }
 
 .button:hover {
@@ -286,6 +288,7 @@ div.highlight:first-of-type {
 .part2 .content {
     grid-column: 2 / 11;
     grid-row: 2;
+    padding: 20px;
 }
 
 .part2 .current {

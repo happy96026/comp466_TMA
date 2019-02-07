@@ -3,6 +3,12 @@
 var currentScript = document.currentScript;
 var units = [1, 2, 3];
 
+var searchParams = new URLSearchParams(window.location.search);
+var unitSection = searchParams.get("section");
+var unit = unitSection.split(".")[0];
+var sectionNumber = unitSection.split(".")[1];
+
+
 function getAllSections() {}
 
 function createSection(section, sectionName) {
@@ -24,18 +30,12 @@ function createSection(section, sectionName) {
     return div;
 }
 
-function loadNotes(asyncRequest) {
-    if (asyncRequest.readyState == 4 && asyncRequest.status == 200) {
-        var content = document.getElementsByClassName("content")[0];
-        var buttons = document.getElementsByClassName("buttons")[0];
-
-        var notes = JSON.parse(asyncRequest.responseText);
-        notes.sections.forEach(function(section) {
-            var sectionName = notes.unit + "." + section.number + " " + section.topic;
-            var div = createSection(section, sectionName);
-            content.insertBefore(div, buttons);
-        });
-    }
+function loadSection(section) {
+    var content = document.getElementsByClassName("content")[0];
+    var form = content.children[0];
+    var sectionName = unit + "." + section.number + " " + section.topic;
+    var div = createSection(section, sectionName);
+    content.insertBefore(div, form);
 }
 
 $(document).ready(function() {
@@ -43,10 +43,18 @@ $(document).ready(function() {
     asyncRequest.addEventListener(
         "readystatechange",
         function() {
-            loadNotes(asyncRequest);
+            if (asyncRequest.readyState == 4 && asyncRequest.status == 200) {
+                var notes = JSON.parse(asyncRequest.responseText);
+                for (let section of notes.sections) {
+                    if (section.number == sectionNumber) {
+                        loadSection(section);
+                        break;
+                    }
+                }
+            }
         },
         false
     );
-    asyncRequest.open("Get", currentScript.getAttribute("path"), true);
+    asyncRequest.open("Get", "notes/note" + unit + ".json", true);
     asyncRequest.send();
 });

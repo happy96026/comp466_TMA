@@ -13,9 +13,9 @@ var links = [
         path: "/part2/end.html"
     }
 ];
+var sidebarItems = [];
 
 function createLinkItemNode(link) {
-
     var linkNode = document.createElement("a");
     linkNode.classList.add("title-container")
     linkNode.setAttribute("href", link.path);
@@ -27,11 +27,26 @@ function createLinkItemNode(link) {
     return itemNode;
 }
 
+function createQuizItem(unitNumber) {
+    var p = document.createElement("p");
+    p.appendChild(
+        document.createTextNode("Unit " + unitNumber + " Quiz")
+    );
+
+    var sectionItem = document.createElement("li");
+    sectionItem.appendChild(p);
+
+    return sectionItem;
+}
+
 function loadSidebar(notes) {
     var form = document.getElementsByClassName("sidebar")[0].firstElementChild;
     var input = form.getElementsByTagName("input")[0];
     var navList = document.createElement("ul");
     navList.appendChild(createLinkItemNode(links[0]));
+    sidebarItems.push({
+        file: "",
+    });
 
     for (let note of notes) {
         let unitItem = document.createElement("li");
@@ -62,11 +77,32 @@ function loadSidebar(notes) {
             sectionItem.setAttribute("section", note.unit + "." + section.number);
             sectionItem.appendChild(p);
             sectionItem.addEventListener("click", function() {
+                input.setAttribute("name", "section");
                 input.setAttribute("value", note.unit + "." + section.number);
+                input.parentElement.setAttribute("action", "notes.html");
                 form.submit();
             });
             sectionList.appendChild(sectionItem);
+            sidebarItems.push({
+                file: "notes.html",
+                name: "section",
+                value: note.unit + "." + section.number
+            });
         }
+
+        let quizItem = createQuizItem(note.unit);
+        sectionList.appendChild(quizItem);
+        quizItem.addEventListener("click", function() {
+            input.setAttribute("name", "quiz");
+            input.setAttribute("value", note.unit);
+            input.parentElement.setAttribute("action", "quiz.html");
+            form.submit();
+        });
+        sidebarItems.push({
+            file: "quiz.html",
+            name: "quiz",
+            value: note.unit
+        });
 
         unitHeader.appendChild(document.createTextNode(note.unit + ". " + note.title));
         titleContainer.appendChild(unitHeader);
@@ -78,6 +114,9 @@ function loadSidebar(notes) {
 
     navList.appendChild(createLinkItemNode(links[1]));
     form.appendChild(navList);
+    sidebarItems.push({
+        href: "part2/end.html",
+    });
 }
 
 function highlightCurrentNodes() {
@@ -106,6 +145,21 @@ function highlightCurrentNodes() {
     }
 }
 
+function findCurrentItem() {
+    
+}
+
+function linkButtons() {
+    var buttons = document.getElementsByClassName("buttons")[0];
+    var submits = buttons.querySelector("input[type='submit']");
+    var hidden = buttons.querySelector("input[type='hidden']");
+    var form = buttons.parentElement;
+
+    var pathArr = window.location.pathname.split("/");
+    var currentFile = pathArr[pathArr.length - 1];
+
+}
+
 $(document).ready(function() {
     var notes = [];
     for (let unit of units) {
@@ -122,6 +176,7 @@ $(document).ready(function() {
                     });
                     loadSidebar(notes);
                     highlightCurrentNodes();
+                    linkButtons();
                 }
             }
         });
