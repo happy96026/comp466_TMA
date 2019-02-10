@@ -90,6 +90,186 @@
                     <h2>Hyperlink</h2>
                     <a href="part1/resume.xml">link</a>
                 </div>
+                <div class="category">
+                    <h1>Part 2</h1>
+                    <h2>Original Description</h2>
+                    <p>
+                        Using the web technologies you have learned so far, including HTML5, CSS3,
+                        JavaScript, XML, and Ajax, write a web application, that can help people to
+                        learn to learn the technologies covered in Unit 1, Unit 2, or Unit 3 of the
+                        course. The requirements are detailed as follows:
+                    </p>
+                    <ol>
+                        <li>
+                            It must be a web-based system with a name you choose, a banner to show
+                            off your work, navigation menus and buttons. It should begin with a
+                            welcome page to greet the users, to explain what the application does,
+                            and what they get from it, and how they should procced.
+                        </li>
+                        <li>
+                            The application must have three pages of tutorials, accessible through
+                            navigation menus or buttons, to teach the technologies covered in Unit
+                            1, Unit 2 and Unit 3 respectively. You don’t need to teach everything,
+                            but there should be enough content to make each of the tutorials useful.
+                        </li>
+                        <li>
+                            There should be a quiz for each tutorial, which can be accessed right
+                            after the tutorial page, as well as through the navigation menus and
+                            buttons of the system.
+                        </li>
+                        <li>
+                            After the submission button is hit, the quiz system should be able to
+                            grade the answers the learner has provided, show the correct answers as
+                            well as the score in percentage.
+                        </li>
+                        <li>
+                            The quiz system should be designed so that questions can be easily
+                            edited, added, or deleted, and new quiz can be easily created.
+                        </li>
+                        <li>
+                            You should do your best to use the web technologies covered in Unit 1,
+                            unit 2 and Unit 3, including HTML5, CSS3, JavaScript, XML and Ajax.
+                        </li>
+                        <li>
+                            Your web application should use or teach at least five page-structure
+                            elements and six new input types
+                        </li>
+                        <li>
+                            You should use an external style sheet for all pages of the system, to
+                            retain a consistent and user-friendly interface for your system.
+                        </li>
+                        <li>
+                            When using HTML5 table, be sure that you only use it to display tabular
+                            information, not to lay out the elements on your page.
+                        </li>
+                    </ol>
+                    <p>
+                        You must pay attention to both the functionalities and user interface. Save
+                        Part 2 files in the directory TMA1/part2.
+                    </p>
+                    <h2>Interpretation of the Part</h2>
+                    <p>
+                        Create a web application that provides a tutorial of the basics of web
+                        development topics that are included in Unit 1 to 3 of COMP 466 which
+                        consists of HTML5, CSS3, JavaScript and Ajax. The application offers a quiz
+                        for each unit that aims to evalute the users about the respective topics.
+                    </p>
+                    <h2>Analysis and Design</h2>
+                    <p>
+                        A document was created for introduction, notes, quiz and end. JavaScript
+                        code was created to load header and sidebar in order to enforce reusability.
+                        Similarly, notes for each section and quizzes for each unit was loaded using
+                        JavaScript code where the section can be inputted using GET parameter
+                        "section" and quiz unit can be inputted using GET parameter "quiz".
+                    </p>
+                    <p>
+                        The header acts as a placeholder for items that can be useful in the future.
+                        Currently, only a banner is included that redirects to home.
+                    </p>
+                    <p>
+                        The sidebar acts a collection of navigation links that allows users to
+                        freely see the content that is available in the web application as well as
+                        go to content that they want to see.
+                    </p>
+                    <p>
+                        The buttons on the bottoms allow users to go forward to next step of the
+                        tutorial and vice versa.
+                    </p>
+                    <p>
+                        Data for notes and quizzes are stored using json format since json files are
+                        simple to parse using Ajax. Notes are stored for each unit and quizzes are
+                        stored for each unit as well.
+                    </p>
+                    <h2>Documentation</h2>
+                    <p>
+                        The application contains four JavaScript files that is responsible for
+                        loading the notes, quiz, sidebar and header:
+                    </p>
+                    <p><b>notes.js</b></p>
+                    <ol>
+                        <li>
+                            <b>ready(function()): </b>Finds the section to be loaded by reading the
+                            corresponding section number from the GET parameter and loads it.
+                        </li>
+                        <li>
+                            <b>createSection(section, sectionName): </b>section is an element from
+                            sections of noteN.json. sectionName is a string that represents the name
+                            of the section that is being created. The function returns a div element
+                            that corresponds to input section .
+                        </li>
+                        <li>
+                            <b>loadSection(section): </b>section is an element from sections of
+                            noteN.json. The function uses createSection to create a section div and
+                            appends it to the content div.
+                        </li>
+                    </ol>
+                    <p><b>quiz.js</b></p>
+                    <ol>
+                        <li>
+                            <b>ready(function()): </b>The ready function loads the quiz to the
+                            document after the Ajax request has been made.
+                        </li>
+                        <li>
+                            <b>createQuestion(question, index): </b>question is an element from
+                            questions of quizN.json. index is the corresponding question number. The
+                            function creates and returns a div that contains the question and the
+                            radio buttons for the available choices of the question.
+                        </li>
+                        <li>
+                            <b>checkQuiz(content, questions): </b>content is the div that contains
+                            all the question divs. questions is an element from quizN.json. The
+                            function checks user choices of the all the questions against the
+                            answers in quizN.json. If no inputs are made by the user for a question,
+                            that question is considered incorrect.
+                        </li>
+                        <li>
+                            <b>loadQuiz(asyncRequest): </b>The function loads the quiz if the Ajax
+                            request has been made successfully.
+                        </li>
+                    </ol>
+                    <p><b>load_sidebar.js</b></p>
+                    <ol>
+                        <li>
+                            <b>ready(function()): </b>An asyncrequest is made for each notesN.json.
+                            Then, the function loads, highlights and links buttons after all the
+                            request has been completed.
+                        </li>
+                        <li>
+                            <b>createLinkItemNode(link): </b>link is an element from the custom made
+                            collection with text and path attribute. An item using the anchor tag is
+                            created which will be included in the sidebar.
+                        </li>
+                        <li>
+                            <b>loadSidebar(notes): </b>notes is a collection of JSON objects for
+                            each notesN.json. The function loads all the elements in the sidebar.
+                        </li>
+                        <li>
+                            <b>highlightCurrentNodes(): </b>The function highlights the current node
+                            that the user is currently visiting.
+                        </li>
+                        <li>
+                            <b>getActionNameValue(index): </b>index is an integer value that
+                            represents ith element of items that can be accessed from the sidebar
+                            excluding Home and End. Returns a list where 0, 1 and 2nd element
+                            represents the redirect, name of the parameter and the value of the
+                            parameter that is associated with the redirect respectively.
+                        </li>
+                        <li>
+                            <b>linkButtons(): </b>Links the redirects of the buttons below the
+                            content such that users are able to continue forward and go back on
+                            their progress of the tutorial.
+                        </li>
+                    </ol>
+                    <p><b>load_navbar.js</b></p>
+                    <ol>
+                        <li>
+                            <b>ready(function()): </b>Loads the navbar that is statically created in
+                            part2/navbar.html.
+                        </li>
+                    </ol>
+                    <h2>Hyperlink</h2>
+                    <a href="part2">link</a>
+                </div>
             </div>
         </div>
     </body>
