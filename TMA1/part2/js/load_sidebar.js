@@ -110,13 +110,14 @@ function highlightCurrentNodes() {
     var currentFile = pathArr[pathArr.length - 1];
     var childNodes = navList.childNodes;
 
-    if (currentFile === "" || currentFile === "index.html") {
+    if (currentFile == "" || currentFile == "index.html") {
         let item = childNodes[0];
         item.childNodes[0].classList.add("current");
-    } else if (currentFile === "notes.html") {
+    } else if (currentFile == "notes.html" || currentFile == "quiz.html") {
+        let key = (currentFile == "notes.html" ? "section" : "quiz");
         const urlParams = new URLSearchParams(window.location.search);
-        let section = urlParams.get("section");
-        let sectionItem = navList.querySelector("li[section='" + section + "']");
+        let value = urlParams.get(key);
+        let sectionItem = navList.querySelector("li[" + key + "='" + value + "']");
         sectionItem.classList.add("current");
 
         let unitItem = sectionItem.parentNode.parentNode;
@@ -124,7 +125,7 @@ function highlightCurrentNodes() {
 
         var event = new Event("click");
         unitItem.firstElementChild.dispatchEvent(event);
-    } else if (currentFile === "end.html") {
+    } else if (currentFile == "end.html") {
         let item = childNodes[childNodes.length - 1];
         item.childNodes[0].classList.add("current");
     }
