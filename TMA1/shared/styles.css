@@ -85,6 +85,10 @@ li {
     margin-bottom: 0;
 }
 
+.category > ul {
+    padding-left: 20px;
+}
+
 @media (min-width: 700px) {
     .content {
         grid-column: 3 / span 8;
@@ -104,17 +108,18 @@ li {
     font-size: 15px;
     display: inline-block;
     border-style: none;
+    border-radius: 0;
 }
 
 .button:hover {
     background-color: #208afc;
 }
 
-.buttons > .button:first-of-type {
+.buttons > .button:first-child {
     float: left;
 }
 
-.buttons > .button:last-of-type {
+.buttons > .button:last-child {
     float: right;
 }
 /*-------------------------------------Main Page--------------------------------------*/
@@ -307,4 +312,33 @@ div.title-container > i {
 
 div.title-container.active > i {
     transform: rotate(45deg);
+}
+
+.question > div {
+    display: flex;
+    align-items: center;
+}
+
+.question > div:first-of-type {
+    margin-top: 10px;
+}
+
+.question input {
+    margin: 0 7px 0 0;
+}
+
+.mark {
+    margin: 0 10px;
+}
+
+.correct {
+    background-color: #adebad;
+}
+
+.incorrect {
+    background-color: #ff9999;
+}
+
+.title {
+    font-size: 30px;
 }

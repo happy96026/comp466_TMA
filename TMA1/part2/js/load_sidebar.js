@@ -114,7 +114,7 @@ function highlightCurrentNodes() {
         let item = childNodes[0];
         item.childNodes[0].classList.add("current");
     } else if (currentFile == "notes.html" || currentFile == "quiz.html") {
-        let key = (currentFile == "notes.html" ? "section" : "quiz");
+        let key = currentFile == "notes.html" ? "section" : "quiz";
         const urlParams = new URLSearchParams(window.location.search);
         let value = urlParams.get(key);
         let sectionItem = navList.querySelector("li[" + key + "='" + value + "']");
@@ -133,7 +133,6 @@ function highlightCurrentNodes() {
 
 function getActionNameValue(index) {
     var action, name, value;
-    console.log(index);
 
     if (index == -1) {
         action = "/part2";

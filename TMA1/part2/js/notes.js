@@ -1,14 +1,9 @@
 "use strict";
 
-var currentScript = document.currentScript;
-var units = [1, 2, 3];
-
 var searchParams = new URLSearchParams(window.location.search);
 var unitSection = searchParams.get("section");
 var unit = unitSection.split(".")[0];
 var sectionNumber = unitSection.split(".")[1];
-
-function getAllSections() {}
 
 function createSection(section, sectionName) {
     var div = document.createElement("div");
@@ -33,6 +28,7 @@ function loadSection(section) {
     var content = document.getElementsByClassName("content")[0];
     var form = content.children[0];
     var sectionName = unit + "." + section.number + " " + section.topic;
+    document.title = sectionName;
     var div = createSection(section, sectionName);
     content.insertBefore(div, form);
 }

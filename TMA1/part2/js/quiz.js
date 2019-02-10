@@ -1,6 +1,7 @@
 "use strict";
 
-var currentScript = document.currentScript;
+var searchParams = new URLSearchParams(window.location.search);
+var quiz = searchParams.get("quiz");
 var choiceID = 0;
 
 // https://stackoverflow.com/questions/610406/javascript-equivalent-to-printf-string-format
@@ -16,6 +17,7 @@ if (!String.prototype.format) {
 function createQuestion(question, index) {
     var questionDiv = document.createElement("div");
     questionDiv.setAttribute("class", "question");
+    questionDiv.classList.add("category");
 
     var questionP = document.createElement("p");
     questionP.appendChild(document.createTextNode(index + 1 + ". " + question.question));
@@ -34,38 +36,36 @@ function createQuestion(question, index) {
         label.setAttribute("for", input.id);
         label.appendChild(document.createTextNode(choice));
 
-        questionDiv.appendChild(input);
-        questionDiv.appendChild(label);
+        let choiceDiv = document.createElement("div");
+        choiceDiv.appendChild(input);
+        choiceDiv.appendChild(label);
+        questionDiv.appendChild(choiceDiv);
     });
 
     return questionDiv;
 }
 
-function checkQuiz(form, questions) {
-    var questionDivs = Array.from(form.getElementsByClassName("question"));
+function checkQuiz(content, questions) {
+    var questionDivs = Array.from(content.getElementsByClassName("question"));
     var noCorrect = 0;
     var noQuestions = questions.length;
     for (let [i, div] of questionDivs.entries()) {
-        var checkMarks = div.querySelectorAll(".checkmark, .xmark");
-        checkMarks.forEach(function(checkMark) {
-            checkMark.remove();
-        });
         var correctChoice = div.getElementsByTagName("input")[questions[i].answer];
         var choice = div.querySelector("input:checked");
 
         var checkMark = document.createElement("p");
-        checkMark.setAttribute("class", "checkmark");
+        checkMark.classList.add("mark");
         checkMark.appendChild(document.createTextNode("\u2714"));
-        correctChoice.nextSibling.after(checkMark);
+        correctChoice.parentElement.appendChild(checkMark);
 
         if (choice == correctChoice) {
-            div.setAttribute("class", "correct");
+            div.classList.add("correct");
             noCorrect++;
         } else {
-            div.setAttribute("class", "incorrect");
+            div.classList.add("incorrect");
             if (choice != null) {
                 var xMark = document.createElement("p");
-                xMark.setAttribute("class", "xmark");
+                xMark.classList.add("mark");
                 xMark.appendChild(document.createTextNode("\u2718"));
                 choice.nextSibling.after(xMark);
             }
@@ -73,6 +73,7 @@ function checkQuiz(form, questions) {
     }
 
     var result = document.getElementById("result");
+    result.style.display = "block";
     while (result.hasChildNodes()) {
         result.removeChild(result.lastChild);
     }
@@ -87,19 +88,26 @@ function checkQuiz(form, questions) {
 
 function loadQuiz(asyncRequest) {
     if (asyncRequest.readyState == 4 && asyncRequest.status == 200) {
-        var form = document.getElementsByTagName("form")[0];
-        var checkButton = form.getElementsByTagName("input")[0];
+        var content = document.getElementsByClassName("content")[0];
+        var title = "Unit " + quiz + " Quiz";
+        content.children[0].appendChild(document.createTextNode(title));
+        document.title = title;
+        var result = content.children[1];
 
         var questions = JSON.parse(asyncRequest.responseText).questions;
         for (let [i, question] of questions.entries()) {
             var div = createQuestion(question, i);
-            form.insertBefore(div, checkButton);
+            content.insertBefore(div, result);
         }
 
+        var checkButton = document.getElementsByTagName("button")[0];
         checkButton.addEventListener(
             "click",
             function() {
-                checkQuiz(form, questions);
+                checkQuiz(content, questions);
+                var buttons = document.getElementsByClassName("buttons")[0];
+                buttons.children[1].style.display = "inline-block";
+                buttons.removeChild(buttons.children[2]);
             },
             false
         );
@@ -115,6 +123,6 @@ $(document).ready(function() {
         },
         false
     );
-    asyncRequest.open("Get", currentScript.getAttribute("path"), true);
+    asyncRequest.open("Get", "quizzes/quiz" + quiz + ".json", true);
     asyncRequest.send();
 });

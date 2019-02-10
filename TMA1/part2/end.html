@@ -20,9 +20,14 @@
                 <form action="notes.html"><input type="hidden" name="section" /></form>
             </aside>
             <div class="content">
-                <p>Congratulations! You have completed the tutorial!</p>
-                <a href="unit3/quiz.html" class="button">Prev</a>
-                <a href="index.html" class="button">Home</a>
+                <div class="category"><p>Congratulations! You have completed the tutorial!</p></div>
+                <form action="quiz.html">
+                    <input type="hidden" name="quiz" value="3" />
+                    <div class="buttons">
+                        <input type="submit" class="button" value="Prev" />
+                        <a href="/part2" class="button">Home</a>
+                    </div>
+                </form>
             </div>
         </div>
     </body>
