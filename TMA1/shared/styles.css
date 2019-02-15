@@ -345,8 +345,8 @@ div.title-container.active > i {
 /*-------------------------------------Part 3-----------------------------------------*/
 .part3 {
     display: grid;
-    grid-template-rows: repeat(12, 1fr);
-    grid-template-columns: repeat(12, 1fr);
+    grid-template-rows: 1fr 650px 1fr;
+    grid-template-columns: 1fr 400px 1fr;
     width: 100vw;
     height: 100vh;
 }
@@ -364,7 +364,7 @@ div.title-container.active > i {
 }
 
 #slideshow {
-    height: 60%;
+    height: 60px;
 }
 
 #slideshow > canvas {
