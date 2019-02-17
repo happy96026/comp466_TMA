@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <title>Welcome to COMP 466 Tutor!</title>
+        <title>TMA1 part3</title>
         <script
             src="https://code.jquery.com/jquery-3.3.1.js"
             integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
@@ -15,19 +15,20 @@
         <div class="wrapper">
             <div class="option">
                 <select>
-                    <option value=""></option>
-                    <option value=""></option>
+                    <option value="no-transition">No Transition</option>
+                    <option value="fade">Fade</option>
                 </select>
             </div>
             <div class="category" id="slideshow">
+                <div id="loader"></div>
                 <canvas> Your browser does not support HTML5 canvas tag. </canvas>
             </div>
-            <div class="category"></div>
             <div class="buttons">
-                <div class="left"><button class="button">Random</button></div>
-                <div class="center"><button class="button">Stop</button></div>
+                <div class="left"><button class="button" id="order">Random</button></div>
+                <div class="center"><button class="button" id="play">Stop</button></div>
                 <div class="right">
-                    <button class="button">Prev</button> <button class="button">Next</button>
+                    <button class="button" id="prev">Prev</button>
+                    <button class="button" id="next">Next</button>
                 </div>
             </div>
         </div>
