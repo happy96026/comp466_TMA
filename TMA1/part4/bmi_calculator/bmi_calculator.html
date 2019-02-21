@@ -1,0 +1,36 @@
+<h1>BMI Calculator</h1>
+<div id="bmi">
+    <div class="tabs">
+        <button id="metric-button" class="active">Metric</button>
+        <button id="imperial-button">Imperial</button>
+    </div>
+    <div id="content">
+        <div class="user-input">
+            <div id="metric" class="input">
+                <div>
+                    <h2>Height</h2>
+                    <input type="number" id="cm" />cm
+                </div>
+                <div>
+                    <h2>Weight</h2>
+                    <input type="number" id="kg" />kg
+                </div>
+            </div>
+
+            <div id="imperial" class="input">
+                <div>
+                    <h2>Height</h2>
+                    <input type="number" id="ft" />ft<input type="number" id="in" />in
+                </div>
+                <div>
+                    <h2>Weight</h2>
+                    <input type="number" id="lbs" />lbs
+                </div>
+            </div>
+        </div>
+        <div id="result">
+            <p id="status"></p>
+            <p id="bmi-value"></p>
+        </div>
+    </div>
+</div>

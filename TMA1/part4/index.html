@@ -1,3 +1,4 @@
+<!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
@@ -7,21 +8,19 @@
             integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
             crossorigin="anonymous"
         ></script>
+        <script src="utility_tools.js"></script>
         <link rel="stylesheet" type="text/css" href="../shared/styles.css" />
     </head>
     <body>
         <div class="part4 wrapper">
             <nav class="header">
                 <ul>
-                    <li>Measurment Converter</li>
-                    <li>Mortgage Calculator</li>
-                    <li>BMI Calculator</li>
+                    <li class="button active" id="measurement-button">Measurment Converter</li>
+                    <li class="button" id="mortgage-button">Mortgage Calculator</li>
+                    <li class="button" id="bmi-button">BMI Calculator</li>
                 </ul>
             </nav>
-            <div class="content">
-                <div class="category">
-                </div>
-            </div>
+            <div class="content category" id="tool"></div>
         </div>
     </body>
 </html>
