@@ -3,16 +3,22 @@ body {
     margin: 0px;
     padding: 0px;
     font-family: "Roboto", sans-serif;
-    /*background-color: #f0f0f0;*/
+}
+
+.border-box {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #d3d3d3;
+}
+
+.button {
 }
 
 .part1 nav {
     height: 60px;
     display: flex;
     justify-content: space-between;
-    border-style: solid;
     border-width: 0 0 1px;
-    border-color: #d3d3d3;
     padding: 0 15px;
 }
 
@@ -37,6 +43,10 @@ body {
     background-color: white;
     cursor: pointer;
     height: 100%;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
 }
 
 .part1 .nav-button:focus {
@@ -61,13 +71,11 @@ body {
     white-space: nowrap;
     font-size: 14px;
     width: 250px;
+    background-color: white;
 }
 
-.part1 .dropdown-content > * {
-    padding: 15px 10px;
-    border-color: #d3d3d3;
-    border-style: solid;
-    border-width: 1px 1px 1px 1px;
+.part1 .dropdown-content.active {
+    display: block;
 }
 
 .part1 .dropdown-content > *:last-of-type {
@@ -78,15 +86,14 @@ body {
     background-color: #f0f0f0;
 }
 
+.part1 .dropdown-content a {
+    display: block;
+    padding: 15px 10px;
+}
+
 .part1 .content {
     margin: 30px auto;
     width: 65vw;
-}
-
-.part1 .box {
-    border-color: #d3d3d3;
-    border-style: solid;
-    border-width: 1px;
 }
 
 .part1 #top10 h1 {
@@ -120,4 +127,54 @@ body {
 
 .part1 #top10 li a:hover {
     background-color: #f0f0f0;
+}
+
+.part1 .login {
+    margin: 30px auto;
+    width: 250px;
+    padding: 25px;
+}
+
+.part1 .login > div {
+    margin-bottom: 8px;
+}
+
+.part1 .login > div:last-of-type {
+    margin-bottom: 30px;
+}
+
+.part1 .login label {
+    display: inline-block;
+    margin: 0 0 3px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.part1 .login input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 30px;
+    padding: 2px;
+}
+
+.part1 #signup {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+}
+
+.part1 #signup a {
+    margin-left: 3px;
+    text-decoration: none;
+}
+
+.part1 .label {
+    display: flex;
+    justify-content: space-between;
+}
+
+.part1 #your-bookmarks .border-box {
+    margin: 6px 0;
 }
