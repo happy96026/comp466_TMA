@@ -1,0 +1,123 @@
+html,
+body {
+    margin: 0px;
+    padding: 0px;
+    font-family: "Roboto", sans-serif;
+    /*background-color: #f0f0f0;*/
+}
+
+.part1 nav {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    border-style: solid;
+    border-width: 0 0 1px;
+    border-color: #d3d3d3;
+    padding: 0 15px;
+}
+
+.part1 nav > div {
+    display: flex;
+}
+
+.part1 #banner {
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+}
+
+.part1 .nav-button {
+    padding: 0 10px;
+    font-size: 16px;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    height: 100%;
+}
+
+.part1 .nav-button:focus {
+    outline: none;
+}
+
+.part1 .nav-button:hover {
+    background-color: #f0f0f0;
+}
+
+.part1 .dropdown {
+    position: relative;
+}
+
+.part1 .dropdown-content {
+    display: none;
+    position: absolute;
+    list-style: none;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    font-size: 14px;
+    width: 250px;
+}
+
+.part1 .dropdown-content > * {
+    padding: 15px 10px;
+    border-color: #d3d3d3;
+    border-style: solid;
+    border-width: 1px 1px 1px 1px;
+}
+
+.part1 .dropdown-content > *:last-of-type {
+    border-width: 0 1px 1px 1px;
+}
+
+.part1 .dropdown-content > *:hover {
+    background-color: #f0f0f0;
+}
+
+.part1 .content {
+    margin: 30px auto;
+    width: 65vw;
+}
+
+.part1 .box {
+    border-color: #d3d3d3;
+    border-style: solid;
+    border-width: 1px;
+}
+
+.part1 #top10 h1 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.part1 #top10 ol {
+    margin: 6px 0;
+    padding: 10px 15px 10px 40px;
+}
+
+.part1 #top10 li {
+    margin: 5px 0;
+    font-size: 17px;
+}
+
+.part1 #top10 li:first-of-type {
+    margin: 0 0 5px;
+}
+
+.part1 #top10 li:last-of-type {
+    margin: 5px 0 0;
+}
+
+.part1 #top10 li a {
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+.part1 #top10 li a:hover {
+    background-color: #f0f0f0;
+}
