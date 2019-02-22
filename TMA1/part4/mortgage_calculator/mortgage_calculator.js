@@ -34,33 +34,13 @@ $(document).ready(function() {
         return [payment, totalPayment, totalInterest];
     }
 
-    var principal = document.getElementById("principal");
-    var interest = document.getElementById("interest");
-    var amortization = document.getElementById("amortization");
-    var frequency = document.getElementById("frequency");
-
-    principal.addEventListener("change", function() {
-        if (this.value < 0) {
-            this.value = 0;
-        }
-        this.value = parseFloat(this.value).toFixed(2);
-    });
-
-    interest.addEventListener("change", function() {
-        if (this.value < 0) {
-            this.value = 0;
-        }
-        this.value = +parseFloat(this.value).toFixed(2);
-    });
-
-    var calculate = document.getElementById("calculate");
-    var result = document.getElementById("result");
-    calculate.addEventListener("click", function() {
-        if (principal.value && interest.value && amortization.value && frequency.value) {
+    function calcMortgage(principalValue, interestValue, amortizationValue, frequencyValue) {
+        var result = document.getElementById("result");
+        if (principalValue && interestValue && !isNaN(principalValue) && !isNaN(interestValue)) {
             var paymentResult;
-            var principalValue = parseFloat(principal.value);
-            var interestValue = parseFloat(interest.value) / 100;
-            var amortizationValue = parseInt(amortization.value);
+            principalValue = parseFloat(principal.value);
+            interestValue = parseFloat(interest.value) / 100;
+            amortizationValue = parseInt(amortization.value);
             switch (frequency.value) {
                 case "monthly":
                     paymentResult = calcRegular(
@@ -130,6 +110,26 @@ $(document).ready(function() {
                 )
             );
             result.style.display = "block";
+        } else {
+            result.style.display = "none";
         }
+    }
+
+    var principal = document.getElementById("principal");
+    var interest = document.getElementById("interest");
+    var amortization = document.getElementById("amortization");
+    var frequency = document.getElementById("frequency");
+
+    principal.addEventListener("input", function() {
+        calcMortgage(principal.value, interest.value, amortization.value, frequency.value);
+    });
+    interest.addEventListener("input", function() {
+        calcMortgage(principal.value, interest.value, amortization.value, frequency.value);
+    });
+    amortization.addEventListener("change", function() {
+        calcMortgage(principal.value, interest.value, amortization.value, frequency.value);
+    });
+    frequency.addEventListener("change", function() {
+        calcMortgage(principal.value, interest.value, amortization.value, frequency.value);
     });
 });
