@@ -10,5 +10,5 @@ $(document).ready(function() {
             .slice(0, -1)
             .join("/") + "/../navbar.html";
 
-    $(".navbar").load(navbarPath);
+    $(".header").load(navbarPath);
 });

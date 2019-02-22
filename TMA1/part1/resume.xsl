@@ -24,7 +24,7 @@
                     <div class="wrapper header">
                         <xsl:apply-templates select="generalInfo"/>
                     </div>
-                    <div class="content x-margin">
+                    <div class="content">
                         <xsl:apply-templates select="educationalBackground"/>
                         <xsl:apply-templates select="workExperience"/>
                     </div>
@@ -34,7 +34,7 @@
     </xsl:template>
 
     <xsl:template match="generalInfo">
-        <div class="generalInfo x-margin">
+        <div class="generalInfo">
             <xsl:apply-templates select="name"/> 
             <div id="resume-position">
                 <xsl:value-of select="position"/>

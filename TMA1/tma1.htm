@@ -9,10 +9,8 @@
 
     <body>
         <div class="wrapper main-page">
-            <div class="wrapper header">
-                <div class="title x-margin">COMP 466 Assignment 1</div>
-            </div>
-            <div class="content x-margin">
+            <div class="header"><div class="title">COMP 466 Assignment 1</div></div>
+            <div class="content">
                 <div class="category">
                     <h1>General Information</h1>
                     <p><b> COMP 466: Advanced Technologies for Web-Based Systems </b></p>
@@ -20,8 +18,14 @@
                     <p><b>Name:</b> Min Soung Choi</p>
                     <p><b>Student ID:</b> 3369465</p>
                     <p><b>Date Started:</b> September 9, 2018</p>
-                    <p><b>Date Completed:</b> TBD</p>
-                    <p><b>Time Spent:</b> TBD</p>
+                    <p><b>Date Completed:</b> February 21, 2019</p>
+                    <p><b>Time Spent:</b> 40 hours</p>
+                    <h2>Setup and Running</h2>
+                    <p>
+                        A local web server must be running at root directory of TMA1 folder. One way
+                        to host a local server is using Python3 with the command "python3 -m
+                        http.server --bind localhost".
+                    </p>
                 </div>
                 <div class="category">
                     <h1>Part 1</h1>
@@ -91,6 +95,465 @@
                     </p>
                     <h2>Hyperlink</h2>
                     <a href="part1/resume.xml">link</a>
+                </div>
+                <div class="category">
+                    <h1>Part 2</h1>
+                    <h2>Original Description</h2>
+                    <p>
+                        Using the web technologies you have learned so far, including HTML5, CSS3,
+                        JavaScript, XML, and Ajax, write a web application, that can help people to
+                        learn to learn the technologies covered in Unit 1, Unit 2, or Unit 3 of the
+                        course. The requirements are detailed as follows:
+                    </p>
+                    <ol>
+                        <li>
+                            It must be a web-based system with a name you choose, a banner to show
+                            off your work, navigation menus and buttons. It should begin with a
+                            welcome page to greet the users, to explain what the application does,
+                            and what they get from it, and how they should procced.
+                        </li>
+                        <li>
+                            The application must have three pages of tutorials, accessible through
+                            navigation menus or buttons, to teach the technologies covered in Unit
+                            1, Unit 2 and Unit 3 respectively. You don’t need to teach everything,
+                            but there should be enough content to make each of the tutorials useful.
+                        </li>
+                        <li>
+                            There should be a quiz for each tutorial, which can be accessed right
+                            after the tutorial page, as well as through the navigation menus and
+                            buttons of the system.
+                        </li>
+                        <li>
+                            After the submission button is hit, the quiz system should be able to
+                            grade the answers the learner has provided, show the correct answers as
+                            well as the score in percentage.
+                        </li>
+                        <li>
+                            The quiz system should be designed so that questions can be easily
+                            edited, added, or deleted, and new quiz can be easily created.
+                        </li>
+                        <li>
+                            You should do your best to use the web technologies covered in Unit 1,
+                            unit 2 and Unit 3, including HTML5, CSS3, JavaScript, XML and Ajax.
+                        </li>
+                        <li>
+                            Your web application should use or teach at least five page-structure
+                            elements and six new input types
+                        </li>
+                        <li>
+                            You should use an external style sheet for all pages of the system, to
+                            retain a consistent and user-friendly interface for your system.
+                        </li>
+                        <li>
+                            When using HTML5 table, be sure that you only use it to display tabular
+                            information, not to lay out the elements on your page.
+                        </li>
+                    </ol>
+                    <p>
+                        You must pay attention to both the functionalities and user interface. Save
+                        Part 2 files in the directory TMA1/part2.
+                    </p>
+                    <h2>Interpretation of the Part</h2>
+                    <p>
+                        Create a web application that provides a tutorial of the basics of web
+                        development topics that are included in Unit 1 to 3 of COMP 466 which
+                        consists of HTML5, CSS3, JavaScript and Ajax. The application offers a quiz
+                        for each unit that aims to evalute the users about the respective topics.
+                    </p>
+                    <h2>Analysis and Design</h2>
+                    <p>
+                        A document was created for introduction, notes, quiz and end. JavaScript
+                        code was created to load header and sidebar in order to enforce reusability.
+                        Similarly, notes for each section and quizzes for each unit was loaded using
+                        JavaScript code where the section can be inputted using GET parameter
+                        "section" and quiz unit can be inputted using GET parameter "quiz".
+                    </p>
+                    <p>
+                        The header acts as a placeholder for items that can be useful in the future.
+                        Currently, only a banner is included that redirects to home.
+                    </p>
+                    <p>
+                        The sidebar acts a collection of navigation links that allows users to
+                        freely see the content that is available in the web application as well as
+                        go to content that they want to see.
+                    </p>
+                    <p>
+                        The buttons on the bottoms allow users to go forward to next step of the
+                        tutorial and vice versa.
+                    </p>
+                    <p>
+                        Data for notes and quizzes are stored using json format since json files are
+                        simple to parse using Ajax. Notes are stored for each unit and quizzes are
+                        stored for each unit as well.
+                    </p>
+                    <h2>Documentation</h2>
+                    <p>
+                        The application contains four JavaScript files that is responsible for
+                        loading the notes, quiz, sidebar and header:
+                    </p>
+                    <p><b>notes.js</b></p>
+                    <ol>
+                        <li>
+                            <b>ready(function()): </b>Finds the section to be loaded by reading the
+                            corresponding section number from the GET parameter and loads it.
+                        </li>
+                        <li>
+                            <b>createSection(section, sectionName): </b>section is an element from
+                            sections of noteN.json. sectionName is a string that represents the name
+                            of the section that is being created. The function returns a div element
+                            that corresponds to input section .
+                        </li>
+                        <li>
+                            <b>loadSection(section): </b>section is an element from sections of
+                            noteN.json. The function uses createSection to create a section div and
+                            appends it to the content div.
+                        </li>
+                    </ol>
+                    <p><b>quiz.js</b></p>
+                    <ol>
+                        <li>
+                            <b>ready(function()): </b>The ready function loads the quiz to the
+                            document after the Ajax request has been made.
+                        </li>
+                        <li>
+                            <b>createQuestion(question, index): </b>question is an element from
+                            questions of quizN.json. index is the corresponding question number. The
+                            function creates and returns a div that contains the question and the
+                            radio buttons for the available choices of the question.
+                        </li>
+                        <li>
+                            <b>checkQuiz(content, questions): </b>content is the div that contains
+                            all the question divs. questions is an element from quizN.json. The
+                            function checks user choices of the all the questions against the
+                            answers in quizN.json. If no inputs are made by the user for a question,
+                            that question is considered incorrect.
+                        </li>
+                        <li>
+                            <b>loadQuiz(asyncRequest): </b>The function loads the quiz if the Ajax
+                            request has been made successfully.
+                        </li>
+                    </ol>
+                    <p><b>load_sidebar.js</b></p>
+                    <ol>
+                        <li>
+                            <b>ready(function()): </b>An asyncrequest is made for each notesN.json.
+                            Then, the function loads, highlights and links buttons after all the
+                            request has been completed.
+                        </li>
+                        <li>
+                            <b>createLinkItemNode(link): </b>link is an element from the custom made
+                            collection with text and path attribute. An item using the anchor tag is
+                            created which will be included in the sidebar.
+                        </li>
+                        <li>
+                            <b>loadSidebar(notes): </b>notes is a collection of JSON objects for
+                            each notesN.json. The function loads all the elements in the sidebar.
+                        </li>
+                        <li>
+                            <b>highlightCurrentNodes(): </b>The function highlights the current node
+                            that the user is currently visiting.
+                        </li>
+                        <li>
+                            <b>getActionNameValue(index): </b>index is an integer value that
+                            represents ith element of items that can be accessed from the sidebar
+                            excluding Home and End. Returns a list where 0, 1 and 2nd element
+                            represents the redirect, name of the parameter and the value of the
+                            parameter that is associated with the redirect respectively.
+                        </li>
+                        <li>
+                            <b>linkButtons(): </b>Links the redirects of the buttons below the
+                            content such that users are able to continue forward and go back on
+                            their progress of the tutorial.
+                        </li>
+                    </ol>
+                    <p><b>load_navbar.js</b></p>
+                    <ol>
+                        <li>
+                            <b>ready(function()): </b>Loads the navbar that is statically created in
+                            part2/navbar.html.
+                        </li>
+                    </ol>
+                    <h2>Hyperlink</h2>
+                    <a href="part2">link</a>
+                </div>
+                <div class="category">
+                    <h1>Part 3</h1>
+                    <h2>Original Description</h2>
+                    <p>
+                        For this project, you are required to create a slideshow web application
+                        using HTML5 canvas and other web technologies you have learned so far. The
+                        requirements are as follows:
+                    </p>
+                    <ol>
+                        <li>The slideshow should be drawn on the canvas;</li>
+                        <li>There should be a caption for each image in the show;</li>
+                        <li>There should be a button to start/stop the show;</li>
+                        <li>
+                            There should be a control to toggle the show between random and
+                            sequential;
+                        </li>
+                        <li>
+                            There should be buttons to manually turn the show backward or forward,
+                            only if the show is in sequential mode;
+                        </li>
+                        <li>
+                            There should be a dropdown list for users to select different
+                            transition/transformation effects for the show;
+                        </li>
+                        <li>
+                            The data of the images should be in a JSON array so that images and
+                            their captions can be easily maintained;
+                        </li>
+                        <li>
+                            To avoid copyright issues, you should use the images/photos you took. If
+                            you don’t have the images ready, please go around the place you live or
+                            work and take some good ones;
+                        </li>
+                        <li>The show should have at least 20 nice pictures.</li>
+                    </ol>
+                    <p>Save Part 3 files in the directory TMA1/part3.</p>
+                    <h2>Interpretation of the Part</h2>
+                    <p>
+                        Design a slideshow application that uses HTML5's canvas elements. The images
+                        are to be stored in a JSON file so that they can easily be accessed by the
+                        application as well modified by the user. The application should include
+                        features such as pause/play, previous/next, change transition animation and
+                        sequential/random order of images. The pause/play button should only be
+                        enabled when the application is in sequential mode.
+                    </p>
+                    <h2>Analysis and Design</h2>
+                    <p>
+                        Images are stored in img directory. A JSON file exists that has the path to
+                        the image files that are stored in img directory with its respective
+                        captions. The application creates a request for the JSON file and creates an
+                        array of Image object and its respective caption so that it does not have to
+                        make another request when these resources are accessed.
+                    </p>
+                    <p>
+                        There are four buttons and one dropdown for choosing the different
+                        transition. The buttons are Random/Sequential, Stop/Play, Prev and Next.
+                        When the application is in Random mode (button should display Sequential),
+                        Prev and Next buttons are greyed out. The Prev and Next button allows to
+                        transition to the next image according to the type of transition that is
+                        being used. The transitions available are No Transition and Fade where No
+                        Transition does not have any animation and Fade decreases the opacity of the
+                        current image and increases the opacity of the next image within a time
+                        frame.
+                    </p>
+                    <h2>Documentation</h2>
+                    <p><b>slideshow.js</b></p>
+                    <ol>
+                        <li>
+                            <b>mod(n, m): </b>Function is equivalent to n % m but only results in
+                            nonnegative values.
+                        </li>
+                        <li>
+                            <b>loadImage(i): </b>Loads an image of index i in jsonData to the
+                            canvas.
+                        </li>
+                        <li>
+                            <b>displayImage(image): </b>Displays image from jsonData to the canvas.
+                            Acts as a helper function for loadImage().
+                        </li>
+                        <li>
+                            <b>render(image): </b>Renders image from jsonData to the canvas by
+                            scaling the original image to fit to canvas.
+                        </li>
+                        <li>
+                            <b>getDrawImageArgs(imageObj): </b>Returns [dx, dy, width, height] which
+                            are the parameters required for CanvasRenderingContext2D.drawImage() so
+                            that original image is scaled to the canvas size. imageObj is the
+                            instantiaton of class Image.
+                        </li>
+                        <li>
+                            <b>generateRandomIndex(): </b>Generate random indices to select random
+                            images from jsonData.
+                        </li>
+                        <li>
+                            <b>getNextIndex(): </b>Get the next image according to the order of
+                            image such as random and sequential.
+                        </li>
+                    </ol>
+                    <h2>Hyperlink</h2>
+                    <a href="part3">link</a>
+                </div>
+                <div class="category">
+                    <h1>Part 4</h1>
+                    <h2>Original Description</h2>
+                    <p>
+                        For this project, you are required to develop a web application that can
+                        provide users with the following utility tools:
+                    </p>
+                    <ul style="padding-left: 40px; margin: 16px 0;">
+                        <li>
+                            (10 marks) Measurement converters: weights, lengths, areas, and volumes
+                        </li>
+                        <li>(10 marks) A mortgage calculator</li>
+                        <li>
+                            (10 marks) A utility tool that you think could be useful. You may need
+                            to do some research on the Web to build this last tool, and in the
+                            report you need to justify why you think it will be useful.
+                        </li>
+                    </ul>
+
+                    <p>
+                        In order to get full marks for the above design and implementation, the
+                        following are required:
+                    </p>
+
+                    <ol>
+                        <li>
+                            It must have an integrated and user-friendly interface for users to
+                            access each of the tools you designed.
+                        </li>
+                        <li>
+                            You need to use JavaScript functions and built-in objects to implement
+                            the application.
+                        </li>
+                        <li>
+                            At any time only one tool will be shown, to ensure a clean and tidy
+                            space for users to work with.
+                        </li>
+                        <li>
+                            You need to use Ajax technologies to eliminate whole page update when
+                            switching from one utility to another.
+                        </li>
+                        <li>
+                            You need to use event handler to calculate and show the result as soon
+                            as the user has given enough input to the system.
+                        </li>
+                        <li>
+                            In the assignment report, you need to provide sufficient documentation
+                            for your work, including algorithms and formulas used for the tools. If
+                            you have used any resources, including documents on the Web, you must
+                            clearly identify the source in your documentation.
+                        </li>
+                    </ol>
+                    <p>Save Part 4 files in the directory TMA1/part4.</p>
+                    <h2>Interpretation of the Part</h2>
+                    <p>
+                        Create an application using AJAX technologies that includes 3 utility tools.
+                        The utility tools must be simple to use and user-friendly. Each tool must be
+                        event driven and produce results when enough inputs have been given. Updates
+                        to the document are made asynchronously.
+                    </p>
+                    <h2>Analysis and Design</h2>
+                    <p>
+                        A tool is displayed when the corresponding tool is selected using the
+                        navigation bar. Ajax call is made to retrieve the tool's html content and is
+                        appended to the document. After the tool's html has been loaded, its
+                        corresponding Javascript file is loaded in order to attach the event
+                        listener for its inputs.
+                    </p>
+                    <p>
+                        For the unit converter, the user has the option to choose the type of units
+                        such as weight, length, area and volume. Then, the units available for each
+                        type of unit can be selected from the dropdowns of the two inputs. Users are
+                        able to input from any input boxes and the converted value will display from
+                        the other input box that is not being used. The converted value will be
+                        displayed whenever a user inputs a value or unit is changed. The conversion
+                        factors can be found in measurement_converter/conversion.js where for each
+                        type of units, a pair of units (unit1,unit2) are used as keys and the
+                        corresponding conversion factor is used as values. To convert from unit1 to
+                        unit2, value of unit1 must be multipled by the conversion factor. Conversly,
+                        to convert from unit2 to unit1, value of unit2 must be divided by the
+                        conversion factor.
+                    </p>
+                    <p>
+                        For the mortgage calculator, the user can input the mortgage principal
+                        amount, interest rate, amortization period and payment frequency. The
+                        mortgage principal and interest rate are user inputs from an input box while
+                        the amortization period and payment frequency are dropdowns. When all the
+                        required values are included, mortgage payment, total payment and total
+                        interest payment is updated.
+                    </p>
+                    <p>
+                        Although BMI is not a perfect indicator of health condition since it does
+                        not take into factor muscle mass, I chose to create the BMI calculator
+                        because it is still a good starting indicator of someone's health. The users
+                        are able to choose between metric and imperial units where metric units are
+                        in cm and kg and the imperial units are in ft/in and lbs. After height and
+                        weight are inputted, BMI is calculated and displayed asynchronously.
+                    </p>
+                    <h2>Documentation</h2>
+                    <p><b>utility_tools.js</b></p>
+                    <ol>
+                        <li>
+                            <b>loadJS(tool): </b>tool must be a string from
+                            ["measurement_converter", "mortgage_calculator", "bmi_calculator"].
+                            Evaluates JavaScript code for the corresponding tool.
+                        </li>
+                        <li>
+                            <b>loadHTML(tool): </b>tool must be a string from
+                            ["measurement_converter", "mortgage_calculator", "bmi_calculator"].
+                            Appends the corresponding HTML content of the tool to the main document.
+                        </li>
+                    </ol>
+                    <p><b>measurement_converter.js</b></p>
+                    <ol>
+                        <li>
+                            <b>convert(type, unit1, unit2, value): </b>type is a string that
+                            specifies the type of unit. unit1 is a string that specifies the unit to
+                            be converted. unit2 is a string that specifies the unit to convert to.
+                            value is a numeric that is to be converted from unit1 to unit2.
+                        </li>
+                        <li>
+                            <b>loadConverter(type): </b>type is a string that specifies the type of
+                            unit. Loads inputs' event handlers with convert() function with correct
+                            units for proper conversion of units.
+                        </li>
+                    </ol>
+                    <p><b>load_sidebar.js</b></p>
+                    <ol>
+                        <li>
+                            <b>calcPayment(principal, interest, number): </b>Calculate mortgage
+                            payment using the formula M = P*i*(1 + i)^n / ((1 + i)^n - 1) where M is
+                            mortgage, P is principal, i is interest rate per time frame and n is the
+                            number of times interest is accumulated.
+                        </li>
+                        <li>
+                            <b>calcRegular(principal, yearlyInterest, frequency, years): </b>Returns
+                            an array that contains payment per time frame, total payment and total
+                            interest paid. Payment per time frame is calculated using calcPayment,
+                            total payment is calculated by payment per time frame * frequency *
+                            years and total interest is calculated by total payment - principal.
+                            frequency is the number of time frame that occurs within a year and
+                            years is the amortization period.
+                        </li>
+                        <li>
+                            <b> calcAccelerated(principal, yearlyInterest, frequency, years): </b>
+                            Returns an array that contains the accelerated payment per time frame,
+                            total payment and total interest paid. Accelerated payment is calculated
+                            by monthly payment * 13 / frequency. Total payment is calculated using a
+                            while loop by summing up the payments until the amount that is required
+                            to pay equals 0. Total interest is total payment - principal.
+                        </li>
+                        <li>
+                            <b>
+                                calcMortgage(principalValue, interestValue, amortizationValue,
+                                frequencyValue):
+                            </b>
+                            Calculates mortgage information for the given user inputs and displays
+                            to the document.
+                        </li>
+                    </ol>
+                    <p><b>bmi_calculator.js</b></p>
+                    <ol>
+                        <li>
+                            <b>categorize(bmi): </b>Categorizes bmi into underweight, normal weight,
+                            overweight and obesity.
+                        </li>
+                        <li>
+                            <b>calcBmiMetric(cm, kg): </b>Calculates BMI using units of cm and kg
+                            where bmi = kg / (cm / 100)^2.
+                        </li>
+                        <li>
+                            <b>calcBmiImperial(ft, inches, lbs): </b>Calculates BMI using units of
+                            ft, inches and lbs where bmi = 703*lbs / (ft*12 + inches)^2
+                        </li>
+                    </ol>
+                    <h2>Hyperlink</h2>
+                    <a href="part4">link</a>
                 </div>
             </div>
         </div>

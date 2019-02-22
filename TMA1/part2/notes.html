@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title></title>
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"
+        ></script>
+        <script src="js/load_sidebar.js"></script>
+        <script src="js/notes.js"></script>
+        <link rel="stylesheet" type="text/css" href="../shared/styles.css" />
+    </head>
+    <body>
+        <div class="part2">
+            <nav class="header">
+                <div><a href="/part2">Comp 466 Tutor</a></div>
+            </nav>
+            <aside class="sidebar">
+                <form action="notes.html"><input type="hidden" name="section" /></form>
+            </aside>
+            <div class="content">
+                <form action="notes.html">
+                    <input type="hidden" name="section" value="" />
+                    <div class="buttons">
+                        <input type="submit" class="button" value="Prev" />
+                        <input type="submit" class="button" value="Next" />
+                    </div>
+                </form>
+            </div>
+        </div>
+    </body>
+</html>

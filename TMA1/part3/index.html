@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <title>TMA1 part3</title>
+        <script
+            src="https://code.jquery.com/jquery-3.3.1.js"
+            integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+            crossorigin="anonymous"
+        ></script>
+        <script src="slideshow.js"></script>
+        <link rel="stylesheet" type="text/css" href="../shared/styles.css" />
+    </head>
+    <body class="part3">
+        <div class="wrapper">
+            <div class="option">
+                <select>
+                    <option value="no-transition">No Transition</option>
+                    <option value="fade">Fade</option>
+                </select>
+            </div>
+            <div class="category" id="slideshow">
+                <div id="loader"></div>
+                <canvas> Your browser does not support HTML5 canvas tag. </canvas>
+            </div>
+            <div class="buttons">
+                <div class="left"><button class="button" id="order">Random</button></div>
+                <div class="center"><button class="button" id="play">Stop</button></div>
+                <div class="right">
+                    <button class="button" id="prev">Prev</button>
+                    <button class="button" id="next">Next</button>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>
