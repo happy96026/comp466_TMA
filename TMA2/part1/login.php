@@ -1,5 +1,13 @@
 <!DOCTYPE html>
 
+<?php
+session_start();
+$display = ($_SESSION["badAuth"] && $_SESSION["badAuth"] ? "block" : "none");
+$userError = "<p class='error' style='display: " . $display . 
+                ";'>Username does not exist or password does not match.</p>";
+$_SESSION["badAuth"] = NULL;
+?>
+
 <html>
     <head>
         <title>Log in</title>
@@ -14,17 +22,18 @@
 
     <body class="part1">
         <?php include_once("navbar.php") ?>
-        <div class="login border-box">
+        <form class="login border-box" action="server/login_server.php" method="post">
             <div id="username">
                 <label for="user">Username</label>
                 <input type="text" id="user" name="username">
             </div>
             <div id="password">
-                <label for="pass">Password (minimum length is 8)</label>
-                <input type="password" id="pass" name="password" minlength="8" required>
+                <label for="pass">Password</label>
+                <input type="password" id="pass" name="password" required>
+                <?=$userError;?>
             </div>
-            <input type="submit" value="Log in">
-        </div>
+            <input type="submit" class="button" value="Log in">
+        </form>
         <div class="login border-box" id="signup">
             Don't have an account? <a href="signup.php">Sign up</a>
         </div>

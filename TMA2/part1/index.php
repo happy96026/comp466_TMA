@@ -1,8 +1,21 @@
 <!DOCTYPE html>
 
 <?php
+require("classes/Database.php");
+
+function createListItem($url) {
+    $name = $url;
+    return "<li><a href='" . $url . "'>" . $name . "</a></li>";
+}
+
 session_start();
-$_SESSION["username"] = "happy96026";
+
+$db = Database::getDatabase();
+$top10 = $db->getTop10();
+$lis = "";
+for ($i = 0; $i < count($top10); $i++) {
+    $lis = $lis . createListItem($top10[$i]["url"]);
+}
 ?>
 
 <html>
@@ -21,18 +34,9 @@ $_SESSION["username"] = "happy96026";
         <?php include_once("navbar.php") ?>
         <div class="content">
             <div id="top10">
-                <h1>Top 10 Bookmarks</h1>
+                <label class="label-header">Top 10 Bookmarks</label>
                 <ol class="border-box">
-                    <li><a href="#">Title</a></li>
-                    <li><a href="#">Title</a></li>
-                    <li><a href="#">Title</a></li>
-                    <li><a href="#">Title</a></li>
-                    <li><a href="#">Title</a></li>
-                    <li><a href="#">Title</a></li>
-                    <li><a href="#">Title</a></li>
-                    <li><a href="#">Title</a></li>
-                    <li><a href="#">Title</a></li>
-                    <li><a href="#">Title</a></li>
+                    <?=$lis;?>
                 </ol>
             </div>
         </div>

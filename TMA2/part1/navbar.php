@@ -10,13 +10,13 @@
 
 <?php 
 function getButton() {
-    if (session_status() == PHP_SESSION_NONE) {
+    if (!isset($_SESSION["username"])) {
         $button = '<a class="nav-button id="login" href="login.php">Log in</a>';
     } else {
         $button = '<button class="nav-button" id="profile">Profile</button>
         <ul class="dropdown-content">
             <li class="border-box">
-                <a class="nav-button" href="edit.php">Edit bookmarks</a>
+                <a class="nav-button" href="your_bookmarks.php">Your bookmarks</a>
             </li>
             <li class="border-box">
                 <a class="nav-button" href="logout.php">Log out</a>

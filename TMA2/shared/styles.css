@@ -12,6 +12,26 @@ body {
 }
 
 .button {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #d3d3d3;
+    background-color: white;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+.label-header {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.button:focus {
+    outline: none;
+}
+
+.button:hover {
+    background-color: #f0f0f0;
 }
 
 .part1 nav {
@@ -157,6 +177,13 @@ body {
     padding: 2px;
 }
 
+.part1 .error {
+    margin: 2px 0 0 0;
+    font-size: 14px;
+    color: red;
+    display: none;
+}
+
 .part1 #signup {
     padding-top: 10px;
     padding-bottom: 10px;
@@ -170,11 +197,82 @@ body {
     text-decoration: none;
 }
 
-.part1 .label {
+.part1 #your-bookmarks .button {
+    font-size: 16px;
+    padding: 10px;
+    width: 75px;
+}
+
+.part1 #your-bookmarks .label {
     display: flex;
     justify-content: space-between;
 }
 
-.part1 #your-bookmarks .border-box {
+.part1 #your-bookmarks ul {
+    list-style-type: none;
+    padding: 8px;
     margin: 6px 0;
+}
+
+.part1 #your-bookmarks ul > li {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.part1 #your-bookmarks ul > li:first-of-type {
+    margin-top: 0;
+}
+
+.part1 #your-bookmarks ul > li:last-of-type {
+    margin-bottom: 0;
+}
+
+.part1 #your-bookmarks a {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.part1 #your-bookmarks a:hover {
+    background-color: #f0f0f0;
+}
+
+.part1 #your-bookmarks li > a {
+    flex: 1;
+    margin-right: 5px;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+}
+
+.part1 #your-bookmarks #add {
+    justify-content: center;
+}
+
+.part1 #add .border-box {
+    margin: 5px 0;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.part1 #add .input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.part1 #add .input > label {
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.part1 #add .input > input {
+    font-size: 20px;
+    padding: 5px 2px;
+}
+
+.part1 #add #submit {
+    float: right;
+    padding: 10px;
 }
