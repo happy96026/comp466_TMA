@@ -29,7 +29,8 @@
             </ul>
         </aside>
         <div class="content">
-            <?php include_once("quiz.php"); ?>
+            <?php include_once("notes.php"); ?>
+            <!--<?php include_once("quiz.php"); ?>-->
             <form id="buttons">
                 <button class="button" id="prev" name="id" value="1">Prev</button>
                 <button class="button" id="next" name="id" value="2">Next</button>

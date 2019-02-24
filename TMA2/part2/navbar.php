@@ -1,7 +1,7 @@
 <?php 
 function getButton() {
     if (!isset($_SESSION["username"])) {
-        $button = '<a class="nav-button id="login" href="login.php">Log in</a>';
+        $button = '<a class="nav-button id="login" href="my_courses.php">Log in</a>';
     } else {
         $button = '<button class="nav-button" id="profile">Profile</button>
         <ul class="dropdown-content">
