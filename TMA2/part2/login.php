@@ -6,6 +6,10 @@ $display = ($_SESSION["badAuth"] && $_SESSION["badAuth"] ? "block" : "none");
 $userError = "<p class='error' style='display: " . $display . 
                 ";'>Username does not exist or password does not match.</p>";
 $_SESSION["badAuth"] = NULL;
+$courseId = $_GET["id"];
+$getParam = isset($courseId) ? "?id=$courseId" : "";
+$anchorTag = "<a href='signup.php$getParam'>Sign up </a>";
+$inputTag = "<input type='hidden' name='id' value='$courseId'>"
 ?>
 
 <html>
@@ -22,7 +26,8 @@ $_SESSION["badAuth"] = NULL;
 
     <body class="part1">
         <?php include_once("navbar.php") ?>
-        <form class="login border-box" action="server/login_server.php" method="post">
+        <form class="login border-box" action="server/authenticate.php" method="post">
+            <?=$inputTag;?>
             <div id="username">
                 <label for="user">Username</label>
                 <input type="text" id="user" name="username" required>
@@ -35,7 +40,7 @@ $_SESSION["badAuth"] = NULL;
             <input type="submit" class="button" value="Log in">
         </form>
         <div class="login border-box" id="signup">
-            Don't have an account? <a href="signup.php">Sign up</a>
+            Don't have an account? <?=$anchorTag?>
         </div>
     </body>
 </html>

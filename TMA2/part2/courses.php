@@ -1,4 +1,32 @@
 <!DOCTYPE html>
+<?php
+require_once("helper/CourseData.php");
+require_once("helper/database.php");
+
+session_start();
+
+$buttons = "";
+$conn = createConn();
+$courseData = new CourseData($conn);
+$courses = $courseData->getCoursesInCategory($_GET["category"]);
+
+if (empty($courses)) {
+    http_response_code(404);
+    include("404.php");
+    die();
+}
+foreach ($courses as $course) {
+    $name = $course["name"];
+    $tutor = $course["tutor"];
+    $id = $course["course_id"];
+    $buttons = "$buttons
+        <button class='course button' name='id' value='$id'>
+            <div class='name'>$name</div>
+            <div class='tutor'>$tutor</div>
+        </button>
+    ";
+}
+?>
 
 <html>
     <head>
@@ -17,18 +45,7 @@
         <div class="content">
             <label class="label-header">Courses</label>
             <form id="course-container" action="course_info.php">
-                <button class="course button">
-                    <div class="name">Introduction to Web Design</div>
-                    <div class="author">Min Soung Choi</div>
-                </button>
-                <button class="course button">
-                    <div class="name">Introduction to Django</div>
-                    <div class="author">Min Soung Choi</div>
-                </button>
-                <button class="course button">
-                    <div class="name">Introduction to Flask</div>
-                    <div class="author">Min Soung Choi</div>
-                </button>
+                <?=$buttons;?>
             </form>
         </div>
     </body>

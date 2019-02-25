@@ -1,5 +1,35 @@
 <!DOCTYPE html>
 
+<?php
+require_once("helper/Registration.php");
+require_once("helper/database.php");
+
+session_start();
+$username = $_SESSION["username"];
+if (!isset($username)) {
+    header("Location: logout.php");
+}
+
+$conn = createConn();
+$registration = new Registration($conn);
+
+$courses = $registration->getUserCourses($username);
+
+$buttons = "";
+foreach ($courses as $course) {
+    $name = $course["name"];
+    $tutor = $course["tutor"];
+    $id = $course["course_id"];
+    $buttons = "$buttons
+        <button class='course button' name='id' value='$id'>
+            <div class='name'>$name</div>
+            <div class='tutor'>$tutor</div>
+        </button>
+    ";
+}
+
+?>
+
 <html>
     <head>
         <title>Courses</title>
@@ -16,19 +46,8 @@
         <?php include_once("navbar.php") ?>
         <div class="content">
             <label class="label-header">Courses</label>
-            <form id="course-container" action="tutor.php">
-                <button class="course button">
-                    <div class="name">Introduction to Web Design</div>
-                    <div class="author">Min Soung Choi</div>
-                </button>
-                <button class="course button">
-                    <div class="name">Introduction to Django</div>
-                    <div class="author">Min Soung Choi</div>
-                </button>
-                <button class="course button">
-                    <div class="name">Introduction to Flask</div>
-                    <div class="author">Min Soung Choi</div>
-                </button>
+            <form id="course-container" action="course_info.php">
+                <?=$buttons;?>
             </form>
         </div>
     </body>

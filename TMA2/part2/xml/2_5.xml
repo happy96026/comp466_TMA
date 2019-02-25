@@ -1,0 +1,17 @@
+<lesson>
+    <meta>
+        <course>COMP 466 - Advanced Technologies for Web-Based System</course>
+        <tutor>Min Soung Choi</tutor>
+        <unit>2<unit>
+        <order>5</order>
+        <type>topic</type>
+    </meta>
+    <name>Event Handling in JavaScript</name>
+    <content>
+        <point>The window object's load event fires when the window finishes loading successfully.</point>
+        <point>Every DOM element has a load event.</point>
+        <point>submit and reset events fire when a form is submitted or reset, respectively.</point>
+        <point>Event bubbling is the process whereby events fired on child elements "bubble" up to their parent elements.</point>
+    </content>
+</lesson>
+

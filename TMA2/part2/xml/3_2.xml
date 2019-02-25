@@ -1,0 +1,23 @@
+<lesson>
+    <meta>
+        <course>COMP 466 - Advanced Technologies for Web-Based System</course>
+        <tutor>Min Soung Choi</tutor>
+        <unit>3<unit>
+        <order>2</order>
+        <type>topic</type>
+    </meta>
+    <name>Ajax and Ajax-enabled Rich Internet Applications</name>
+    <content>
+        <point>Rich Internet Applications (RIAs) are web applications that approximate the look, feel and usability of desktop applications.</point>
+        <point>RIA performances comes from Ajax.</point>
+        <point>Traditional web applications are synchronous.</point>
+        <point>In an Ajax application, the requests that are made to the server is asynchronous.</point>
+        <point>When the third argument to XMLHttpRequest method open is true, the request is asynchronous.</point>
+        <point>An exception is an indication of a problem that occurs during a program's execution</point>
+        <point>try-catch block can be implemented to handle exceptions.</point>
+        <point>A callback function is registered as the event handler for the XMLHttpRequest object's readystatechange event.</point>
+        <point>Ajax applications often use XML because it consumes little bandwith and is easy to parse.</point>
+        <point>XML is used for retrieving files from a server while JSON is used whenever client interacts with a server-side web service.</point>
+    </content>
+</lesson>
+

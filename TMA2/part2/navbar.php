@@ -1,12 +1,14 @@
 <?php 
+session_start();
+
 function getButton() {
     if (!isset($_SESSION["username"])) {
-        $button = '<a class="nav-button id="login" href="my_courses.php">Log in</a>';
+        $button = '<a class="nav-button id="login" href="login.php">Log in</a>';
     } else {
         $button = '<button class="nav-button" id="profile">Profile</button>
         <ul class="dropdown-content">
             <li class="border-box">
-                <a class="nav-button" href="courses.php">Courses</a>
+                <a class="nav-button" href="my_courses.php">My courses</a>
             </li>
             <li class="border-box">
                 <a class="nav-button" href="server/logout.php">Log out</a>

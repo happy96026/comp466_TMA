@@ -1,0 +1,50 @@
+{
+    "unit": 2,
+    "questions": [
+        {
+            "question": "In HTML5, the default MIME type for a <script> is \"text/html\", so you can omit the type attribute from your <script> tag.",
+            "choices": ["True", "False"],
+            "answer": 0
+        },
+        {
+            "question": "JavaScript is case insensitive.",
+            "choices": ["True", "False"],
+            "answer": 0
+        },
+        {
+            "question": "Three expressions in the for statement are required.",
+            "choices": ["True", "False"],
+            "answer": 1
+        },
+        {
+            "question": "JavaScript does not include an exponentiation operator.",
+            "choices": ["True", "False"],
+            "answer": 0
+        },
+        {
+            "question": "What keyword is used to decalre the name of a variable inside a block such that the variable is only available within the block?",
+            "choices": ["var", "let", "of", "in"],
+            "answer": 0
+        },
+        {
+            "question": "A function will return to the point of invocation when",
+            "choices": [
+                "reaching the function-ending right brace.",
+                "executing the statement return.",
+                "executing the statement return expression.",
+                "All of the above"
+            ],
+            "answer": 3
+        },
+        {
+            "question": "When array is passed as an argument to a function, it is passed as?",
+            "choices": ["pass-by-value", "pass-by-reference", "None of the above"],
+            "answer": 1
+        },
+        {
+            "question": "By default, where is the coordinates (0, 0) located on a canvas?",
+            "choices": ["upper-left", "upper-right", "lower-left", "lower-right"],
+            "answer": 0
+        }
+    ]
+}

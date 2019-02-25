@@ -1,0 +1,32 @@
+<lesson>
+    <meta>
+        <course>COMP 466 - Advanced Technologies for Web-Based System</course>
+        <tutor>Min Soung Choi</tutor>
+        <unit>1<unit>
+        <order>1</order>
+        <type>topic</type>
+    </meta>
+    <name>Introduction to Computers and the Internet</name>
+    <content>
+        <point>Moore's Law state that every year or two, the capacities of computers have approximately doubled inexpensively. Note that the law is actually an observation.</point>
+        <point>HTML is a special type of computer language called a markup language designed to specify the content and structure of web pages (also called documents) in a protable manner.</point>
+        <point>Cascading Style Sheets (CSS) are used to specify the presentation, or styling, of elements on a web page.</point>
+        <point>CSS3 is the current version of CSS under development.</point>
+        <point>Javascript helps you build dynamic web pages and computer applications. It enables you to do client-side programming of web applications</point>
+        <point>Support for HTML5, CSS3 and JavaScript features varies by browser.</point>
+        <point>jQuery is a JavaScript library that simplifies JavaScript programming by making it easier to amnipulate a web page's elements and interact with servers in a portable manner across various web browsers.</point>
+        <point>A bit (short for \"binary digit\") is the smallest data item in a computer; it can assume the value 0 or 1.</point>
+        <point>ARPA proceeded to implement the ARPANET, which eventually evolved into today's Internet.</point>
+        <point>Each computer on the Internet has a unique IP address. The current IP standard is IPv4</point>
+        <point>HTTPS is the standard for transferring encrypted data on the web.</point>
+        <point>URIs (Uniform Resource Identifiers) identify resources on the Internet. URIs that start with http:// are called URLs (Uniform Resource Locators).</point>
+        <point>A get request typically gets information from a server.</point>
+        <point>A post request typically posts (or sends) data to a server.</point>
+        <point>Web-based applications are often multitier applications.</point>
+        <point>Tim Berners-Lee founded an organization - the World Wide Web Constortium (W3C) - devoted to developing nonproprietary, interoperable technologies for the World Wide Web.</point>
+        <point>Web 2.0 involves the users - not only do they often create content, but they help organize it, share it, remix it, critique it, update it, etc.</point>
+        <point>Data items processed by computers form a data hierarchy that becomes larger and more complex in structure as we progress from bits to characters to fields, and so on.</point>
+        <point>Operating systems provide services that allow each application to execute safely, efficiently, and concurrently with other applications.</point>
+        <point>Objects, or more precisely the classes objects come from, are essentially reusable software components.</point>
+    </content>
+</lesson>

@@ -1,0 +1,27 @@
+<lesson>
+    <meta>
+        <course>COMP 466 - Advanced Technologies for Web-Based System</course>
+        <tutor>Min Soung Choi</tutor>
+        <unit>1<unit>
+        <order>2</order>
+        <type>topic</type>
+    </meta>
+    <name>Web Server (Apache and IIS)</name>
+    <content>
+        <point>A web server responds to client requests (typically from a web browser) by providing resources such as HTML documents.</point>
+        <point>URL contains the server's fully qualified hostname. The hostname is then translated into an IP address. The remainder of the URL after the hostname is the resource's location on the web server.</point>
+        <point>For security reasons the path location is typically a virtual directory</point>
+        <point>HTTP status code 200 indicates success.</point>
+        <point>The Multipurpose Internet Mail Extensions (MIME) standard specifies data formats, which programs can use to interpret data correctly.</point>
+        <point>Browsers often cache recetly viewed web pages so they can quickly reload the pages.</point>
+        <point>The bottom tier (also called the data tier or the information tier) maintains the application's data.</point>
+        <point>The middle tier implemenets business logic, controller logic and presentation logic to control interations between the application's clients and its data.</point>
+        <point>Business logic in the middle tier enforces buisness rules and ensures that data is reliable before the server application updates the database or presents the data to users.</point>
+        <point>The top tier, or client tier, is the application's user interface.</point>
+        <point>To request documents from web servers, users must know the hostnames on which the web server software resides.</point>
+        <point>Local web servers can be accessed through your computer's name or through the name localhost - a hostname that references the local machine and normally translates to the IP address 127.0.0.1.</point>
+        <point>Apache HTTP Server maintained by the Apache Software Foundation is currently the most pouplar web server.</point>
+        <point>MySQL is the most popular open-source database management system.</point>
+        <point>Microsoft Internet Information Services (IIS) is a web server that is included with several versions of Windows.</point>
+    </content>
+</lesson>

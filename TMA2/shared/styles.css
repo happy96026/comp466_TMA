@@ -326,13 +326,17 @@ nav > div {
 }
 
 .part2 .course .name {
-    font-size: 25px;
+    font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
 }
 
-.part2 .course .author {
+.part2 .course .tutor {
     font-size: 16px;
+}
+
+.part2 .course .buttons {
+    display: flex;
 }
 
 .part2 .content .border-box {
@@ -426,8 +430,11 @@ nav > div {
     justify-content: flex-end;
 }
 
-.part2 #course #register {
-    padding: 13px;
+.part2 #course .buttons > button {
+    width: 90px;
+    height: 50px;
+    padding: 3px;
+    margin-left: 10px;
 }
 
 .part2#tutor nav {

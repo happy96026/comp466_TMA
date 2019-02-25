@@ -10,4 +10,9 @@ $(document).ready(function() {
             arrow.classList.toggle("active");
         });
     }
+
+    var withdraw = document.getElementById("withdraw");
+    withdraw.addEventListener("click", function() {
+        withdraw.parentElement.action = "server/withdraw_redirect.php";
+    });
 });

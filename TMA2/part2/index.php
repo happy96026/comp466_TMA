@@ -1,10 +1,23 @@
 <!DOCTYPE html>
 <?php
+require_once("helper/CourseData.php");
+require_once("helper/database.php");
+
+session_start();
+
+$conn = createConn();
+$courseData = new CourseData($conn);
+$categories = $courseData->getCategories();
+
+$buttons = "";
+foreach ($categories as $category) {
+    $buttons = "$buttons<button class='category button' name='category' value='$category'>$category</button>";
+}
 ?>
 
 <html>
     <head>
-        <title>Welcome to Learner 101!</title>
+        <title>Welcome to Learner 101</title>
         <link rel="stylesheet" type="text/css" href="../shared/styles.css" />
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"/>
         <script
@@ -17,11 +30,9 @@
     <body class="part2">
         <?php include_once("navbar.php") ?>
         <div class="content">
-            <label class="label-header">Category</label>
+            <label class="label-header">Categories</label>
             <form id="category-container" action="courses.php">
-                <button class="category button">Web Design</button>
-                <button class="category button">Machine Learning</button>
-                <button class="category button">Algorithms</button>
+                <?=$buttons;?>
             </form>
         </div>
     </body>

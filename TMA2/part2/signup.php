@@ -2,12 +2,16 @@
 
 <?php
 session_start();
-$userDisplay = ((isset($_SESSION["userExists"]) && $_SESSION["userExists"]) ? "block" : "none");
-$passDisplay = ((isset($_SESSION["passwordMatches"]) && !$_SESSION["passwordMatches"]) ? "block" : "none");
+$userDisplay = isset($_SESSION["userExists"]) ? "block" : "none";
+$passDisplay = isset($_SESSION["passwordMatches"]) ? "block" : "none";
 $userError = "<p class='error' style='display: " . $userDisplay . ";'>Username already exists.</p>";
 $passwordError = "<p class='error' style='display: " . $passDisplay . ";'>Does not match password.</p>";
 $_SESSION["userExists"] = NULL;
 $_SESSION["passwordMatches"] = NULL;
+
+$courseId = $_GET["id"];
+$getParam = isset($courseId) ? "?id=$courseId" : "";
+$inputTag = "<input type='hidden' name='id' value='$courseId'>"
 ?>
 
 <html>
@@ -25,7 +29,8 @@ $_SESSION["passwordMatches"] = NULL;
 
     <body class="part2">
         <?php include_once("navbar.php") ?>
-        <form class="login border-box" action="server/signup_server.php" method="post">
+        <form class="login border-box" action="server/signup_user.php" method="post">
+            <?=$inputTag;?>
             <div id="username">
                 <label for="user">Username</label>
                 <input type="text" id="user" name="username">

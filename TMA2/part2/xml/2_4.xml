@@ -1,0 +1,31 @@
+<lesson>
+    <meta>
+        <course>COMP 466 - Advanced Technologies for Web-Based System</course>
+        <tutor>Min Soung Choi</tutor>
+        <unit>2<unit>
+        <order>5</order>
+        <type>topic</type>
+    </meta>
+    <name>Arrays, Objects, and Document Object Model (DOM) in JavaScript</name>
+    <content>
+        <point>An array is a group of memory locations.</point>
+        <point>The first element in every array is the zeroth element.</point>
+        <point>Arrays can be created using a comma-separated initializer list enclosed in square brackets.</point>
+        <point>Two ways to pass arguments to functions (or methods), pass-by-value or pass-by-reference.</point>
+        <point>In JavaScript, numbers, boolean values and string are passed to functions by value.</point>
+        <point>All objects are passed to function by reference.</point>
+        <point>Two-dimensional array element accessed using an element name of the form a[row][column].</point>
+        <point>The Document Object Model gives you scripting access to all the elements on the web page.</point>
+        <point>document object createElement method creates a new DOM node.</point>
+        <point>document object appendChild inserts a child node after any existing childre of the node on which it's called.</point>
+        <point>DOM has collections - groups of related objects on a page.</point>
+        <point>An element's style can be chnaged dynamically in response to user events by changing the object's attribute.</point>
+        <point>Math object methods enable you to conveniently perform many common mathematical calculations.</point>
+        <point>Sting object method allows you to perform basic operations on string.</point>
+        <point>Date object provides methods for date and time manipulations</point>
+        <point>The Boolean and Number objects are object wrappers for boolean true/false values and numbers, respectively.</point>
+        <point>document object is provided by the browser and allows JavaScript code to manipulate the current document in the browser.</point>
+        <point>JSON is a simple way to represent JavaScript objects as strings.</point>
+    </content>
+</lesson>
+

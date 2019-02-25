@@ -1,0 +1,33 @@
+<lesson>
+    <meta>
+        <course>COMP 466 - Advanced Technologies for Web-Based System</course>
+        <tutor>Min Soung Choi</tutor>
+        <unit>1<unit>
+        <order>4</order>
+        <type>topic</type>
+    </meta>
+    <name>Introduction to HTML5: Part 2</name>
+    <content>
+        <point>The color input type enables the user to enter a color.</point>
+        <point>The new HTML 5 input types are self validating on the client side, eliminating the need to add complicated JavaScript code to your web pages.</point>
+        <point>The server should still validate all user input.</point>
+        <point>The date input type enables the user to enter a date in the form yyyy-mm-dd.</point>
+        <point>The datetime-local input type enables the user to enter the date and time in a single control.</point>
+        <point>The email input type enables the user to enter an e-mail address or a list of e-mail address separated by commas.</point>
+        <point>The month input type enables the user to enter a year and month in the format yyyy-mm, such as 2012-01.</point>
+        <point>The number input type enables the user to enter a numerical value - mobile browsers typically display a numeric keypad for this input type.</point>
+        <point>The range input type appears as a slider control in Chrome, Safari, and Opera.</point>
+        <point>The tel input type enables the user to enter a telephone number.</point>
+        <point>The time input type enables the user to enter an hour, minute, seconds and fraction of second.</point>
+        <point>The url input type enables the user to enter a URL.</point>
+        <point>The week input type enables the user to select a year and week number in the format yyyy-Wnn where nn is 01-53.</point>
+        <point>The header element creates a header for this page that contains both text and graphics.</point>
+        <point>The time element enables you to identify a date.</point>
+        <point>The nav element groups navigation links.</point>
+        <point>The figure element describes a figure in the document so that it could be moved to the side of the page or to another page.</point>
+        <point>The article element describes standalone content that could potentially be used or distrubted elsewhere, such as a news article forum post or blog entry.</point>
+        <point>The section element describes a section of a document, usually with a heading for each section - these element can be nested.</point>
+        <point>The meter element renders a visual representation of a measure within a range.</point>
+        <point>The footer element describes a footer - content that usually appears at the bottom of the content or section element.</point>
+    </content>
+</lesson>

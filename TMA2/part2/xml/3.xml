@@ -1,0 +1,13 @@
+<lesson>
+    <meta>
+        <course>COMP 466 - Advanced Technologies for Web-Based System</course>
+        <tutor>Min Soung Choi</tutor>
+        <unit>3<unit>
+        <order>0</order>
+        <type>unit</type>
+    </meta>
+    <name>XML and Ajax</name>
+    <content>
+        <para>Some description goes in here...</para>
+    </content>
+</lesson>

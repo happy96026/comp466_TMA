@@ -1,0 +1,90 @@
+<lesson>
+    <meta>
+        <course>COMP 466 - Advanced Technologies for Web-Based System</course>
+        <tutor>Min Soung Choi</tutor>
+        <unit>2<unit>
+        <order>7</order>
+        <type>quiz</type>
+    </meta>
+    <name>Unit 2 Quiz</name>
+    <content>
+        <question-container>
+            <question>In HTML5, the default MIME type for a <script> is 'text/html', so you can omit the type attribute from your <script> tag.</question>
+            <choices>
+                <choice>True</choice>
+                <choice>False</choice>
+            </choices>
+            <answer>0</answer>
+        </question-container>
+
+        <question-container>
+            <question>JavaScript is case insensitive.</question>
+            <choices>
+                <choice>True</choice>
+                <choice>False</choice>
+            </choices>
+            <answer>0</answer>
+        </question-container>
+
+        <question-container>
+            <question>Three expressions in the for statement are required.</question>
+            <choices>
+                <choice>True</choice>
+                <choice>False</choice>
+            </choices>
+            <answer>1</answer>
+        </question-container>
+
+        <question-container>
+            <question>JavaScript does not include an exponentiation operator.</question>
+            <choices>
+                <choice>True</choice>
+                <choice>False</choice>
+            </choices>
+            <answer>0</answer>
+        </question-container>
+
+        <question-container>
+            <question>What keyword is used to decalre the name of a variable inside a block such that the variable is only available within the block?</question>
+            <choices>
+                <choice>var</choice>
+                <choice>let</choice>
+                <choice>of</choice>
+                <choice>in</choice>
+            </choices>
+            <answer>0</answer>
+        </question-container>
+
+        <question-container>
+            <question>A function will return to the point of invocation when</question>
+            <choices>
+                <choice>reaching the function-ending right brace.</choice>
+                <choice>executing the statement return.</choice>
+                <choice>executing the statement return expression.</choice>
+                <choice>All of the above</choice>
+            </choices>
+            <answer>3</answer>
+        </question-container>
+
+        <question-container>
+            <question>When array is passed as an argument to a function, it is passed as?</question>
+            <choices>
+                <choice>pass-by-value</choice>
+                <choice>pass-by-reference</choice>
+                <choice>None of the above</choice>
+            </choices>
+            <answer>1</answer>
+        </question-container>
+
+        <question-container>
+            <question>By default, where is the coordinates (0, 0) located on a canvas?</question>
+            <choices>
+                <choice>upper-left</choice>
+                <choice>upper-right</choice>
+                <choice>lower-left</choice>
+                <choice>lower-right</choice>
+            </choices>
+            <answer>0</answer>
+        </question-container>
+    </content>
+</lesson>
