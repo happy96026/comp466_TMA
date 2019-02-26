@@ -1,0 +1,27 @@
+<lesson>
+    <meta>
+        <course>COMP 466 - Advanced Technologies for Web-Based System</course>
+        <tutor>Min Soung Choi</tutor>
+        <unit>1</unit>
+        <order>6</order>
+        <type>topic</type>
+    </meta>
+    <name>Introduction to Cascading Style Sheets (CSS): Part 2</name>
+    <content>
+        <point>The CSS3 text-shadow property makes it easy to add a text shadow effect to any text.</point>
+        <point>The border-radius property allows you to add rounded corners to an element.</point>
+        <point>RGB or RGBA gives you greater control over the exact colors in your web pages.</point>
+        <point>CSS3 also allows you to express color using HSL or HSLA.</point>
+        <point>Lightness - the intensity of light or luminance of the hue - is also expressed as a percentage.</point>
+        <point>You can shadow any block-level element in CSS3.</point>
+        <point>Vendor prefixes are used for properties that are still being finalized in the CSS specification but have already been implemented in various browsers.</point>
+        <point>CSS3 allows you to add multiple background images to an element.</point>
+        <point>The CSS3 border-image property uses images to place a border around any block-level element.</point>
+        <point>The animatino property allows you to represent several animation properties in a shorthand notation.</point>
+        <point>With CSS3 transitions, you can change an element's style over a specified duration.</point>
+        <point>CSS3 transformations allow you to move, rotate, scale and skew elements.</point>
+        <point>Using the @font-face rule, you can specify fonts for a web page, even if they're not installed on the user's system.</point>
+        <point>Flexible Box Layout Module (FBLM) makes it easy to align the contents of boxes, change their size, change their order dynamically, and lay out the contents in any direction.</point>
+        <point>With CSS# media queries you can determine the finer attributes of the media on which the user is viewing the page, such as the length and width of the viewing area on the screen.</point>
+    </content>
+</lesson>

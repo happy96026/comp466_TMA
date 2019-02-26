@@ -1,0 +1,82 @@
+<lesson>
+    <meta>
+        <course>COMP 466 - Advanced Technologies for Web-Based System</course>
+        <tutor>Min Soung Choi</tutor>
+        <unit>3</unit>
+        <order>3</order>
+        <type>quiz</type>
+    </meta>
+    <name>Unit 3 Quiz</name>
+    <content>
+        <question-container>
+            <question>A DTD expresses the set of rules for document structure using an XML syntax.</question>
+            <choices>
+                <choice>True</choice>
+                <choice>False</choice>
+            </choices>
+            <answer>1</answer>
+        </question-container>
+
+        <question-container>
+            <question>Complex types in XML Schema can have either simple content or complex content.</question>
+            <choices>
+                <choice>True</choice>
+                <choice>False</choice>
+            </choices>
+            <answer>0</answer>
+        </question-container>
+
+        <question-container>
+            <question>Ajax requests are useful because they are asynchronous.</question>
+            <choices>
+                <choice>True</choice>
+                <choice>False</choice>
+            </choices>
+            <answer>0</answer>
+        </question-container>
+
+        <question-container>
+            <question>Which category of types exist in XML Schema?</question>
+            <choices>
+                <choice>complex</choice>
+                <choice>compound</choice>
+                <choice>hybrid</choice>
+                <choice>None of the above</choice>
+            </choices>
+            <answer>0</answer>
+        </question-container>
+
+        <question-container>
+            <question>What extension does an XSL document have?</question>
+            <choices>
+                <choice>xml</choice>
+                <choice>xsd</choice>
+                <choice>xsl</choice>
+                <choice>None of the above</choice>
+            </choices>
+            <answer>2</answer>
+        </question-container>
+
+        <question-container>
+            <question>When the third argument to XMLHttpRequest method open is true, the request is?</question>
+            <choices>
+                <choice>synchronous</choice>
+                <choice>asynchronous</choice>
+                <choice>blocked</choice>
+                <choice>None of the above</choice>
+            </choices>
+            <answer>1</answer>
+        </question-container>
+
+        <question-container>
+            <question>When an exception is raised, what type of block is used to handle the exception?</question>
+            <choices>
+                <choice>if-else</choice>
+                <choice>for</choice>
+                <choice>while</choice>
+                <choice>try-catch</choice>
+            </choices>
+            <answer>3</answer>
+        </question-container>
+    </content>
+</lesson>

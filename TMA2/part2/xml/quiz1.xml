@@ -1,0 +1,80 @@
+<lesson>
+    <meta>
+        <course>COMP 466 - Advanced Technologies for Web-Based System</course>
+        <tutor>Min Soung Choi</tutor>
+        <unit>1</unit>
+        <order>7</order>
+        <type>quiz</type>
+    </meta>
+    <name>Unit 1 Quiz</name>
+    <content>
+        <question-container>
+            <question>Support for HTML5, CSS3 and JavaScript features is universal for all browsers.</question>
+            <choices>
+                <choice>True</choice>
+                <choice>False</choice>
+            </choices>
+            <answer>1</answer>
+        </question-container>
+
+        <question-container>
+            <question>HTTP status code 404 indicates that the request was made succesfully.</question>
+            <choices>
+                <choice>True</choice>
+                <choice>False</choice>
+            </choices>
+            <answer>1</answer>
+        </question-container>
+
+        <question-container>
+            <question>HTML5 elements and attribute names are case insensitive.</question>
+            <choices>
+                <choice>True</choice>
+                <choice>False</choice>
+            </choices>
+            <answer>0</answer>
+        </question-container>
+
+        <question-container>
+            <question>The margin property determines the distance between the content inside an element and the inside of the element's border.</question>
+            <choices>
+                <choice>True</choice>
+                <choice>False</choice>
+            </choices>
+            <answer>1</answer>
+        </question-container>
+
+        <question-container>
+            <question>The top tier of the web application represents</question>
+            <choices>
+                <choice>Business Logic</choice>
+                <choice>Controller Logic</choice>
+                <choice>Application's User Interface</choice>
+                <choice>All of the Above</choice>
+            </choices>
+            <answer>2</answer>
+        </question-container>
+
+        <question-container>
+            <question>A comment in HTML start with</question>
+            <choices>
+                <choice>&lt;!--</choice>
+                <choice>#</choice>
+                <choice>//</choice>
+                <choice>&quot;&quot;&quot;</choice>
+            </choices>
+            <answer>0</answer>
+        </question-container>
+
+        <question-container>
+            <question>In CSS, classes are selected by</question>
+            <choices>
+                <choice>,</choice>
+                <choice>.</choice>
+                <choice>#</choice>
+                <choice>></choice>
+            </choices>
+            <answer>1</answer>
+        </question-container>
+    </content>
+</lesson>

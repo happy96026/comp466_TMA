@@ -1,0 +1,33 @@
+<lesson>
+    <meta>
+        <course>COMP 466 - Advanced Technologies for Web-Based System</course>
+        <tutor>Min Soung Choi</tutor>
+        <unit>2</unit>
+        <order>1</order>
+        <type>topic</type>
+    </meta>
+    <name>Introduction to Scripting</name>
+    <content>
+        <point>Often, JavaScript appear in the &lt;head&gt; section of the HTML5 document</point>
+        <point>The &lt;script&gt; tag indicates to the browser that the text that follows is part of a script.</point>
+        <point>In HTML5, the default MIME type for a &lt;script&gt; is 'text/html', so you can omit the type attribute from your &lt;script&gt; tags.</point>
+        <point>String in JavaScript can be enclosedi n either double quotation marks (\") or single quotation marks (').</point>
+        <point>The term object normally implies that attributes (data) and behaviours (methods) are associated with the object.</point>
+        <point>The parentheses following the name of a method contain the arguments that the method requires to perform its task</point>
+        <point>Every statement should end with a semicolon although none is required by JavaScript</point>
+        <point>JavaScript is case sensitive.</point>
+        <point>The document object's writeln method writes a line of HTML5 text in the HTML5 document.</point>
+        <point>The + operator joins two string together.</point>
+        <point>Dialogs are useful to display information in windows that 'pop up' on the screen to grab the user's attention.</point>
+        <point>When a backslash is encountered in a string of characters, the next character is combined with the backslash to form an escape sequence.</point>
+        <point>Keywords are words with special meaning in JavaScript.</point>
+        <point>Keyword var is used to declare the names of variables.</point>
+        <point>Single line comments begin with // and terminates at the end of the line</point>
+        <point>Multiline comments begin with delimiter /* and end with delimiter */</point>
+        <point>null keyword signifies that a variable has no value.</point>
+        <point>Variable names correspond to locations in the computer's memory.</point>
+        <point>The basic arithmetic operators are binary operators, because they each operate on two operands.</point>
+        <point>if statement allows a script to make a decision based on the truth or falsity of a condition.</point>
+        <point>Date object is used to acquire the current local time.</point>
+    </content>
+</lesson>

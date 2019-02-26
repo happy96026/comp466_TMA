@@ -1,0 +1,24 @@
+<lesson>
+    <meta>
+        <course>COMP 466 - Advanced Technologies for Web-Based System</course>
+        <tutor>Min Soung Choi</tutor>
+        <unit>2</unit>
+        <order>3</order>
+        <type>topic</type>
+    </meta>
+    <name>Functions in JavaScript</name>
+    <content>
+        <point>return statement passes information from inside a function back to the point in the program where it was called.</point>
+        <point>A function must be called explicitly for the code in its body to execute.</point>
+        <point>Reaching the function-ending right brace returns to the point at which a function was invoked.</point>
+        <point>Executing the statement return; returns to the point at which a function was invoked.</point>
+        <point>Executing the statement return expression; returns to the point at which a function was invoked.</point>
+        <point>All variables declared with the keyowrd var in function definitions are local variables.</point>
+        <point>Each identifier in the program has a scope.</point>
+        <point>The scope of an identifier for a variable or function is the portion of the program in which the identifier can be referenced.</point>
+        <point>JavaScript provides nine global functions as part of a Global object.</point>
+        <point>A recursive function calls itself, either directly, or indirectly through another function.</point>
+        <point>Iteration terminates when the loop-continuation condition fails while recursion terminates when a base case is recognized.</point>
+    </content>
+</lesson>
+

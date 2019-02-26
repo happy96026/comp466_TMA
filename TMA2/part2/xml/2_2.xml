@@ -1,0 +1,30 @@
+<lesson>
+    <meta>
+        <course>COMP 466 - Advanced Technologies for Web-Based System</course>
+        <tutor>Min Soung Choi</tutor>
+        <unit>2</unit>
+        <order>2</order>
+        <type>topic</type>
+    </meta>
+    <name>Control Statements in JavaScript</name>
+    <content>
+        <point>A procedure for solving a problem in terms of the actions to be executed, and the order in which the actions are to be executed is called an algorithm.</point>
+        <point>Pseudocode is an informal language that helps you develop algorithms.</point>
+        <point>Sequential execution: Execute statements in the order they appear in the code.</point>
+        <point>JavaScript provides four repetition statemenets, namely, while, do...while, for and for...in.</point>
+        <point>Conditional operator (?:) is a ternary operator where first operand is a boolean expression, second is a value when expression evaluates to true and third is a value when expression evalutes to false.</point>
+        <point>A logic error has its effect at execution time.</point>
+        <point>while statement allows you to specify that an action is to be repeated while some condition remainis true.</point>
+        <point>JavaSCript represents all numbers as floating-point numbers in memory.</point>
+        <point>The increment operator, ++ and the decrement operator, --, increment or decrement a variable by 1, respectively.</point>
+        <point>for statement specifies each of the items needed for counter-controlled repetition with a control variable.</point>
+        <point>for statement header contains three expressions: initialization, condition, increment expression.</point>
+        <point>The three expressions in the for statement are optional. The two semicolons in the for statement are required.</point>
+        <point>JavaScript does not include an exponentiation operator.</point>
+        <point>switch multiple-selection statement tests variable or expression separately for each of the values it may assume. Different actions are taken for each value.</point>
+        <point>do...while tests the loop-continuation condition after the loop body executes. The loop body always executes at least once.</point>
+        <point>break statement in a while, for, do...while or switch statement causes immediate exit from the statement.</point>
+        <point>Logical operators such as &&, || and ! can be used to form complex conditons by combining simple conditions.</point>
+    </content>
+</lesson>
+

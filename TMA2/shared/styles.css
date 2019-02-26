@@ -1,0 +1,610 @@
+* {
+    font-family: "Roboto", sans-serif;
+}
+
+html,
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+.border-box {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #d3d3d3;
+}
+
+.button {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #d3d3d3;
+    background-color: white;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+.label-header {
+    font-size: 30px;
+    font-weight: bold;
+}
+
+.button:focus {
+    outline: none;
+}
+
+.button:hover {
+    background-color: #f0f0f0;
+}
+
+.arrow-up {
+    border: solid black;
+    border-width: 0 1px 1px 0;
+    display: inline-block;
+    padding: 3px;
+    transform: rotate(-135deg);
+    height: 100%;
+    margin-right: 10px;
+}
+
+.arrow-up.active {
+    transform: rotate(45deg);
+}
+
+nav {
+    height: 60px;
+    display: flex;
+    justify-content: space-between;
+    border-width: 0 0 1px !important;
+    padding: 0 15px;
+    position: sticky;
+    top: 0;
+    background-color: white;
+    z-index: 1;
+}
+
+nav > div {
+    display: flex;
+}
+
+#banner {
+    color: black;
+    font-size: 20px;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+}
+
+.nav-button {
+    padding: 0 10px;
+    font-size: 16px;
+    border: none;
+    background-color: white;
+    cursor: pointer;
+    height: 100%;
+    text-decoration: none;
+    color: black;
+    display: flex;
+    align-items: center;
+}
+
+.nav-button:focus {
+    outline: none;
+}
+
+.nav-button:hover {
+    background-color: #f0f0f0;
+}
+
+.dropdown {
+    position: relative;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    list-style: none;
+    right: 0;
+    margin: 0;
+    padding: 0;
+    white-space: nowrap;
+    font-size: 14px;
+    width: 250px;
+    background-color: white;
+}
+
+.dropdown-content.active {
+    display: block;
+}
+
+.dropdown-content > *:last-of-type {
+    border-width: 0 1px 1px 1px;
+}
+
+.dropdown-content > *:hover {
+    background-color: #f0f0f0;
+}
+
+.dropdown-content a {
+    display: block;
+    padding: 15px 10px;
+}
+
+.content {
+    margin: 30px auto;
+    width: 65vw;
+}
+
+.part1 #top10 h1 {
+    margin: 0;
+    font-size: 25px;
+}
+
+.part1 #top10 ol {
+    margin: 6px 0;
+    padding: 10px 15px 10px 40px;
+}
+
+.part1 #top10 li {
+    margin: 5px 0;
+    font-size: 17px;
+}
+
+.part1 #top10 li:first-of-type {
+    margin: 0 0 5px;
+}
+
+.part1 #top10 li:last-of-type {
+    margin: 5px 0 0;
+}
+
+.part1 #top10 li a {
+    display: block;
+    text-decoration: none;
+    color: black;
+}
+
+.part1 #top10 li a:hover {
+    background-color: #f0f0f0;
+}
+
+.login {
+    margin: 30px auto;
+    width: 250px;
+    padding: 25px;
+}
+
+.login > div {
+    margin-bottom: 8px;
+}
+
+.login > div:last-of-type {
+    margin-bottom: 30px;
+}
+
+.login label {
+    display: inline-block;
+    margin: 0 0 3px;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.login input {
+    box-sizing: border-box;
+    width: 100%;
+    height: 30px;
+    padding: 2px;
+}
+
+.error {
+    margin: 2px 0 0 0;
+    font-size: 14px;
+    color: red;
+    display: none;
+}
+
+#signup {
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-size: 13px;
+    display: flex;
+    justify-content: center;
+}
+
+#signup a {
+    margin-left: 3px;
+    text-decoration: none;
+}
+
+.part1 #your-bookmarks .button {
+    font-size: 16px;
+    padding: 10px;
+    width: 75px;
+}
+
+.part1 #your-bookmarks .label {
+    display: flex;
+    justify-content: space-between;
+}
+
+.part1 #your-bookmarks ul {
+    list-style-type: none;
+    padding: 8px;
+    margin: 6px 0;
+}
+
+.part1 #your-bookmarks ul > li {
+    display: flex;
+    justify-content: space-between;
+    margin: 10px 0;
+}
+
+.part1 #your-bookmarks ul > li:first-of-type {
+    margin-top: 0;
+}
+
+.part1 #your-bookmarks ul > li:last-of-type {
+    margin-bottom: 0;
+}
+
+.part1 #your-bookmarks a {
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+}
+
+.part1 #your-bookmarks a:hover {
+    background-color: #f0f0f0;
+}
+
+.part1 #your-bookmarks li > a {
+    flex: 1;
+    margin-right: 5px;
+    padding: 5px;
+    text-decoration: none;
+    color: black;
+}
+
+.part1 #your-bookmarks #add {
+    justify-content: center;
+}
+
+.part1 #add .border-box {
+    margin: 5px 0;
+    padding: 10px;
+    overflow: hidden;
+}
+
+.part1 #add .input {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 15px;
+}
+
+.part1 #add .input > label {
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+.part1 #add .input > input {
+    font-size: 20px;
+    padding: 5px 2px;
+}
+
+.part1 #add #submit {
+    float: right;
+    padding: 10px;
+}
+
+.part2 #category-container {
+    display: grid;
+    margin: 20px 0;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+
+.part2 .category {
+    height: 300px;
+    font-size: 30px;
+    font-weight: bold;
+    padding: 15px;
+}
+
+.part2 #course-container {
+    display: grid;
+    margin: 20px 0;
+    grid-template-columns: repeat(5, 1fr);
+    grid-column-gap: 20px;
+    grid-row-gap: 20px;
+}
+
+.part2 .course {
+    height: 230px;
+    padding: 15px;
+}
+
+.part2 .course .name {
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.part2 .course .tutor {
+    font-size: 16px;
+}
+
+.part2 .course .buttons {
+    display: flex;
+}
+
+.part2 .content .border-box {
+    margin: 20px 0;
+    padding: 20px 15px;
+}
+
+.part2 .content .border-box > div {
+    margin: 30px 0;
+}
+
+.part2 .content .border-box > div:first-of-type {
+    margin-top: 0;
+}
+
+.part2 .content .border-box > div:last-of-type {
+    margin-bottom: 0;
+}
+
+.part2 .content .border-box h1 {
+    margin: 0;
+    font-size: 21px;
+    margin-bottom: 10px;
+}
+
+.part2 .content .border-box p {
+    margin: 0;
+    font-size: 18px;
+}
+
+.part2 #course > .label-header {
+    font-size: 35px;
+    margin: 80px 0;
+    display: block;
+}
+
+.part2 #course .section {
+    margin: 50px 0;
+}
+
+.part2 #course .section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.part2 #course .unit-container {
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    margin: 8px 0;
+}
+
+.part2 #course .unit {
+    padding: 10px 15px;
+    display: flex;
+    font-size: 16px;
+    background-color: #f0f0f0;
+    align-items: center;
+}
+
+.part2 #course .unit:hover {
+    background-color: #d8d8d8;
+}
+
+.part2 #course .sub-unit-container {
+    display: none;
+}
+
+.part2 #course .sub-unit-container.active {
+    display: block;
+}
+
+.part2 #course .sub-unit {
+    padding: 10px 15px;
+    padding-left: 55px;
+    display: block;
+    border-top: 0;
+    cursor: default;
+}
+
+.part2 #course .sub-unit:hover {
+    background-color: white;
+}
+
+.part2 #course .sub-unit.active {
+    display: none;
+}
+
+.part2 #course .buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.part2 #course .buttons > button {
+    width: 90px;
+    height: 50px;
+    padding: 3px;
+    margin-left: 10px;
+}
+
+.part2#tutor nav {
+    position: fixed;
+    width: calc(100vw - 30px);
+}
+
+.part2#tutor nav .dropdown-content > li {
+    border-width: 0 1px 1px 1px;
+}
+
+.part2#tutor nav .dropdown-content > li:last-of-type {
+    border-bottom: 0;
+}
+
+.part2#tutor aside {
+    position: fixed;
+    top: 61px;
+    width: 250px;
+    height: calc(100vh - 61px);
+    border-width: 0 1px 0 0;
+    background-color: #f0f0f0;
+}
+
+.part2#tutor aside ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.part2#tutor aside .button {
+    border-style: none;
+    margin: 5px 0;
+    text-align: left;
+    display: flex;
+    width: 100%;
+}
+
+.part2#tutor .unit {
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
+    font-size: 14px;
+    background-color: #f0f0f0;
+}
+
+.part2#tutor .unit:hover {
+    background-color: #d8d8d8;
+}
+
+.part2#tutor .sub-unit {
+    padding: 7px 15px;
+    padding-left: 45px;
+    border-top: 0;
+    font-size: 11px;
+    margin: 3px 0 !important;
+    background-color: white;
+}
+
+.part2#tutor .active {
+    background-color: white;
+    border-style: solid;
+    border-width: 1px 0;
+    border-color: #d3d3d3;
+}
+
+.part2#tutor .active:first-child {
+    border-top: 0;
+}
+
+.part2#tutor .active > .unit {
+    background-color: #c2c2c2;
+}
+
+.part2#tutor .active > .unit:hover {
+    background-color: #d8d8d8;
+}
+
+.part2#tutor .sub-unit.active {
+    background-color: #f0f0f0;
+}
+
+.part2#tutor .sub-unit:hover {
+    background-color: #d8d8d8;
+}
+
+.part2#tutor .content {
+    position: relative;
+    top: 61px;
+    left: 251px;
+    margin: 30px 130px;
+    /*width: 60vw;*/
+}
+
+.part2#tutor .content .border-box {
+    display: block;
+}
+
+.part2#tutor .content .border-box * {
+    font-size: 16px;
+}
+
+.part2#tutor .content .border-box > * {
+    margin: 15px 0;
+    font-size: 16px;
+}
+
+.part2#tutor .content .border-box > *:first-child {
+    margin-top: 0;
+}
+
+.part2#tutor .content .border-box > *:last-child {
+    margin-bottom: 0;
+}
+
+.part2#tutor .content .border-box > ul,
+.part2#tutor .content .border-box > ol {
+    padding-left: 30px;
+}
+
+.part2#tutor .content .border-box li {
+    margin: 5px 0;
+}
+
+.part2#tutor #buttons {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.part2#tutor #buttons button {
+    padding: 10px 25px;
+    margin-left: 10px;
+}
+
+.part2#tutor .quiz.correct {
+    background-color: #adebad;
+}
+
+.part2#tutor .quiz.incorrect {
+    background-color: #ff9999;
+}
+
+.part2#tutor .quiz div {
+    margin: 0 !important;
+}
+
+.part2#tutor .quiz > label {
+    margin-bottom: 7px !important;
+    display: block;
+}
+
+.part2#tutor .quiz .choice {
+    display: flex;
+    align-items: center;
+}
+
+.part2#tutor .quiz .choice > input {
+    margin: 5px 10px 5px 0;
+}
+
+.part2#tutor .quiz .choice > label {
+    display: flex;
+    align-items: center;
+}
+
+.part2#tutor .quiz .choice > label > .mark {
+    margin-bottom: 2px !important;
+    margin-left: 5px !important;
+    /*padding-bottom: 3px;*/
+}

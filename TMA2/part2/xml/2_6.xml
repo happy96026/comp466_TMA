@@ -1,0 +1,31 @@
+<lesson>
+    <meta>
+        <course>COMP 466 - Advanced Technologies for Web-Based System</course>
+        <tutor>Min Soung Choi</tutor>
+        <unit>2</unit>
+        <order>6</order>
+        <type>topic</type>
+    </meta>
+    <name>Canvas in HTML5</name>
+    <content>
+        <point>The canvas elemetn provides a JavaScript API with methods for drawing two-dimensional bitmapped graphics and animations and etc.</point>
+        <point>By default, the upper-left corner of a canvas has the coordinates (0, 0).</point>
+        <point>The canvas element has two attributes - width and height.</point>
+        <point>A context object represents a 2D rendering surface that provides methods for drawing on a canvas.</point>
+        <point>fillRect method draws rectangle using the arguments x, y, width and height.</point>
+        <point>To draw lines and complex shapes in canvas, we use paths.</point>
+        <point>Arcs are portions of the circumference of a circle.</point>
+        <point>To draw an arc, you specify the arc's starting angle and ending angle measured in radians.</point>
+        <point>drawImage method is used to draw an image. An image must be stored in an Image object.</point>
+        <point>createpattern method can be used to create a pattern on the canvas.</point>
+        <point>Transformation can be applied to the canvas using translate, scale and rotate method.</point>
+        <point>fillText method can be used to create text on the canvas.</point>
+        <point>The globalAlpha attribute is used to change the transparency.</point>
+        <point>The canvas's state includes its current style and transformations, which are maintained in a stack.</point>
+        <point>The save method is used to save the context's current state.</point>
+        <point>The restore method restores the context to its previous state.</point>
+        <point>Most current browsers also support SVG (Scalable Vector Graphics), which offers a different approach to developing 2D graphics.</point>
+        <point>Vector graphics are made of scalable geometric primitives such as line segments and arcs.</point>
+    </content>
+</lesson>
+

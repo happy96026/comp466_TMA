@@ -1,0 +1,31 @@
+<lesson>
+    <meta>
+        <course>COMP 466 - Advanced Technologies for Web-Based System</course>
+        <tutor>Min Soung Choi</tutor>
+        <unit>1</unit>
+        <order>5</order>
+        <type>topic</type>
+    </meta>
+    <name>Introduction to Cascading Style Sheets (CSS): Part 1</name>
+    <content>
+        <point>Inline style: declare an individual element's format using the HTML5 attribute style.</point>
+        <point>color property sets text color.</point>
+        <point>Embedded style sheets: embed a CSS3 document in an HTML5 document's head section.</point>
+        <point>style element type attribute specifies the MIME type of the style sheet. Style sheets use text/css.</point>
+        <point>The style sheet's body declares the CSS rules for the style sheet.</point>
+        <point>CSS selectors are used to specify the elements that will be styled according to a rule.</point>
+        <point>Style-class declarations are preceded by a period (.).</point>
+        <point>font-size property specifies the size used to render the font.</point>
+        <point>Properties defined for child and descendant elements have a higher specificty than properties defined for parent and ancestor elements.</point>
+        <point>link element is used to reference an external style sheet from HTML5. The rel attribute declares the linked document to be a stylesheet for the document.</point>
+        <point>CSS position property allows absolute positioning, which provides greater control over where on a page elements reside.</point>
+        <point>The z-index property allows a developer to layer overlapping elements.</point>
+        <point>CSS can control the backgrounds of block-level elements by adding colors and images.</point>
+        <point>Dimensions of elements on a page can be set with CSS by using properties height and width.</point>
+        <point>CSS controls the border using three properties: border-width, border-color, and border-style.</point>
+        <point>Floating allows you to move an element to one side of the screen; other content in the document then flows around the floated element.</point>
+        <point>The margin property sets the space between the outside of an element's border and all other content on the page.</point>
+        <point>The padding property determines the distance between the content inside an element and the inside of the element's border.</point>
+        <point>Media queries allow you to format your content to specific output devices.</point>
+    </content>
+</lesson>
