@@ -2,14 +2,14 @@
     <meta>
         <course>COMP 466 - Advanced Technologies for Web-Based System</course>
         <tutor>Min Soung Choi</tutor>
-        <unit>2<unit>
+        <unit>2</unit>
         <order>7</order>
         <type>quiz</type>
     </meta>
     <name>Unit 2 Quiz</name>
     <content>
         <question-container>
-            <question>In HTML5, the default MIME type for a <script> is 'text/html', so you can omit the type attribute from your <script> tag.</question>
+            <question>In HTML5, the default MIME type for a &lt;script&gt; is 'text/html', so you can omit the type attribute from your &lt;script&gt; tag.</question>
             <choices>
                 <choice>True</choice>
                 <choice>False</choice>

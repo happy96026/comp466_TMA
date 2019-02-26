@@ -2,15 +2,15 @@
     <meta>
         <course>COMP 466 - Advanced Technologies for Web-Based System</course>
         <tutor>Min Soung Choi</tutor>
-        <unit>2<unit>
+        <unit>2</unit>
         <order>1</order>
         <type>topic</type>
     </meta>
     <name>Introduction to Scripting</name>
     <content>
-        <point>Often, JavaScript appear in the <head> section of the HTML5 document</point>
-        <point>The <script> tag indicates to the browser that the text that follows is part of a script.</point>
-        <point>In HTML5, the default MIME type for a <script> is 'text/html', so you can omit the type attribute from your <script> tags.</point>
+        <point>Often, JavaScript appear in the &lt;head&gt; section of the HTML5 document</point>
+        <point>The &lt;script&gt; tag indicates to the browser that the text that follows is part of a script.</point>
+        <point>In HTML5, the default MIME type for a &lt;script&gt; is 'text/html', so you can omit the type attribute from your &lt;script&gt; tags.</point>
         <point>String in JavaScript can be enclosedi n either double quotation marks (\") or single quotation marks (').</point>
         <point>The term object normally implies that attributes (data) and behaviours (methods) are associated with the object.</point>
         <point>The parentheses following the name of a method contain the arguments that the method requires to perform its task</point>

@@ -2,7 +2,7 @@
     <meta>
         <course>COMP 466 - Advanced Technologies for Web-Based System</course>
         <tutor>Min Soung Choi</tutor>
-        <unit>1<unit>
+        <unit>1</unit>
         <order>3</order>
         <type>topic</type>
     </meta>
@@ -10,7 +10,7 @@
     <content>
         <point>HTML5 (HyperText Markup Language 5) is a markup language that specifies the structure and content of documents that are displayed in web browsers.</point>
         <point>The document type declaration (DOCTYPE) is required in HTML5 documents so that browsers render the page in standards mode.</point>
-        <point>Comments start with <!-- and end with --></point>
+        <point>Comments start with &lt;!-- and end with --&gt;</point>
         <point>The head section contains information about the HTML5 document, such as the character set (UTF-8, the most popular character-encoding scheme for the web) that the page use.</point>
         <point>The head section also can contain special document-formatting instructions called CSS3 style sheets and client-side programs called scripts for creating dynamic web pages.</point>
         <point>The body section contains the page's content, which the browser displays when the user visits the web page.</point>
@@ -23,7 +23,7 @@
         <point>The most popular image formats used by web developers today are PNG (Portable Network Graphics) and JPEG (Joint Photographic Experts Group).</point>
         <point>The img element's src attribute specifies an image's location.</point>
         <point>HTML5 provides character entity references (in the form &code;) for representing special characters that cannot be rendered otherwise.</point>
-        <point>A horizontal rule, indicated by the <hr> tag renders a horizontal line with extra space above and below it in most browsers.</point>
+        <point>A horizontal rule, indicated by the &lt;hr&gt; tag renders a horizontal line with extra space above and below it in most browsers.</point>
         <point>Unordered list element ul creates a list in which each item in the list begins with a bullet symbol.</point>
         <point>Tables are frequently used to organize data into rows and columns.</point>
         <point>A table can be split into three distinc sections, head, body and table foot.</point>

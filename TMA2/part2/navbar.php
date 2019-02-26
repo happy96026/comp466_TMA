@@ -31,7 +31,7 @@ function getDropdown() {
 
 <nav class="border-box">
     <div>
-        <a href="/part2" id="banner">Learner 101</a>
+        <a href="/part2/" id="banner">Tutor 101</a>
     </div>
     <div>
         <?=getDropdown();?>

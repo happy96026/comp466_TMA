@@ -63,13 +63,14 @@ $aboutDiv = "
 
 $ulContent = getSyllabus($syllabus);
 $courseId = $_GET["id"];
+$firstLessonId = $syllabus[0]["lesson_id"];
 $username = $_SESSION["username"];
 
 $registration = new Registration($conn);
 $registered = $registration->userRegistered($username, $courseId);
 
 $registerContent = $registered ? "Go to course" : "Register";
-$registerButton = "<button id='register' class='button' name='id' value='$courseId'>$registerContent</button>";
+$registerButton = "<button id='register' class='button' name='id' value='$firstLessonId'>$registerContent</button>";
 
 $hidden = $registered ? "" : "none;";
 $withdrawButton = "<button style='display: $hidden;' class='button' id='withdraw' name='id' value='$courseId'>Withdraw</button>"

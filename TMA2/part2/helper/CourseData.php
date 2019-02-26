@@ -83,7 +83,7 @@ class CourseData {
         $conn = $this->conn;
         $query = "SELECT * FROM $lessonTable WHERE lesson_id = ?";
         $stmt = $conn->prepare($query);
-        $stmt->bind_param("i", $courseId);
+        $stmt->bind_param("i", $lessonId);
         $stmt->execute();
         $result = $stmt->get_result();
 

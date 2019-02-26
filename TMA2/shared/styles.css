@@ -60,6 +60,7 @@ nav {
     position: sticky;
     top: 0;
     background-color: white;
+    z-index: 1;
 }
 
 nav > div {
@@ -440,7 +441,14 @@ nav > div {
 .part2#tutor nav {
     position: fixed;
     width: calc(100vw - 30px);
-    /*box-sizing: border-box;*/
+}
+
+.part2#tutor nav .dropdown-content > li {
+    border-width: 0 1px 1px 1px;
+}
+
+.part2#tutor nav .dropdown-content > li:last-of-type {
+    border-bottom: 0;
 }
 
 .part2#tutor aside {
@@ -463,6 +471,9 @@ nav > div {
 .part2#tutor aside .button {
     border-style: none;
     margin: 5px 0;
+    text-align: left;
+    display: flex;
+    width: 100%;
 }
 
 .part2#tutor .unit {
@@ -517,8 +528,8 @@ nav > div {
     position: relative;
     top: 61px;
     left: 251px;
-    margin: 30px 100px;
-    width: 60vw;
+    margin: 30px 130px;
+    /*width: 60vw;*/
 }
 
 .part2#tutor .content .border-box {
@@ -561,6 +572,14 @@ nav > div {
     margin-left: 10px;
 }
 
+.part2#tutor .quiz.correct {
+    background-color: #adebad;
+}
+
+.part2#tutor .quiz.incorrect {
+    background-color: #ff9999;
+}
+
 .part2#tutor .quiz div {
     margin: 0 !important;
 }
@@ -577,4 +596,15 @@ nav > div {
 
 .part2#tutor .quiz .choice > input {
     margin: 5px 10px 5px 0;
+}
+
+.part2#tutor .quiz .choice > label {
+    display: flex;
+    align-items: center;
+}
+
+.part2#tutor .quiz .choice > label > .mark {
+    margin-bottom: 2px !important;
+    margin-left: 5px !important;
+    /*padding-bottom: 3px;*/
 }
