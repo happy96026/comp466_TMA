@@ -9,7 +9,6 @@
 
     <body>
         <div class="wrapper main-page">
-            <div class="header"><div class="title">COMP 466 Assignment 2</div></div>
             <div class="content">
                 <div class="category">
                     <h1>General Information</h1>
@@ -17,53 +16,410 @@
                     <p><b>Assignment #2</b></p>
                     <p><b>Name:</b> Min Soung Choi</p>
                     <p><b>Student ID:</b> 3369465</p>
-                    <p><b>Date Started:</b> February 21, 2019</p>
-                    <p><b>Date Completed:</b> February 21, 2019</p>
-                    <p><b>Time Spent:</b> 40 hours</p>
-                    <h2>Setup and Running</h2>
-                    <p></p>
+                    <p><b>Date Started:</b> February 1, 2019</p>
+                    <p><b>Date Completed:</b> February 15, 2019</p>
+                    <p><b>Time Spent:</b> 32 hours</p>
+                    <h2>Instructions on accessing website</h2>
+                    <p>
+                        The url for the main page is
+                        <a href="minsoungchoi.com:7000/tma2.htm">minsoungchoi.com:7000/tma2.htm</a>.
+                        Contact Min Soung Choi through m.choi960@gmail.com if the website is down.
+                    </p>
                 </div>
                 <div class="category">
                     <h1>Part 1</h1>
                     <h2>Original Description</h2>
-                    <p></p>
+                    <p>
+                        For this project, you will be using MySQL and PHP to develop a web
+                        application that provides an online bookmarking service to users on the
+                        Internet. The requirements are as follows:
+                    </p>
+                    <ul>
+                        <li>
+                            The web application should have a good thoughtful interface, with menus
+                            and navigation buttons as needed.
+                        </li>
+                        <li>It should have a name or logo shown across all the pages.</li>
+                        <li>
+                            It should begin with a welcome or greeting message and a list of ten
+                            most popular websites that people have bookmarked.
+                        </li>
+                        <li>
+                            Once signed in, a list of bookmarks should be displayed, and the user
+                            can browse any web site in the list in a new browser tab or window by
+                            clicking the URL.
+                        </li>
+                        <li>
+                            The user will also be able to add new websites to the list and edit and
+                            delete any of the existing ones in the list;
+                        </li>
+                        <li>
+                            When adding or editing, user input needs to be validated using
+                            JavaScript, to make sure the URLs are correct and active.
+                        </li>
+                    </ul>
+                    <p>Save Part 1 files in the directory TMA2/part1.</p>
                     <h2>Interpretation of the Part</h2>
-                    <p></p>
+                    <p>
+                        Design a bookmarking application that allows users to create, save, edit and
+                        delete bookmarks for future references. In the main page, users are able to
+                        see the top 10 URLs that are the most popular.
+                    </p>
                     <h2>Analysis and Design</h2>
-                    <p></p>
+                    <p>
+                        The website is split up into 3 components which are front-end, back-end that
+                        deals with authentication, redirects and etc. and the database component
+                        which is part of the Database class.
+                    </p>
+                    <p>
+                        The front-end php files are located in /part1 where it consists of 8 files.
+                    </p>
+                    <p>
+                        The server consists of files that receives post request and redirects the
+                        user or validates any sensitive information. It is located at /part1/server.
+                    </p>
+                    <p>
+                        The database file is located in /part1/classes. Responsible for handling all
+                        the queries with the database. The actual database consists of two tables
+                        named authentication and bookmark. The authentication table has the columns
+                        id, username and password. The bookmark table has the columns username, name
+                        which represents the name of the bookmark and url.
+                    </p>
+                    <p>
+                        There are also javascript files that asynchronously checks if user inputs
+                        are valid.
+                    </p>
                     <h2>Documentation</h2>
+                    <p>For client-side</p>
+                    <ul>
+                        <li>add.php: Page to add bookmarks. Only available to registered users.</li>
+                        <li>
+                            edit.php: Page to edit bookmarks. Only available to registerd users.
+                        </li>
+                        <li>
+                            index.php: The main page. Displays top 10 most popular bookmarks. Click
+                            on the link to visit.
+                        </li>
+                        <li>login.php: Page where users can login.</li>
+                        <li>
+                            logout.php: Not a page actually but a redirect that allows users to
+                            logout and get redirected to the main page.
+                        </li>
+                        <li>
+                            navbar.php: This file is imported from other pages so that it can
+                            dynamically create the navigation bar.
+                        </li>
+                        <li>
+                            signup.php: Page where users can sign up. Note that password is not
+                            salted and is stored as plaintext.
+                        </li>
+                        <li>
+                            your_bookmarks.php: Registered users can see a list of their bookmarks
+                            at this page.
+                        </li>
+                    </ul>
+                    <p>For server-side</p>
+                    <ul>
+                        <li>
+                            add_server.php: Adds bookmark with name and url to the database if url
+                            is valid and alive.
+                        </li>
+                        <li>
+                            check_user.php: Checks if username exists in the database. Requested by
+                            AJAX calls and thus, echos true or false.
+                        </li>
+                        <li>delete_server.php: Deletes an user's bookmark from the database.</li>
+                        <li>
+                            edit_server.php: Edits the name and the url of a user's bookmark from
+                            the database.
+                        </li>
+                        <li>
+                            login_server.php: Authenticates the user by checking if password matches
+                            with the on e that is in ther database. Redirects to your_bookmarks page
+                            when user is authenticated.
+                        </li>
+                        <li>
+                            signup_server.php: Creates a user with a password in the database. Only
+                            occurs when username does not exists in the database.
+                        </li>
+                        <li>
+                            valid_url.php: Checks if URL is valid and alive. Requested by AJAX calls
+                            and thus, echos true or false.
+                        </li>
+                    </ul>
+                    <p>database.php</p>
+                    <ul>
+                        <li>getDatabase():</li>
+                        <li>
+                            selectDB(): Checks if username exists in the database. Requested by AJAX
+                            calls and thus, echos true or false.
+                        </li>
+                        <li>close(): Deletes an user's bookmark from the database.</li>
+                        <li>
+                            initialize(): Edits the name and the url of a user's bookmark from the
+                            database.
+                        </li>
+                        <li>
+                            authUser($username, $password): Authenticates the user by checking if
+                            username exists and password matches the password linked to username
+                            that is in database.
+                        </li>
+                        <li>
+                            userExists($username, $password): Checks if username exists in the
+                            database.
+                        </li>
+                        <li>addUser($username): Insert the username in the database.</li>
+                        <li>
+                            getBookmark($username, $id): Get bookmark linked to username and id.
+                        </li>
+                        <li>getBookmarks($username): Get all bookmarks linked to the username.</li>
+                        <li>
+                            addBookmark($username, $name, $url): Inserts bookmark to the database.
+                        </li>
+                        <li>deleteBookmark($username, $id): Deletes bookmark from the database.</li>
+                        <li>
+                            updateBookmark($id, $name, $url): Updates the name and the url linked to
+                            the user.
+                        </li>
+                        <li>
+                            getTop10(): Get top 10 URLs by counting the number of occcurences of the
+                            URL.
+                        </li>
+                    </ul>
                     <h2>Hyperlink</h2>
-                    <a href="part1/resume.xml">link</a>
+                    <a href="part1/">link</a>
                 </div>
                 <div class="category">
                     <h1>Part 2</h1>
                     <h2>Original Description</h2>
-                    <p></p>
+                    <p>
+                        In this part of the assignment, you are required to develop a small-scale
+                        online learning management system that can be used to deliver online courses
+                        to learners.
+                    </p>
+                    <p>
+                        To that end, you will have to think about what these online courses are, how
+                        they can they be developed and how they should be stored on the web server,
+                        how they can be retrieved from the server, how they should be delivered to a
+                        web browser, and then rendered/presented properly on the web browser.
+                    </p>
+                    <p>
+                        To that end, you will have to think about what these online courses are, how
+                        they can they be developed and how they should be stored on the web server,
+                        how they can be retrieved from the server, how they should be delivered to a
+                        web browser, and then rendered/presented properly on the web browser.
+                    </p>
+                    <p>
+                        To that end, you will have to think about what these online courses are, how
+                        they can they be developed and how they should be stored on the web server,
+                        how they can be retrieved from the server, how they should be delivered to a
+                        web browser, and then rendered/presented properly on the web browser.
+                    </p>
+                    <p>
+                        To deliver the course contents (lessons and quizzes in our context), you
+                        will need to navigate through the database to find the right lesson or quiz
+                        that the learner has requested, and them retrieve the actual content in EML.
+                        For the content to be properly rendered or presented on learner's browser,
+                        you need to translate the content in your EML to HTML. We call this process
+                        parsing. Instead of using XSLT as you did for the first assignment, parsing
+                        EML to HTML needs to be done with PHP. So, the last important technical step
+                        for this project is to write a parser in PHP.
+                    </p>
+                    <p>
+                        When doing this project, or any project for the assignments, you must take a
+                        system approach. That's why students are expected to have completed comp361
+                        or a similar course on system analysis and design before taking this course.
+                    </p>
+                    <p>The distribution of marks is as follows:</p>
+                    <ul>
+                        <li>
+                            System analysis and design – 10 marks.<br />
+                            Your analysis and design need to be presented in the assignment report.
+                            The details should include, but not be limited to, analysis of
+                            requirements, data flow, functional modules of learning management, the
+                            relationships of these modules, and system layout within browser’s
+                            window.
+                        </li>
+                        <li>
+                            Educational Markup language - 10 marks.<br />
+                            Your educational markup language should be presented in the assignment
+                            report by showing all the tags and explanation of their intended purpose
+                            with examples.
+                        </li>
+                        <li>
+                            Database design - 10 marks.<br />
+                            Database is used to store information about courses, units, lessons,
+                            quizzes, learners, and other learning object such as images, audio and
+                            video files, as well as actual learning contents written in your
+                            educational markup language. When designing database tables, you have to
+                            think about how that information and those actual data will be kept on
+                            the server.
+                        </li>
+                        <li>
+                            Parser - 10 marks. <br />On the server side, the parser written in PHP
+                            parses the learning contents written in your EML taken from database
+                            into HTML documents that can be rendered by web browsers. Don’t be
+                            afraid of writing a parser for this purpose! It can be as simple as
+                            using some PHP regular expression functions to do pattern matching and
+                            string replacement.
+                        </li>
+                        <li>
+                            Learning Contents - 10 marks.<br />
+                            Since you have written three tutorials or lessons for part 2 of your
+                            first assignment, you may take the contents from there, and rewrite them
+                            in your EML. You must have enough contents in your system, to make it a
+                            real web-based system.
+                        </li>
+                        <li>
+                            Quizzes - 10 marks <br />there should be an online quiz for each
+                            teaching lesson.
+                        </li>
+                        <li>
+                            Implementation - 10 marks.<br />
+                            The system should be implemented and deployed on a web server, and
+                            accessible for your tutor to evaluate. The implementation includes the
+                            overall look-and-feel of the learning management system, essential
+                            components of such a web-based system, and the functionalities of online
+                            learning management.
+                        </li>
+                    </ul>
+                    <p>Save all files related to Part 2 in the directory TMA2/part2.</p>
+                    <p>
+                        You must test your web applications developed for the assignment on your own
+                        server before you submit them and make the websites hosting the assignments
+                        and applications accessible for your tutor to evaluate. For your personal
+                        protection you should not put your student ID in any of the documents if
+                        hosted on an unprotected web site. After your tutor has finished the
+                        evaluation, you must remove all the assignment-related documents from the
+                        web site.
+                    </p>
+                    <p>You must submit all the files under TMA2 in a zip package through Moodle.</p>
                     <h2>Interpretation of the Part</h2>
-                    <p></p>
+                    <p>
+                        Develop a Learning Management System that deliver online courses to
+                        learners. It should be implemented such that subject matter experts (SMEs)
+                        can deliver the contents of the courses using EML because it provides a
+                        common method of delivering the content of a course as well as not all SMEs
+                        tech-savy. The contents then should be stored in a database such that the
+                        contents are retrievable. There also should be a parser that parses the
+                        contents of the lessons so that the content is accesible and rendered by the
+                        browser.
+                    </p>
                     <h2>Analysis and Design</h2>
-                    <p></p>
+                    <p>System analysis and design</p>
+                    <p>
+                        There are five modules that are used in this application which are
+                        Authentication, CourseData, Registration, Parser and Builder.
+                    </p>
+                    <ul>
+                        <li>
+                            Authentication: Responsible for authenticating users if user has
+                            inputted the correct password.
+                        </li>
+                        <li>
+                            CourseData: Reponsible for accessing course data and lessons data from
+                            the database.
+                        </li>
+                        <li>
+                            Registration: Responsible for registering users to a course that a user
+                            wants to enroll in.
+                        </li>
+                        <li>
+                            Parser: Responsible for parsing the contents of the EML and translating
+                            it to a JSON format data so that the content is accesible by the system.
+                        </li>
+                        <li>
+                            Builder: Responsible for building an HTML data from the JSON data
+                            returned by the parser so that it can be renderd by the browser.
+                        </li>
+                    </ul>
+                    <p>Educational Markup language</p>
+                    <p>
+                        EML always starts out with the lesson tag. Inside lesson, the following tags
+                        are contained:
+                    </p>
+                    <ul>
+                        <li>
+                            meta: Contains meta information such as
+                            <ul>
+                                <li>course: Name of the course</li>
+                                <li>tutor: Name of the tutor teaching the course</li>
+                                <li>unit: Unit number of the lesson</li>
+                                <li>order: Order number of the lesson. Sub number of unit.</li>
+                                <li>type: Type of lesson. Can be unit, topic or quiz.</li>
+                            </ul>
+                        </li>
+                        <li>name: Name of the lesson</li>
+                        <li>
+                            content: Can contain point or para.
+                            <ul>
+                                <li>point: Used to represent a bullet point.</li>
+                                <li>para: Used to represent a paragraph.</li>
+                            </ul>
+                        </li>
+                    </ul>
+                    <p>Database design</p>
+                    <p>
+                        Database consists of four tables, Authentication, Course, Lesson and
+                        Registration.
+                    </p>
+                    <ul>
+                        <li>
+                            Authentication: Contains columns username and password. Username is
+                            primary key and thus, must be unique.
+                        </li>
+                        <li>
+                            Course: Contains columns course_id, name, tutor, category and
+                            description. course_id is the primary key and thus, must be unique.
+                        </li>
+                        <li>
+                            Lesson: Contains columns lesson_id, course_id, unit_id and order_id.
+                            lesson_id is primary key and must be unique. course_id is used to
+                            reference a course from Course table. unit_id is the unit number of the
+                            lesson and order_id is the order number of the lesson which is local the
+                            unit_id. order_id of 0 means that the lesson represents a unit node
+                            which can represent a page that gives a introduction about the unit that
+                            is to be started.
+                        </li>
+                        <li>
+                            Registration: Contains columns username and course_id. This table is
+                            used to check which username is registered in which courses. username
+                            references username from Authentication table and course_id references
+                            course_id from Course table.
+                        </li>
+                    </ul>
+                    <p>Parser</p>
+                    <p>Parser returns an associative array that has a same structure to the EML.</p>
                     <h2>Documentation</h2>
-                    <p><b>notes.js</b></p>
-                    <ol>
-                        <li>
-                            <b>ready(function()): </b>Finds the section to be loaded by reading the
-                            corresponding section number from the GET parameter and loads it.
-                        </li>
-                        <li>
-                            <b>createSection(section, sectionName): </b>section is an element from
-                            sections of noteN.json. sectionName is a string that represents the name
-                            of the section that is being created. The function returns a div element
-                            that corresponds to input section .
-                        </li>
-                        <li>
-                            <b>loadSection(section): </b>section is an element from sections of
-                            noteN.json. The function uses createSection to create a section div and
-                            appends it to the content div.
-                        </li>
-                    </ol>
+                    <p>ajax_interface.php: Receive POST request from AJAX for input validation.</p>
+                    <p>
+                        authenticate.php: Used to receive POST request with username and password.
+                        Checks if username and password is valid and redirects user to courses.php
+                        if users are coming from the main page. If users are coming from
+                        courses_info.php, users are redirected to that page.
+                    </p>
+                    <p>
+                        logout.php: Responsible for logging out the user. Redirects to index.php
+                        after.
+                    </p>
+                    <p>
+                        register_redirect.php: Responsible for registering a course for a user and
+                        putting the relevant data into the database. If registration succeeds, user
+                        is redirected to tutor.php.
+                    </p>
+                    <p>
+                        signup_user.php: Responsible for signing up users to the application. Note
+                        that password is not salted which is a huge security vulnerability in the
+                        system. Users are redirected to my_courses.php to see a list of courses the
+                        users are registerd in or redirected to course_info.php if user is coming
+                        from that page.
+                    </p>
+                    <p>
+                        withdraw_redirect.php: Withdraws a course for the user. Redirects the
+                        index.php
+                    </p>
                     <h2>Hyperlink</h2>
-                    <a href="part1/resume.xml">link</a>
+                    <a href="part2">link</a>
                 </div>
             </div>
         </div>
