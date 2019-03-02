@@ -1,4 +1,4 @@
-﻿<%@ Page Title="" Language="C#" MasterPageFile="~/part1/Site1.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="TMA3.part1.WebForm1" %>
+﻿<%@ Page Title="Tracker" Language="C#" MasterPageFile="~/part1/Layout.Master" AutoEventWireup="true" CodeBehind="Default.aspx.cs" Inherits="TMA3.part1.Default" %>
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -12,4 +12,6 @@
         Time Zone:
         <asp:Label ID="TimeZone" runat="server" Text=""></asp:Label>
     </div>
+    <asp:GridView ID="GridView1" runat="server" OnSelectedIndexChanged="GridView1_SelectedIndexChanged">
+    </asp:GridView>
 </asp:Content>

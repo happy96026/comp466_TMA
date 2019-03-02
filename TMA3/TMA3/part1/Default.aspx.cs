@@ -10,7 +10,7 @@ using Newtonsoft.Json;
 
 namespace TMA3.part1
 {
-    public partial class WebForm1 : System.Web.UI.Page
+    public partial class Default : System.Web.UI.Page
     {
         protected void Page_Load(object sender, EventArgs e)
         {
@@ -28,6 +28,11 @@ namespace TMA3.part1
             var responseString = new StreamReader(response.GetResponseStream()).ReadToEnd();
             dynamic json = JsonConvert.DeserializeObject(responseString);
             TimeZone.Text = json.timezone;
+        }
+
+        protected void GridView1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

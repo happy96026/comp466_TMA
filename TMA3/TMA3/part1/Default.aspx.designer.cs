@@ -10,7 +10,7 @@
 namespace TMA3.part1 {
     
     
-    public partial class WebForm1 {
+    public partial class Default {
         
         /// <summary>
         /// Hits control.
@@ -38,5 +38,14 @@ namespace TMA3.part1 {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label TimeZone;
+        
+        /// <summary>
+        /// GridView1 control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.GridView GridView1;
     }
 }
