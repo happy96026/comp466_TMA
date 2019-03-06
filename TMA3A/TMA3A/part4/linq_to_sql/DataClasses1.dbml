@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="database" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="WebSettings" ConnectionString="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database.mdf;Integrated Security=True;Connect Timeout=30" SettingsObjectName="System.Configuration.ConfigurationManager.ConnectionStrings" SettingsPropertyName="databaseConnectionString1" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Auth" Member="Auths">
+    <Type Name="Auth">
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Username" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Password" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Column Name="Email" Type="System.String" DbType="VarChar(MAX) NOT NULL" CanBeNull="false" />
+      <Association Name="Auth_Order" Member="Orders" ThisKey="UserID" OtherKey="UserID" Type="Order" />
+    </Type>
+  </Table>
+  <Table Name="dbo.ComputerParts" Member="ComputerParts">
+    <Type Name="ComputerPart">
+      <Column Name="ComputerID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="PartID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Standard" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="Computer_ComputerPart" Member="Computer" ThisKey="ComputerID" OtherKey="ComputerID" Type="Computer" IsForeignKey="true" />
+      <Association Name="Part_ComputerPart" Member="Part" ThisKey="PartID" OtherKey="PartID" Type="Part" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Computers" Member="Computers">
+    <Type Name="Computer">
+      <Column Name="ComputerID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Brand" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="ImagePath" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="About" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="AddCost" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Label" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="Computer_ComputerPart" Member="ComputerParts" ThisKey="ComputerID" OtherKey="ComputerID" Type="ComputerPart" />
+      <Association Name="Computer_OrderList" Member="OrderLists" ThisKey="ComputerID" OtherKey="ComputerID" Type="OrderList" />
+    </Type>
+  </Table>
+  <Table Name="dbo.OrderList" Member="OrderLists">
+    <Type Name="OrderList">
+      <Column Name="OrderID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="ComputerID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="CpuID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="RamID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="HdID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="DisplayID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="OsID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Price" Type="System.Double" DbType="Float NOT NULL" CanBeNull="false" />
+      <Association Name="Computer_OrderList" Member="Computer" ThisKey="ComputerID" OtherKey="ComputerID" Type="Computer" IsForeignKey="true" />
+      <Association Name="Order_OrderList" Member="Order" ThisKey="OrderID" OtherKey="OrderID" Type="Order" IsForeignKey="true" />
+      <Association Name="Part_OrderList" Member="Part" ThisKey="CpuID" OtherKey="PartID" Type="Part" IsForeignKey="true" />
+      <Association Name="Part_OrderList1" Member="Part1" ThisKey="DisplayID" OtherKey="PartID" Type="Part" IsForeignKey="true" />
+      <Association Name="Part_OrderList2" Member="Part2" ThisKey="HdID" OtherKey="PartID" Type="Part" IsForeignKey="true" />
+      <Association Name="Part_OrderList3" Member="Part3" ThisKey="OsID" OtherKey="PartID" Type="Part" IsForeignKey="true" />
+      <Association Name="Part_OrderList4" Member="Part4" ThisKey="RamID" OtherKey="PartID" Type="Part" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Orders" Member="Orders">
+    <Type Name="Order">
+      <Column Name="OrderID" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="UserID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Date" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Association Name="Order_OrderList" Member="OrderLists" ThisKey="OrderID" OtherKey="OrderID" Type="OrderList" />
+      <Association Name="Auth_Order" Member="Auth" ThisKey="UserID" OtherKey="UserID" Type="Auth" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Parts" Member="Parts">
+    <Type Name="Part">
+      <Column Name="PartID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Name" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Price" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="Brand" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Column Name="Type" Type="System.String" DbType="VarChar(MAX)" CanBeNull="true" />
+      <Association Name="Part_ComputerPart" Member="ComputerParts" ThisKey="PartID" OtherKey="PartID" Type="ComputerPart" />
+      <Association Name="Part_OrderList" Member="OrderLists" ThisKey="PartID" OtherKey="CpuID" Type="OrderList" />
+      <Association Name="Part_OrderList1" Member="OrderLists1" ThisKey="PartID" OtherKey="DisplayID" Type="OrderList" />
+      <Association Name="Part_OrderList2" Member="OrderLists2" ThisKey="PartID" OtherKey="HdID" Type="OrderList" />
+      <Association Name="Part_OrderList3" Member="OrderLists3" ThisKey="PartID" OtherKey="OsID" Type="OrderList" />
+      <Association Name="Part_OrderList4" Member="OrderLists4" ThisKey="PartID" OtherKey="RamID" Type="OrderList" />
+    </Type>
+  </Table>
+</Database>

@@ -1,0 +1,28 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Layout.Master.cs" Inherits="TMA3.part2.Layout" %>
+
+<!DOCTYPE html>
+
+<html>
+<head runat="server">
+    <title></title>
+    <link href="~/shared/styles.css" rel="stylesheet"/>
+    <link href="~/part2/part2.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto"/>
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+</head>
+<body>
+    <nav class="border-box">
+         <div>
+            <a href="." id="banner">Slideshow</a>
+        </div>
+    </nav>
+    <form id="form1" runat="server">
+        <asp:ScriptManager EnablePartialRendering="true" ID="ScriptManager1" runat="server"></asp:ScriptManager>
+        <div class="content">
+            <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+            </asp:ContentPlaceHolder>
+        </div>
+    </form>
+</body>
+</html>
