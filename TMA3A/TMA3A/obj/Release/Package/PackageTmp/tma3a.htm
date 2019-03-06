@@ -1,0 +1,323 @@
+﻿<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <title>COMP 466 Assignment 3</title>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto" />
+        <link rel="stylesheet" type="text/css" href="../shared/styles.css" />
+    </head>
+
+    <body>
+        <div class="wrapper main-page">
+            <div class="content">
+                <div class="category">
+                    <h1>General Information</h1>
+                    <p><b> COMP 466: Advanced Technologies for Web-Based Systems </b></p>
+                    <p><b>Assignment #3</b></p>
+                    <p><b>Name:</b> Min Soung Choi</p>
+                    <p><b>Student ID:</b> 3369465</p>
+                    <p><b>Date Started:</b> February 28, 2019</p>
+                    <p><b>Date Completed:</b> March 5, 2019</p>
+                    <p><b>Time Spent:</b> 30 hours</p>
+                    <h2>Instructions on accessing website</h2>
+                    <p>
+                        The url for the main page is
+                        <a href="minsoungchoi.com:7000/tma3a.htm">minsoungchoi.com:7000/tma3a.htm</a>.
+                        Contact Min Soung Choi through m.choi960@gmail.com if the website is down.
+                    </p>
+                </div>
+                <div class="category">
+                    <h1>Part 1</h1>
+                    <h2>Original Description</h2>
+                    <p>
+						Create a web application with ASP.NET in C# that uses a persistent cookie to track 
+						how many times a client computer has visited the page. In addition to the number of hits, 
+						the application also needs to display the IP address of the client computer and the time 
+						zone where the client computer is located.
+                    </p>
+                    <h2>Interpretation of the Part</h2>
+                    <p>
+						Design a web application that can track the number of times a user has visited
+						using the page using cookies. IP address and the time zone of where the client computer
+						is located should be displayed.
+                    </p>
+                    <h2>Analysis and Design</h2>
+                    <p>
+						Everytime the page loads, increment the number of hits by 1 and store it in a cookie
+						or session variable. IP address can be obtained from the request header. For obtaining
+						the time zone, web service from http://ip-api.com was used.
+                    </p>
+                    <h2>Hyperlink</h2>
+                    <a href="part1/">link</a>
+                </div>
+                <div class="category">
+                    <h1>Part 2</h1>
+                    <h2>Original Description</h2>
+                    <p>
+						Develop a web application using ASP.NET in C# that runs a slideshow of a list of pictures. The requirements are as follows:
+                    </p>
+					<ol>
+						<li>
+							Information about the pictures must be stored on the server either in a database 
+							or in a text file. These details would include the name and location or URL of each picture 
+							and a description of the picture to be used as a caption, which must be stored in a plain text 
+							file or a database.
+						</li>
+						<li>
+							The caption should be shown under each picture in the show.
+						</li>
+						<li>
+							There should be a button to start/stop the show.
+						</li>
+						<li>
+							There should be a control to toggle the show between random and sequential.
+						</li>
+						<li>
+							There should be buttons to manually turn the show backward or forward, only if the show is in sequential mode.
+						</li>
+						<li>
+							You may reuse the pictures you have used for assignment 1.
+						</li>
+						<li>
+							The show should have at least 20 nice pictures.
+						</li>
+					</ol>
+                    <p>
+						All files for this project should be stored under directory TMA3A/part2
+                    </p>
+                    <h2>Interpretation of the Part</h2>
+                    <p>
+						Similar to TMA1 part 3, create a web application that can play a list of pictures like a slideshow.
+						Users should be able to start/stop the show, play in a sequential/random order. Each image
+						should have a caption that describes the image.
+                    </p>
+                    <h2>Analysis and Design</h2>
+                    <p>
+						Images are stored in the img/ directory using a JSON file. The JSON file contains an array of
+						objects that describes the path of the image and the caption. Whenever a button is pressed
+						to request the resource of image, the JSON file is read using Newtonsoft.Json module. The 
+						image url of the image object of the view is then changed to the the path of the file that
+						is currently being requested. Then, the image should be updated asynchrnously by enabling
+						partial update using an UpdatePanel.
+                    </p>
+					<p>
+                        There are four buttons and one dropdown for choosing the different
+                        transition. The buttons are Random/Sequential, Stop/Play, Prev and Next.
+                        When the application is in Random mode (button should display Sequential),
+                        Prev and Next buttons are not displayed. The Prev and Next button allows to
+                        transition to the next image.
+                    </p>
+                    <a href="part2">link</a>
+                </div>
+				 <div class="category">
+                    <h1>Part 3</h1>
+                    <h2>Original Description</h2>
+                    <p>
+						In parts 3 and 4 of this assignment, you will be developing an online computer store in which customers can select a computer from a list and customize it by replacing some components in its standard configuration with others that may be better or cheaper. Customers can then place an order with the online store.
+                    </p>
+                    <p>
+						In this part, your focus should be on the web interface design and implementation of the online store, using ASP.NET in C# as server-side language and other web technologies you have learned from Units 1–4. The requirements are as follows:
+                    </p>
+                    <ol>
+                        <li>
+							Visit some online stores such as Bestbuy.CA and Amazon.CA, study their designs and functionalities, and write your findings in the assignment report.
+                        </li>
+                        <li>
+							Based on your study above, analyze the requirements of the web application you are to develop and then work out a design of the web application, including drawings of the interface, name and functions of each modules you will need, and web pages/documents to be used.
+                        </li>
+                        <li>
+							The application running in a web browser should be like a real online store, with a name and logo, menus and buttons for navigation, a welcome page to greet customers, and other pages, such as contacts and a feedback form, and so on.
+                        </li>
+                        <li>
+							There should be a list of computers, lists of different parts or components (no less than five different components including at least RAM, hard drive, CPU, display, OS, and soundcard) of computers that can be reviewed by customers. At this stage, the information about these products can be hard-coded into the HTML or program files.
+                        </li>
+                        <li>
+							A customer can select a computer with default/standard configuration and pricing, and then customize it by changing its configuration, that is, by replacing one component with another from a list of compatible components.
+                        </li>
+                        <li>
+							Whenever a change has been made by the customer, the price total needs to be dynamically changed and displayed to the customer, in an area embedded in the online store, not in a pop-up window.
+                        </li>
+                        <li>
+							After the customer has hit the Buy or Add to Cart or something similar, a summary of selections, including all the details of the customized computer and its pricing, should be displayed in the browser window.
+                        </li>
+						<li>
+							At this stage, you don’t need to save orders placed by customers in the database. You can use Cookies to store and track customer selections.
+						</li>
+						<li>
+							All links, menus, and buttons within the online store should be active.
+						</li>
+                    </ol>
+					<p>All files for this project should be stored under directory TMA3A/part3</p>
+                    <h2>Interpretation of the Part</h2>
+                    <p>
+						Develop a web application that provided users with computer e-commerce service. When
+						users are trying to purchase a computer, they should be displayed with computers
+						that are in the standard configuration. However, the users should be able to
+						ultimately choose the parts that they want to purchase from the five components
+						such as CPU, RAM, hard drive, display and soundcard. Whenever the components
+						are changed, the price of the computer should change dynamically without having to
+						reload the page. After the user has decided to purchase a computer, user should be able
+						to hit the Add to Cart button and they should be redirected to a summary page of 
+						the items in the cart. Since the database is not alive, all values should be
+						hardcoded.
+                    </p>
+                    <h2>Analysis and Design</h2>
+                    <p>
+						There are three model classes that are used to represent the application.
+                    </p>
+                    <ul>
+                        <li>
+							Parts: Used to represent the component of a computer. The part contains
+							information such as name, id, brand, price and type. Each part has a
+							type which can be CPU, RAM, hard drive, display and os.
+                        </li>
+                        <li>
+							Computer: Used to represent a computer in an order. It contains information
+							such as name, id, brand, quantity, price, type such as laptop, desktop, label such as
+							home, gaming and business. Computer class also contains reference to the
+							parts by storing the partIDs of each component.
+                        </li>
+                        <li>
+							Cart: Used to represent a cart. It is a dictionary that has the mapping from
+							string to int where key is a representation of a computer represented
+							as 'comp_id,cpu_id,ram_id,hd_id,display_id,os_id' and value represents the number of
+							quantity of the corresponding computer. This kind of representation is required
+							in order serialize and store the info into a cookie.
+                        </li>
+                    </ul>
+                    <h2>Documentation</h2>
+                    <p>
+                        Category.aspx: Prompts users to select from laptops and desktops.
+                    </p>
+                    <p>
+                        Default.aspx: Default page. Should display recently added items but has
+						not been implemented.
+                    </p>
+                    <p>
+                        MyCart.aspx: Responsible for handling the items that have been added
+						to cart. Users have the choice to change the quantity of the items or
+						delete the items from the cart. The price is dynamically updated whenever
+						a quantity or an item is updated. Note that the quantity can only go up to 5.
+                    </p>
+                    <p>
+                        Product.aspx: Users are able to see the default configuration of a computers
+						as well as they are able to pick and choose the components that they want.
+						Quantity can also be changed. Note that there are only 5 components that the
+						user can pick from which are CPU, RAM, hard drive, display and operating system.
+                    </p>
+                    <p>
+                        ProductList.aspx: Users are able to see a list products that are in the category
+						that the user has selected. Users are also able to filter computers based on
+						the criteria of brand and label of the computer.
+                    </p>
+                    <h2>Hyperlink</h2>
+                    <a href="part3">link</a>
+                </div>
+				<div class="category">
+                    <h1>Part 4</h1>
+                    <h2>Original Description</h2>
+                    <p>
+						In part 4 of the assignment, you will continue your work completed in part 3, to develop a fully functioning online computer store (without payment transaction, though). Your tasks for this part are:
+                    </p>
+                    <ol>
+                        <li>
+							Add a customer management module to the online computer store, which should include new customer registration, customer authentication, and password recovery.
+                        </li>
+                        <li>
+							Add an order management module which will save orders for registered customers and allow registered customers to manage their orders, including view the list and details of each item in the list and delete or make changes to a selected order in the list.
+                        </li>
+                        <li>
+                            Design and implement a back-end database to support your online computer store that does the following.
+							<ul>
+								<li>
+									Store all the details of the computers and components and replace all the data hard-coded into the program files with data from the database.
+								</li>
+								<li>
+									Use the database for all your customer management.
+								</li>
+								<li>
+									Use the database for all your order management. When an order is submitted, the details of the order, including pricing, need to be saved in the database, and then displayed in an appropriate format to the customer.
+								</li>
+							</ul>
+						</li>
+                    </ol>
+					<p>All files for this project should be stored under directory TMA3A/part4</p>
+                    <h2>Interpretation of the Part</h2>
+                    <p>
+						Since all data in part 3 was hard-coded, in part4, implement an application
+						using a database that stores all the details of the computers and compoments,
+						customer information as well as order information. Additionally, implement two
+						extra modules. First ons is customer management module that deals with customer 
+						registration, authentication and password recovery. Second one is order
+						management module which saves orders for registered customers and allows them
+						to manage by viewing the list and details of the order.
+                    </p>
+                    <h2>Analysis and Design</h2>
+                    <p>
+						There are three parts to this part but only two have been completed which are
+						Database implementation and customer management module. Order management module
+						was not completed.
+                    </p>
+                    <p>Database Design</p>
+                    <p>
+                        Database consists of six tables which are Parts, Computers, ComputerParts,
+						Auth, Orders and OrderComputers.
+                    </p>
+                    <ul>
+                        <li>
+                            Parts: Contains columns PartID, Name, Price, Brand and Type. PartID is
+							the primary key and auto increments. Type of parts consist of
+							CPU, RAM, Hard Drive, Display and Operating System.
+                        </li>
+                        <li>
+                            Computers: Contains columns ComputerID, Name, Brand, ImagePath, About,
+							AddCost, Type and Label. ComputerID is the primary key and auto increments.
+							ImagePath is the path to the image of the computer. AddCost is any additional
+							cost that is put into the branding or serving of the whole product. Type consists
+							of Laptop or Desktop. Label consists of Home, Gaming or Business.
+                        </li>
+                        <li>
+                            ComputerParts: Contains columns ComputerID, PartID and Standard. This table
+							is used to reference the components that are available to a computer. Standard
+							is a bit value where 1 represents a default configuration component and 0 represents
+							the converse.
+                        </li>
+                        <li>
+                            Auth: Contains columns user_id, username, user_email and password. This table stores
+							the authentication information of the customers.
+                        </li>
+                        <li>
+                            Order: Contains columns OrderID, UserID and Date. This table is used to reference
+							the orders that are belonged to the customers.
+                        </li>
+                        <li>
+                            OrderComputers: Contains OrderID, ComputerID, CpuID, RamID, HdID, DisplayID, OsID and Price.
+							This table is used to reference the content of an order which is composed of a multiple
+							computers. Since there is no unique identifer for identifying the unique vartiaion of a component
+							of a computer, all of the IDs of a part of a computer must be stored.
+                        </li>
+                    </ul>
+                    <p>Customer Management Module</p>
+                    <p>
+						Customers are able to register and log in using a username and a password. However,
+						it is important to note that password recovery functionality has not been implemented.
+						Also, password is not salted and thus, stored as plaintext which is a security vulnerability.
+                    </p>
+                    <p>Order Management Module</p>
+                    <p>
+						Since this module is not implemented, users are not able to checkout after items are
+						placed in the cart.
+                    </p>
+                    <h2>Documentation</h2>
+                    <p>Added pages from part 3:</p>
+                    <p>Login.aspx: Users can login in from this page.</p>
+                    <p>
+                        Register.aspx: Users can register and sign up from this page.
+                    </p>
+                    <h2>Hyperlink</h2>
+                    <a href="part4">link</a>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

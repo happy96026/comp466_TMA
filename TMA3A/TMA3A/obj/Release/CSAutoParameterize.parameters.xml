@@ -1,0 +1,9 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<parameters>
+  <parameter name="databaseConnectionString-Web.config Connection String" description="databaseConnectionString Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=&quot;C:\Users\minsoung\Documents\minsoung\University\Comp 466\TMA\TMA3\TMA3\part4\database.mdf&quot;;Integrated Security=True;Connect Timeout=30" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\minsoung\\Documents\\minsoung\\University\\Comp\ 466\\TMA\\TMA3A\\TMA3A\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='databaseConnectionString']/@connectionString" />
+  </parameter>
+  <parameter name="databaseConnectionString1-Web.config Connection String" description="databaseConnectionString1 Connection String used in web.config by the application to access the database." defaultValue="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=|DataDirectory|\database.mdf;Integrated Security=True;Connect Timeout=30" tags="SqlConnectionString">
+    <parameterEntry kind="XmlFile" scope="C:\\Users\\minsoung\\Documents\\minsoung\\University\\Comp\ 466\\TMA\\TMA3A\\TMA3A\\obj\\Release\\Package\\PackageTmp\\Web\.config$" match="/configuration/connectionStrings/add[@name='databaseConnectionString1']/@connectionString" />
+  </parameter>
+</parameters>
